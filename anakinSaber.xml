@@ -1,0 +1,406 @@
+<scene>
+   <scope>0</scope>
+   
+  <camera>
+    <position>
+		<x>0</x>
+		<y>0</y>
+		<z>65</z>
+	</position>
+    <direction>
+		<x>0</x>
+		<y>19</y>
+		<z>0</z>
+	</direction>
+    <near_clip>2</near_clip>
+    <far_clip>2000</far_clip>
+  </camera>
+  
+  <light>
+    <type></type>
+    <color>
+		<r>1</r>
+		<g>1</g>
+		<b>1</b>
+	</color>
+    <direction>
+		<x>0</x>
+		<y>0</y>
+		<z>-1</z>
+	</direction> <!-- For directional lights -->
+    <position></position> <!-- For positional/spotlight lights -->
+  </light>
+  
+  <root>
+  <transform>
+  <name>Saber</name>
+  <child>
+	<animation>
+		<name>LightSaberAnimation</name>
+
+		<keyframes>
+		<name>SaberFlick</name>
+		<length>1</length>		
+			<key>
+				<time>0</time>
+				<rotate>
+					<w>0</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.2</time>
+				<rotate>
+					<w>45</w>
+					<x>.3</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.3</time>
+				<rotate>
+					<w>45</w>
+					<x>.3</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.35</time>
+				<rotate>
+					<w>45</w>
+					<x>-.5</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+		</keyframes>
+
+		<keyframes>
+		<name>SwingLeft</name>
+		<length>1</length>		
+			<key>
+				<time>0</time>
+				<rotate>
+					<w>0</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.2</time>
+				<rotate>
+					<w>45</w>
+					<x>0</x>
+					<y>1</y>
+					<z>1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.35</time>
+				<rotate>
+					<w>45</w>
+					<x>-1</x>
+					<y>1</y>
+					<z>1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.5</time>
+				<rotate>
+					<w>45</w>
+					<x>-1.5</x>
+					<y>1</y>
+					<z>1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.65</time>
+				<rotate>
+					<w>45</w>
+					<x>-1.5</x>
+					<y>.5</y>
+					<z>.5</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.8</time>
+				<rotate>
+					<w>45</w>
+					<x>-1</x>
+					<y>.25</y>
+					<z>.25</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.9</time>
+				<rotate>
+					<w>45</w>
+					<x>-.5</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+
+		</keyframes>
+		
+		<keyframes>
+		<name>SwingRight</name>
+		<length>1</length>		
+			<key>
+				<time>0</time>
+				<rotate>
+					<w>0</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.2</time>
+				<rotate>
+					<w>45</w>
+					<x>0</x>
+					<y>-1</y>
+					<z>-1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.35</time>
+				<rotate>
+					<w>45</w>
+					<x>-1</x>
+					<y>-1</y>
+					<z>-1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.5</time>
+				<rotate>
+					<w>45</w>
+					<x>-1.5</x>
+					<y>-1</y>
+					<z>-1</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.65</time>
+				<rotate>
+					<w>45</w>
+					<x>-1.5</x>
+					<y>-.5</y>
+					<z>-.5</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.8</time>
+				<rotate>
+					<w>45</w>
+					<x>-1</x>
+					<y>-.25</y>
+					<z>-.25</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.9</time>
+				<rotate>
+					<w>45</w>
+					<x>-.5</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+
+		</keyframes>
+		
+		<keyframes>
+		<name>SaberThrust</name>
+		<length>1</length>		
+			<key>
+				<time>0</time>
+				<rotate>
+					<w>0</w>
+					<x>0</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>		
+			</key>
+			
+			<key>
+				<time>.3</time>
+				<rotate>
+					<w>80</w>
+					<x>-1</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>
+				
+			</key>
+			
+			<key>
+				<time>.5</time>
+				<rotate>
+					<w>80</w>
+					<x>-1</x>
+					<y>0</y>
+					<z>0</z>
+				</rotate>	
+				<translate>
+					<x>0</x>
+					<y>0</y>
+					<z>-20</z>
+				</translate>					
+			</key>
+			
+
+
+		</keyframes>
+		
+		
+		
+		<child>
+			<transform>
+			  <name>LightsaberTransform</name>
+			  <translate>
+				<x>0</x>
+				<y>0</y>
+				<z>0</z>
+			  </translate>
+			  <rotate>
+				<w>0</w>
+				<x>0</x>
+				<y>0</y>
+				<z>0</z>
+			  </rotate>
+			  
+			  <child>
+				<transform>
+				  <name>HiltTransform</name>
+					<scale>
+						<x>1</x>
+						<y>4</y>
+						<z>1</z>
+					</scale>
+				  
+					<child>
+						<entity>
+							<name>HiltMesh</name>
+							<mesh>Hilt.mesh</mesh>
+							<material>Silver</material>
+
+						
+						<child>
+							<transform>
+								<name>HiltBlack</name>
+								<scale>
+									<x>1.001</x>
+									<y>1.001</y>
+									<z>1.001</z>
+								</scale>
+
+							<child>
+								<entity>
+									<name>HiltBlackMesh</name>
+									<mesh>HiltBlack.mesh</mesh>
+									<material>Black</material>
+								</entity>
+							</child>
+							</transform>
+						</child>
+						</entity>
+					</child>
+				</transform>
+
+				<animation>
+				<name>BladeAnimation</name>
+
+				
+				<keyframes>
+				<name>BladeExtend</name>
+				<length>1</length>
+					<key>
+						<time>0</time>
+						<scale>
+							<x>.6</x>
+							<y>0</y>
+							<z>.6</z>
+						</scale>			
+					</key>
+					
+					<key>
+						<time>0.5</time>
+						<scale>
+							<x>.6</x>
+							<y>1</y>
+							<z>.6</z>
+						</scale>
+					</key>						
+				</keyframes>
+				
+				
+			
+					<child>
+						<transform>
+						  <name>BladeTransform</name>
+						  <translate>
+							<x>0</x>
+							<y>0</y>
+							<z>0</z>
+						  </translate>
+
+						  <rotate>
+							<w>180</w>
+							<x>1</x>
+							<y>0</y>
+							<z>0</z>
+						  </rotate>
+						  
+						  <child>
+							<entity>
+								<name>BladeMesh</name>
+								<mesh>Blade.mesh</mesh>
+								<material>Red</material>
+							</entity>
+						  </child>
+						</transform>
+					</child>
+				</animation>
+					
+				
+				
+			  </child>
+			  
+			  
+			  
+			</transform>
+</child>
+</animation>
+
+
+	</child>
+	</transform>
+	
+	
+	
+	
+  </root>
+</scene>

@@ -1,0 +1,40 @@
+
+<resources>
+
+   <resource>
+      <uid>1</uid>
+	  <scope>0</scope>
+	  <resource_type>path</resource_type>
+	  <file_name>./assets/models</file_name>
+   </resource>
+	  
+   <resource>
+      <uid>2</uid>
+	  <scope>0</scope>
+	  <resource_type>path</resource_type>
+	  <file_name>./assets/materials/scripts</file_name>
+   </resource>	  
+
+   <resource>
+      <uid>3</uid>
+	  <scope>0</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>Hilt.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>4</uid>
+	  <scope>0</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>HiltBlack.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>5</uid>
+	  <scope>0</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>Blade.mesh</file_name>
+   </resource>
+
+</resources>
+
