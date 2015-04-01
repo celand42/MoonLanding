@@ -55,12 +55,18 @@ void GUIManager::mouseMoved(uint32 mouse_x, uint32 mouse_y)
 //left button is 0, right button is 1
 void GUIManager::mousePressed(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse)
 {
+   if (game_mouse == 1)	// Lets user left click
+       game_mouse = 0;
+	
    MyGUI::InputManager& mygui_input_manager = MyGUI::Singleton<MyGUI::InputManager>::getInstance();
    mygui_input_manager.injectMousePress(mouse_x, mouse_y, MyGUI::MouseButton::Enum(game_mouse));
 }
 
 void GUIManager::mouseReleased(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse)
 {
+   if (game_mouse == 1) // Lets user left click
+       game_mouse = 0;
+	
    MyGUI::InputManager& mygui_input_manager = MyGUI::Singleton<MyGUI::InputManager>::getInstance();
    mygui_input_manager.injectMouseRelease(mouse_x, mouse_y, MyGUI::MouseButton::Enum(game_mouse));
 }
@@ -159,7 +165,14 @@ void GUIManager::buildGUIFromXML(std::string file_name)
             {
                addButtons(buttons_node, values, w);
             }
+			
+			TiXmlNode* text_boxes_node = window_node->FirstChild("text_boxes");
 
+			if (text_boxes_node)
+            {
+               addTextBoxes(text_boxes_node, values, w);
+            }
+			
             TiXmlNode* combo_boxes_node = window_node->FirstChild("combo_boxes");
 
             if (combo_boxes_node)
@@ -202,7 +215,48 @@ void GUIManager::addButtons(TiXmlNode* buttons_node, float* values, MyGUI::Windo
       b->setFontHeight(font_size);
       b->setTextColour(MyGUI::Colour(0,0,0));
       b->setModeImage(true);
-      b->setImageResource("taco.jpg");
+      b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonGUIDelegate);
+
+      // GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);
+      // widget_script->setFileName(file_name_text);
+      // widget_script->setScriptName(script_name_text);
+
+      // all_widgets->tableInsert(widget_script);
+   }
+}
+
+void GUIManager::addTextBoxes(TiXmlNode* text_boxes_node, float* values, MyGUI::Window* w)
+{
+	
+   for(TiXmlNode* text_box_node = text_boxes_node->FirstChild("text_box"); text_box_node; text_box_node = text_box_node->NextSibling())
+   {  
+      std::string name_text = GameManager::textFromChildNode(text_box_node, "name");
+	  std::string caption_text = GameManager::textFromChildNode(text_box_node, "caption");
+      std::string position_text = GameManager::textFromChildNode(text_box_node, "position");
+      GameManager::parseFloats(position_text, values);
+      uint32 left = (uint32) values[0];
+      uint32 top = (uint32) values[1];
+
+      std::string size_text = GameManager::textFromChildNode(text_box_node, "size");
+      GameManager::parseFloats(size_text, values);
+      uint32 width = (uint32) values[0];
+      uint32 height = (uint32) values[1];
+
+      std::string align_text = GameManager::textFromChildNode(text_box_node, "align");
+      std::string font_size_text = GameManager::textFromChildNode(text_box_node, "font");
+      uint32 font_size = (uint32) GameManager::parseFloat(font_size_text);
+
+	  cout << "NAME: " << name_text << endl;
+	  cout << "CAPTION: " << caption_text << endl;
+	  cout << "POSITION: " << left << " " << top << endl;
+	  cout << "SIZE: " << width << " " << height << endl;
+	  cout << "ALIGN: " << align_text << endl;
+	  cout << "FONT: " << font_size << endl;
+	  
+      MyGUI::TextBox* b = w->createWidget<MyGUI::TextBox>("TextBox", left, top, width, height, MyGUI::Align::Default, name_text);
+      b->setCaption(caption_text);
+      b->setFontHeight(font_size);
+      b->setTextColour(MyGUI::Colour(0,0,0));
       b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonGUIDelegate);
 
       // GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);

@@ -21,6 +21,7 @@ class GUIManager
 
       void addButtons(TiXmlNode* buttons_node, float* value, MyGUI::Window* w);
       void addComboBoxes(TiXmlNode* combo_boxes_node, float* value, MyGUI::Window* w);
+	  void addTextBoxes(TiXmlNode* text_boxes_node, float* values, MyGUI::Window* w);
 
    public:
       GUIManager(RenderManager* render_manager);

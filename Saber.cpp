@@ -138,7 +138,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 	// Swing left
 	if (saberLeft)
 	{
-		if (saberSlashSound && saberExtract)
+		if (saberSlashSound && saberExtract && animationFinished)
 		{
 			saberSlashSound = false;
 			game_manager->playAudio(23,1);	// Saber slash noise
@@ -158,7 +158,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 	// Swing right
 	else if (saberRight)
 	{
-		if (saberSlashSound && saberExtract)
+		if (saberSlashSound && saberExtract && animationFinished)
 		{
 			saberSlashSound = false;
 			game_manager->playAudio(23,1);	// Saber slash noise
@@ -178,7 +178,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 	// Thrust blade
 	else if (saberThrust)
 	{
-		if (saberThrustSound && saberExtract)
+		if (saberThrustSound && saberExtract && animationFinished)
 		{
 			saberThrustSound = false;
 			game_manager->playAudio(24,1);	// Saber stab noise

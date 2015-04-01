@@ -249,7 +249,7 @@ void RenderManager::init()
 
       //initialize render system
       //automatically create the window and give it a title
-      window = root->initialise(true, "Game Engine Programming");  
+      window = root->initialise(true, "Anakin's Dark Side");  
 
       //can create BSP or octree scene managers
       scene_manager = root->createSceneManager(Ogre::ST_GENERIC, "Default Scene Manager");
