@@ -47,7 +47,9 @@ void RenderManager::setSelectedNode(std::string item)
 {
    try
    {
-      selected_node = scene_manager->getSceneNode(item);
+      //selected_node = scene_manager->getSceneNode(item);
+      Entity* entity = scene_manager->getEntity("BladeMesh");
+      entity->setMaterialName(item);
    }
    catch (Ogre::Exception& e)
    {

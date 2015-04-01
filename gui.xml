@@ -65,8 +65,11 @@
          <selected_index>0</selected_index>
 
          <selections>
-            <selection>StarShip</selection>
-            <selection>RobotTranNode</selection>
+         <selection>Red</selection>
+            <selection>Green</selection>
+            <selection>Blue</selection>
+            <selection>Orange</selection>
+            <selection>Purple</selection>
             <selection>InvalidNode</selection>
          </selections>
            
