@@ -31,6 +31,9 @@ class Saber
 	bool saberSlashSound;
 	bool saberThrustSound;
 	
+	// Reset
+	bool resetAnimate;
+	
 	public:
 	
 	Saber(GameManager* gm);
@@ -39,7 +42,7 @@ class Saber
 	void keyPressed(std::string key);
 	
 	void processAnimations(float time_step, ListArray<Ogre::AnimationState>* animation_states);
-	
+	void resetAnimation();
 	
 	
 	

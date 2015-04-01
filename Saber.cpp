@@ -31,6 +31,8 @@ void Saber::init()
 	saberHumSound = true;
 	saberSlashSound = true;
 	saberThrustSound = true;
+	
+	resetAnimate = false;
 }
 
 void Saber::keyPressed(std::string key)
@@ -73,6 +75,14 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
    // 3: Swing Right
    // 4: Thrust
    // 5: Blade
+   
+   if (resetAnimate)
+   {
+		resetAnimate = false;
+		animation_states->get(1)->setTimePosition(0);
+		animation_states->get(5)->setTimePosition(0);
+		saberOnSound = true;
+   }
    
    // Animate hilt flick and blade extension
    if (saberExtract)
@@ -185,4 +195,9 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 				animation_states->get(4)->setTimePosition(0);
 		}		
 	}
+}
+
+void Saber::resetAnimation()
+{
+	resetAnimate = true;
 }

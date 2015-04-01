@@ -35,6 +35,7 @@ class GameManager : public InputListener
       static GameManager* getGameManager(std::string scene_file_name);
 
 	  void processAnimations(float time_step, ListArray<Ogre::AnimationState>* animation_states);
+	  void resetAnimation();
 	  
       void updateAudio();
       void playAudio(uint32 audio_id, uint32 num_repeats);

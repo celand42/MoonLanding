@@ -246,6 +246,11 @@ void GameManager::processAnimations(float time_step, ListArray<Ogre::AnimationSt
 	saber->processAnimations(time_step, animation_states);
 }
 
+void GameManager::resetAnimation()
+{
+	saber->resetAnimation();
+}
+
 std::string GameManager::textFromChildNode(TiXmlNode* parent_node, const char* child_element_name)
 {
    TiXmlNode* child_node = parent_node->FirstChild(child_element_name);
