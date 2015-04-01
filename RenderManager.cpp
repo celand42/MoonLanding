@@ -262,7 +262,7 @@ void RenderManager::init()
 
       //z-order (for possible overlapping), left, top, width, height
       viewport = window->addViewport(camera, 0, 0, 0, 1.0, 1.0);  //assign a camera to a viewport (can have many cameras and viewports in a single window)
-      viewport->setBackgroundColour(Ogre::ColourValue(0,0,0));
+	  viewport->setBackgroundColour(Ogre::ColourValue(.33, .33, .33, 1));
 
       float actual_width = Ogre::Real(viewport->getActualWidth());
       float actual_height = Ogre::Real(viewport->getActualHeight());
