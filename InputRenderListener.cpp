@@ -17,8 +17,10 @@ InputRenderListener::~InputRenderListener()
 bool InputRenderListener::frameStarted(const Ogre::FrameEvent& event) 
 {
    float time_step = event.timeSinceLastFrame;
-   //this is the memory address of the object invoked to call the method where I am
+
    getRenderManager()->checkForInput(time_step);
+   getRenderManager()->updateAudio();
+
    return getRenderStatus();
 }
 

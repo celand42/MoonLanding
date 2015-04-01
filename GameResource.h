@@ -1,7 +1,7 @@
 #if !defined GAME_RESOURCE
 #define GAME_RESOURCE
 
-enum GameResourceType{PATH, MESH};
+enum GameResourceType{PATH, MESH, AUDIO};
 
 #include "GameHeader.h"
 #include <string>

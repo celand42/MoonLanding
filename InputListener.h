@@ -20,7 +20,7 @@ class InputListener
 
       //joystick methods
       virtual void joystickButtonPressed(std::string button) = 0;
-      virtual void joystickAxisMoved(std::string axis, int amount) = 0;
+      virtual void joystickAxisMoved(int* amount) = 0;
 };
 
 #endif

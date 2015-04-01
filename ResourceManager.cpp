@@ -3,6 +3,7 @@
 
 #include "MeshResource.h"
 #include "PathResource.h"
+#include "AudioResource.h"
 
 #include "TinyXML.h"
 
@@ -66,6 +67,7 @@ void ResourceManager::loadResources(std::string group_name)
    {
       GameResource* resource = iter->next();
       GameResourceType grt = resource->getResourceType();
+
       if (grt != PATH)
       {
          resource->load();
@@ -82,15 +84,6 @@ cout << "meshes should all be loaded" << endl;
    current_group = group_name;
 }
 
-/*
-std::string ResourceManager::getConfigFilePath()
-{
-   GameResource* gr = findResourceByID(1);
-   return gr->getResourceFileName();
-}
-*/
-
-//id 1 will be the config file path for the current resource group
 GameResource* ResourceManager::findResourceByID(uint32 resource_id)
 {
    if (current_group == "") return NULL;
@@ -101,12 +94,22 @@ GameResource* ResourceManager::findResourceByID(uint32 resource_id)
    while(current_list_iter->hasNext())
    {
       GameResource* game_resource = current_list_iter->next();
-      int test_resource_id = game_resource->getResourceID();
+      uint32 test_resource_id = game_resource->getResourceID();
 
       if (test_resource_id == resource_id)
       {
          delete current_list_iter;
          return game_resource;
+/*
+         if (game_resource->isLoaded())
+         {
+            return game_resource;
+         }
+         else
+         {
+            return NULL;
+         }
+*/
       }
    }
    delete current_list_iter;
@@ -166,9 +169,9 @@ void ResourceManager::loadFromXMLFile(std::string file_name)
 
                if (resource_type == "audio")  //audio elements have an additional field, audio_type
                {
-/*
                   TiXmlElement* audio_element = (TiXmlElement*) resource_element->FirstChild("audio_type");
                   std::string audio_type = audio_element->GetText();
+
                   if (audio_type == "stream")
                   {
                      game_resource = new AudioResource(uid, scope, file_name, AUDIO, STREAM, game_manager);
@@ -177,7 +180,6 @@ void ResourceManager::loadFromXMLFile(std::string file_name)
                   {
                      game_resource = new AudioResource(uid, scope, file_name, AUDIO, SAMPLE, game_manager);
                   }
-*/
                }
 
                else if (resource_type == "path")

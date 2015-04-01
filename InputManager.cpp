@@ -227,6 +227,11 @@ std::string InputManager::keyMap(const OIS::KeyEvent& e)
       game_key = "ESCAPE";
    }
 
+   else if (key_code == OIS::KC_SPACE)
+   {
+	   game_key = "SPACE";
+   }
+   
    else if (key_code == OIS::KC_RIGHT)
    {
       game_key = "RIGHT";
@@ -259,10 +264,6 @@ std::string InputManager::keyMap(const OIS::KeyEvent& e)
    else if (key_code == OIS::KC_D)
    {
       game_key = "D";
-   }
-   else if (key_code == OIS::KC_SPACE)
-   {
-      game_key = "SPACE";
    }
 
    return game_key;
@@ -356,6 +357,7 @@ std::string InputManager::joystickAxisMap(int axis)
    }
 }
 
+/*
 bool InputManager::axisMoved (const OIS::JoyStickEvent& e, int axis)
 {
    int amount = e.state.mAxes[axis].abs;
@@ -373,7 +375,41 @@ bool InputManager::axisMoved (const OIS::JoyStickEvent& e, int axis)
    delete iter;
    return true;
 }
+*/
 
 bool InputManager::sliderMoved (const OIS::JoyStickEvent& e, int index){return true;}
 bool InputManager::povMoved (const OIS::JoyStickEvent& e, int index){return true;}
 bool InputManager::vector3Moved (const OIS::JoyStickEvent& e, int index){return true;}
+
+bool InputManager::axisMoved (const OIS::JoyStickEvent& e, int axis)
+{
+    //axis 1,0 = left stick
+    //axis 4,3 = right stick
+    //axis 2 = left trigger
+    //axis 5 = right trigger
+   
+    //After testing this on Dr. Boshart's machine, I found that depending upon your drivers
+    //the element in the e.state.mAxis[] array which corresponds to particular axis can vary,
+    //you may have to change this part in accordance with your drivers.
+    int amount[6] =    {e.state.mAxes[0].abs, e.state.mAxes[1].abs,  // left stick north/south (north is negative), east/west (west is negative)
+			e.state.mAxes[2].abs, e.state.mAxes[3].abs,  // right stick north/south, east/west
+			e.state.mAxes[4].abs, e.state.mAxes[5].abs}; // left trigger positive, right trigger negative for index 4 (index 5 not used?)
+
+
+    cout << endl;
+    cout << amount[0] << " " << amount[1] << "\n" 
+	 << amount[2] << " " << amount[3] << "\n"
+	 << amount[4] << " " << amount[5] << endl;
+    cout << endl;
+
+    
+    //Notify each of the listeners
+    ListArrayIterator<InputListener>* iter = input_listeners->iterator();
+    while(iter->hasNext())
+    {
+	InputListener* listener = iter->next();
+	listener->joystickAxisMoved(amount);
+    }
+    delete iter;	
+    return true;
+}

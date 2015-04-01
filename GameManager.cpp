@@ -3,8 +3,51 @@
 #include "ResourceManager.h"
 #include "LogManager.h"
 #include "InputManager.h"
+#include "AudioManager.h"
+#include "Saber.h"
 
 #include <stdlib.h>  //atoi, atof (actual include not needed?)
+
+void GameManager::playAudio(uint32 audio_id, uint32 num_repeats)
+{
+   //check to make sure the audio is loaded before attempting to play it
+   //if the resource is not in the currently loaded group, NULL is returned
+   GameResource* game_resource = resource_manager->findResourceByID(audio_id);
+   if (game_resource)
+   {
+      audio_manager->playAudio((AudioResource*) game_resource, num_repeats);
+   }
+}
+
+void GameManager::updateAudio()
+{
+   audio_manager->updateAudio();
+}
+
+AudioResourceInfo* GameManager::createAudioResourceInfo()
+{
+   return audio_manager->createAudioResourceInfo();
+}
+
+void GameManager::loadSampleAudioResource(std::string file_name, AudioResourceInfo* ar_info)
+{
+   audio_manager->loadSampleAudioResource(file_name, ar_info);
+}
+
+void GameManager::loadStreamAudioResource(std::string file_name, AudioResourceInfo* ar_info)
+{
+   audio_manager->loadStreamAudioResource(file_name, ar_info);
+}
+
+void GameManager::unloadSampleAudioResource(AudioResourceInfo* ar_info)
+{
+   audio_manager->unloadSampleAudioResource(ar_info);
+}
+
+void GameManager::unloadStreamAudioResource(AudioResourceInfo* ar_info)
+{
+   audio_manager->unloadStreamAudioResource(ar_info);
+}
 
 void GameManager::loadResources(std::string scope_text)
 {
@@ -24,65 +67,12 @@ void GameManager::keyPressed(std::string game_key)
       //delete this;
       //exit(0);
    }
-   else if (game_key == "SPACE")
+   
+   else
    {
-	   if (render_manager->animationDone())
-	   {
-		   render_manager->newAnimation();
-		   
-		   if(!saberExtract)
-			   saberExtract = true;
-		   else
-			   saberExtract = false;
-	   }
-	   
-	   //cout << saberExtract << endl;
-	   
+	   cout<<game_key<<endl;
+	   saber->keyPressed(game_key);
    }
-   
-   else if (game_key == "A" || game_key == "LEFT")
-	   saberLeft = true;
-   
-   else if (game_key == "D" || game_key == "RIGHT")
-	   saberRight = true;
-   
-   else if (game_key == "W" || game_key == "UP")
-	   saberThrust = true;
-}
-
-bool GameManager::saberOn()
-{
-	return saberExtract;
-}
-
-bool GameManager::swingLeft()
-{
-	return saberLeft;
-}
-
-bool GameManager::finishLeft()
-{
-	saberLeft = false;
-}
-
-bool GameManager::swingRight()
-{
-	return saberRight;
-}
-
-bool GameManager::finishRight()
-{
-	saberRight = false;
-}
-
-bool GameManager::saberStab()
-{
-	return saberThrust;
-}
-
-bool GameManager::finishStab()
-{
-	saberThrust = false;
 }
 
 void GameManager::keyReleased(std::string game_key)
@@ -91,13 +81,13 @@ void GameManager::keyReleased(std::string game_key)
 
 void GameManager::mousePressed(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse)
 {
-   cout << "mouse_x: " << mouse_x << endl;
-   cout << "mouse_y: " << mouse_y << endl;
-   cout << "mouse button: " << game_mouse << endl;
+   render_manager->mousePressed(mouse_x, mouse_y, game_mouse);
+   //playAudio(27, 3);  //is id 27 one of the loaded resources
 }
 
 void GameManager::mouseReleased(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse)
 {
+   render_manager->mouseReleased(mouse_x, mouse_y, game_mouse);
 }
 
 void GameManager::mouseMoved(uint32 mouse_x, uint32 mouse_y, int mouse_rel_x, int mouse_rel_y)
@@ -110,9 +100,9 @@ void GameManager::joystickButtonPressed(std::string button)
    cout << button << endl;
 }
 
-void GameManager::joystickAxisMoved(std::string axis, int amount)
+void GameManager::joystickAxisMoved(int* amount)
 {
-   render_manager->joystickAxisMoved(axis, amount);
+   render_manager->joystickAxisMoved(amount);
 }
 
 void GameManager::logProblem(std::string problem_message, int line_number)
@@ -160,18 +150,19 @@ GameManager* GameManager::getGameManager(std::string scene_file_name)
 
 void GameManager::init(std::string scene_file_name)
 {
-   saberExtract = false;
-   saberLeft = false;
-   saberRight = false;
-   saberThrust = false;
    log_manager = new LogManager("log.txt");
    render_manager = new RenderManager(this);  //calls render manager's init, sets up the frame listener
+   audio_manager = new AudioManager(this);
    input_manager = new InputManager(this);
+   saber = new Saber(this);
 
    resource_manager = new ResourceManager(this);
    resource_manager->loadFromXMLFile("resources.xml");
 
-   render_manager->createScene(scene_file_name);
+   render_manager->createScene(scene_file_name);  //the group name is now stored in this file
+   //resource_manager->unloadResources();
+   //render_manager->buildSceneFromXML(scene_file_name);
+   playAudio(20, 5);
 }
 
 GameManager::GameManager(std::string scene_file_name)
@@ -189,13 +180,17 @@ GameManager::GameManager(std::string scene_file_name)
 
 GameManager::~GameManager()
 {
-cout << "GameManager destructor called" << endl;
+   log_manager->logComment("Destructor started.");
    resource_manager->unloadResources();
 
+   
+   delete audio_manager;  //crashes unless moved here
    delete resource_manager;
    delete input_manager;
    delete render_manager;
-   delete log_manager;
+   log_manager->logComment("Destructor completed.");
+   delete log_manager;  
+   delete saber;
 }
 
 size_t GameManager::getRenderWindowHandle()
@@ -244,6 +239,11 @@ void GameManager::parseFloats(std::string& str, float* values)
       loc = index + 1;
       token_index++;
    }
+}
+
+void GameManager::processAnimations(float time_step, ListArray<Ogre::AnimationState>* animation_states)
+{
+	saber->processAnimations(time_step, animation_states);
 }
 
 std::string GameManager::textFromChildNode(TiXmlNode* parent_node, const char* child_element_name)

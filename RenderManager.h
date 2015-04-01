@@ -8,15 +8,17 @@
 #include "tinyxml.h"
 
 class GameManager;
+class GUIManager;
+//class ScriptManager;
 
 class RenderManager
 {
    private:
 
+      Ogre::SceneNode* selected_node;
+
       ListArray<Ogre::AnimationState>* animation_states;
 
-	  bool animationFinished;
-	  
       Ogre::Root* root;
       Ogre::RenderWindow* window;
       Ogre::SceneManager* scene_manager;
@@ -24,6 +26,8 @@ class RenderManager
       Ogre::Camera* camera;
       Ogre::Viewport* viewport;
 
+      //ScriptManager* script_manager;
+      GUIManager* gui_manager;
       GameManager* game_manager;
       RenderListener* render_listener;
 
@@ -32,7 +36,6 @@ class RenderManager
       Ogre::Real time_since_last_frame;
 
       std::string loaded_group;
-	  
 
       void addSceneNodeChildren(TiXmlNode* xml_node, Ogre::SceneNode* parent_node, float* values);
       void addSceneNodeAnimation(TiXmlNode* animation_node_xml, Ogre::SceneNode* child_scene_node, std::string animation_name_text, float* values);
@@ -62,15 +65,16 @@ class RenderManager
       RenderManager(GameManager* game_manager);
       virtual ~RenderManager();
 
+      void updateAudio();
+      void mousePressed(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse);
+      void mouseReleased(uint32 mouse_x, uint32 mouse_y, uint32 game_mouse);
+
       void mouseMoved(uint32 mouse_x, uint32 mouse_y, int mouse_rel_x, int mouse_rel_y);
-      void joystickAxisMoved(std::string axis, int amount);
+      void joystickAxisMoved(int* amount);
 
 	  void createScene(std::string fileName);
 	  void processScene(TiXmlElement* elements, Ogre::SceneNode* parent_node);
-	  
-	  bool animationDone();
-	  void newAnimation();
-	  
+	    
       size_t getRenderWindowHandle();
       int getRenderWindowWidth();
       int getRenderWindowHeight();
@@ -96,6 +100,10 @@ class RenderManager
       void stopRendering();
 
       void processAnimations(float time_step);
+
+      void setSelectedNode(std::string item);
+      void logComment(std::string comment_message);
+      void executeScript(std::string file_name, std::string script_name, std::string object_name);
 };
 
 #endif

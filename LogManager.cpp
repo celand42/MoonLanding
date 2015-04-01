@@ -61,7 +61,7 @@ std::string LogManager::getTimeString()
 {
    std::stringstream time_str;
 
-   struct tm *pTime;
+   struct tm* pTime;
    time_t ctTime; 
    time(&ctTime);
    pTime = localtime(&ctTime);

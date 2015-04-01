@@ -26,7 +26,6 @@ class ResourceManager
 
       void loadFromXMLFile(std::string file_name);
       GameResource* findResourceByID(uint32 resource_ID);
-      //std::string getConfigFilePath();
       
       void unloadResources();
       void loadResources(std::string group_name);
