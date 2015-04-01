@@ -90,7 +90,7 @@ class RenderManager
       //void unloadOgreResources();
 
       void buildSceneFromXML(std::string file_name);
-
+      void talk();
       void setTimeSinceLastFrame(Ogre::Real time_since_last_frame);
 
       Ogre::RenderWindow* getRenderWindow();

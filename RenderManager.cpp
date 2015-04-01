@@ -42,7 +42,10 @@ void RenderManager::logComment(std::string comment_message)
 {
    game_manager->logComment(comment_message);
 }
-
+void RenderManager::talk()
+{
+  cout << "button pushed" << endl;
+}
 void RenderManager::setSelectedNode(std::string item)
 {
    try

@@ -92,19 +92,23 @@ void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, 
    const string& _name = _sender->getName();
    string name = _name;
 
-   GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&name);
-   if (widget_script)
+   if(name == "Quotes")
    {
-      string file_name = widget_script->getFileName();
-      string script_name = widget_script->getScriptName();
-
-      //obtain a reference to the combo box
-      MyGUI::ComboBox* combo = MyGUI::Gui::getInstance().findWidget<MyGUI::ComboBox>("Select_Object");
-      int selected_index = combo->getIndexSelected();
-      string object_name = combo->getItemNameAt(selected_index);
-
-      render_manager->executeScript(file_name, script_name, object_name);
+      render_manager->talk();
    }
+   // GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&name);
+   // if (widget_script)
+   // {
+   //    string file_name = widget_script->getFileName();
+   //    string script_name = widget_script->getScriptName();
+
+   //    //obtain a reference to the combo box
+   //    MyGUI::ComboBox* combo = MyGUI::Gui::getInstance().findWidget<MyGUI::ComboBox>("Select_Object");
+   //    int selected_index = combo->getIndexSelected();
+   //    string object_name = combo->getItemNameAt(selected_index);
+
+   //    render_manager->executeScript(file_name, script_name, object_name);
+   // }
 }
 
 void GUIManager::comboGUIDelegate(MyGUI::ComboBox* _sender, uint32 index) 
@@ -187,8 +191,8 @@ void GUIManager::addButtons(TiXmlNode* buttons_node, float* values, MyGUI::Windo
       uint32 width = (uint32) values[0];
       uint32 height = (uint32) values[1];
 
-      std::string file_name_text = GameManager::textFromChildNode(button_node, "file_name");
-      std::string script_name_text = GameManager::textFromChildNode(button_node, "script_name");
+      // std::string file_name_text = GameManager::textFromChildNode(button_node, "file_name");
+      // std::string script_name_text = GameManager::textFromChildNode(button_node, "script_name");
 
       std::string font_size_text = GameManager::textFromChildNode(button_node, "font");
       uint32 font_size = (uint32) GameManager::parseFloat(font_size_text);
@@ -197,13 +201,15 @@ void GUIManager::addButtons(TiXmlNode* buttons_node, float* values, MyGUI::Windo
       b->setCaption(caption_text);
       b->setFontHeight(font_size);
       b->setTextColour(MyGUI::Colour(0,0,0));
+      b->setModeImage(true);
+      b->setImageResource("taco.jpg");
       b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonGUIDelegate);
 
-      GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);
-      widget_script->setFileName(file_name_text);
-      widget_script->setScriptName(script_name_text);
+      // GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);
+      // widget_script->setFileName(file_name_text);
+      // widget_script->setScriptName(script_name_text);
 
-      all_widgets->tableInsert(widget_script);
+      // all_widgets->tableInsert(widget_script);
    }
 }
 
