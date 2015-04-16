@@ -1,0 +1,159 @@
+
+<resources>
+
+   <resource>
+      <uid>31</uid>
+      <scope>1</scope>
+      <resource_type>path</resource_type>
+      <file_name>./assets/my_gui</file_name>
+   </resource>
+
+   <resource>
+      <uid>20</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Imperial_March.mp3</file_name>
+      <audio_type>stream</audio_type>
+   </resource>
+
+   <resource>
+      <uid>21</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/SaberOn.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+
+   <resource>
+      <uid>22</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/SaberOff.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+
+   <resource>
+      <uid>23</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/SaberSwing.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+
+   <resource>
+      <uid>24</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/SaberStab.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>25</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Wilhelm.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>26</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/R2D2-3.mp3</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>27</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/R2D2-Scream.mp3</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>13</uid>
+	  <scope>1</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>Hilt.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>9</uid>
+	  <scope>1</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>HiltBlack.mesh</file_name>
+   </resource>
+   
+   <resource>
+      <uid>10</uid>
+	  <scope>1</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>Blade.mesh</file_name>
+   </resource>
+    
+   <resource>
+      <uid>1</uid>
+      <scope>1</scope>
+      <resource_type>path</resource_type>
+      <file_name>./assets/models</file_name>
+   </resource>
+
+   <resource>
+      <uid>8</uid>
+      <scope>1</scope>
+      <resource_type>path</resource_type>
+      <file_name>./assets/materials/scripts</file_name>
+   </resource>
+
+   <resource>
+      <uid>40</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Vaderbreathe.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>41</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Comeback.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>42</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Darkside.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>43</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Dontfail.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>44</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Failedme.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+   
+   <resource>
+      <uid>45</uid>
+      <scope>1</scope>
+      <resource_type>audio</resource_type>
+      <file_name>./assets/audio/audio_1/Giveyourself.wav</file_name>
+      <audio_type>sample</audio_type>
+   </resource>
+
+
+</resources>
