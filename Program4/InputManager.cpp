@@ -245,6 +245,10 @@ std::string InputManager::keyMap(const OIS::KeyEvent& e)
    {
       game_key = "D";
    }
+   else if (key_code == OIS::KC_SPACE)
+   {
+      game_key = "SPACE";
+   }
 
    return game_key;
 }

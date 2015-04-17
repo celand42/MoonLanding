@@ -65,12 +65,7 @@ void GameManager::checkForInput(float time_step)
 
 void GameManager::keyPressed(std::string game_key)
 {
-   if (game_key == "ESCAPE")
-   {
-      render_manager->stopRendering();
-      //delete this;
-      //exit(0);
-   }
+    render_manager->keyPressed(game_key); 
 }
 
 void GameManager::keyReleased(std::string game_key)
@@ -146,23 +141,31 @@ GameManager* GameManager::getGameManager(std::string scene_file_name)
    return &game_manager;  //won't go out of scope as game_manager is static
 }
 
-void GameManager::init()
+void GameManager::init(std::string scene_file_name)
 {
    log_manager = new LogManager("log.txt");
    render_manager = new RenderManager(this);  //calls render manager's init, sets up the frame listener(s)
    audio_manager = new AudioManager(this);
    input_manager = new InputManager(this);
    resource_manager = new ResourceManager(this);
+   
+   resource_manager->loadFromXMLFile("resources.xml");
+   render_manager->createScene(scene_file_name);  //the group name is now stored in this file
+
+   playAudio(20, 5);
+   cout <<"IMPERIAL MARCH"<<endl;
+   //playAudio(20, 5);
 }
 
 GameManager::GameManager(std::string scene_file_name)
 {
-   init();
+   init(scene_file_name);
 
-   resource_manager->loadFromXMLFile("resources.xml");
-   render_manager->buildSceneFromXML(scene_file_name);  //the group name is now stored in this file
-   //playAudio(20, 5);
+   //resource_manager->loadFromXMLFile("resources.xml");
+   //render_manager->createScene(scene_file_name);  //the group name is now stored in this file
+
    render_manager->startRendering();
+   
 }
 
 GameManager::~GameManager()

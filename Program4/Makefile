@@ -3,14 +3,14 @@ CC = g++
 
 GAME_PATH=/$(GAME_DRIVE_LETTER)/Game_Engine
 
-INC_DIRS=-I./ -I$(GAME_PATH)/Ogre/OgreMain/include/ -I$(GAME_PATH)/Ogre/include/ -I$(GAME_PATH)/boost_1_57_0/ -I$(GAME_PATH)/tinyxml -I$(GAME_PATH)/OgreDeps/src/ois/includes -I$(GAME_PATH)/bass_2.4 -I$(GAME_PATH)/MyGUI_3.2.2/MyGUIEngine/include -I$(GAME_PATH)/MyGUI_3.2.2/Platforms/Ogre/OgrePlatform/include -I$(GAME_PATH)/lua-5.3.0 -I$(GAME_PATH)/bullet/include -I$(GAME_PATH)
-LIB_DIRS=-L./ -L$(GAME_PATH)/Ogre/lib/ -L$(GAME_PATH)/boost_1_57_0/stage/lib/ -L$(GAME_PATH)/tinyxml -L$(GAME_PATH)/OgreDeps/src/ois -L$(GAME_PATH)/bass_2.4 -L$(GAME_PATH)/MyGUI_3.2.2/lib -L$(GAME_PATH)/lua-5.3.0/lib -L$(GAME_PATH)/bullet/lib
+INC_DIRS=-I./ -I$(GAME_PATH)/Ogre/OgreMain/include/ -I$(GAME_PATH)/Ogre/include/ -I$(GAME_PATH)/boost_1_57_0/ -I$(GAME_PATH)/tinyxml -I$(GAME_PATH)/OgreDeps/src/ois/includes -I$(GAME_PATH)/bass_2.4 -I$(GAME_PATH)/MyGUI_3.2.2/MyGUIEngine/include -I$(GAME_PATH)/MyGUI_3.2.2/Platforms/Ogre/OgrePlatform/include -I$(GAME_PATH)/lua_5.3.0/install -I$(GAME_PATH)/bullet/src -I$(GAME_PATH)
+LIB_DIRS=-L./ -L$(GAME_PATH)/Ogre/lib/ -L$(GAME_PATH)/boost_1_57_0/stage/lib/ -L$(GAME_PATH)/tinyxml -L$(GAME_PATH)/OgreDeps/src/ois -L$(GAME_PATH)/bass_2.4 -L$(GAME_PATH)/MyGUI_3.2.2/lib -L$(GAME_PATH)/lua_5.3.0/install/lib -L$(GAME_PATH)/bullet/lib
 LIBS=-lboost_system-mgw48-mt-1_57 -ltinyxml -lOIS -lbass -llua -lMyGUI.OgrePlatform -lMyGUIEngine -lOgreMain -lBulletDynamics -lBulletCollision -lLinearMath
 
 COMPILE = $(CC) $(INC_DIRS) -c 
 LINK = $(CC) $(LIB_DIRS) -o
 
-GAME_FILES = Main.o GameManager.o RenderListener.o AnimationRenderListener.o InputRenderListener.o PhysicsRenderListener.o RenderManager.o LogManager.o GameResource.o PathResource.o MeshResource.o ResourceManager.o InputManager.o AudioResource.o AudioPlayer.o AudioManager.o GUIManager.o ScriptManager.o GUIWidgetScript.o PhysicsManager.o RigidBody.o BulletSceneNodeMotionState.o OgreBulletDebugDrawer.o
+GAME_FILES = Main.o GameManager.o RenderListener.o AnimationRenderListener.o InputRenderListener.o PhysicsRenderListener.o RenderManager.o LogManager.o GameResource.o PathResource.o MeshResource.o ResourceManager.o InputManager.o AudioResource.o AudioPlayer.o AudioManager.o GUIManager.o ScriptManager.o GUIWidgetScript.o PhysicsManager.o RigidBody.o BulletSceneNodeMotionState.o OgreBulletDebugDrawer.o Saber.o
 
 all:	Ogre
 
@@ -92,5 +92,6 @@ BulletSceneNodeMotionState.o:	BulletSceneNodeMotionState.h BulletSceneNodeMotion
 OgreBulletDebugDrawer.o:	OgreBulletUtils.h OgreBulletDebugDrawer.h OgreBulletDebugDrawer.cpp
 				$(COMPILE) OgreBulletDebugDrawer.cpp
 
-
+Saber.o:	Saber.h	Saber.cpp
+			$(COMPILE) Saber.cpp
 

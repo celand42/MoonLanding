@@ -54,6 +54,13 @@
 			</Index>
 		</Group>
 	</Resource>
+	<Resource type="ResourceImageSet" name="SaberPointerImage">
+		<Group name="Pointer" texture="MyGUI_Pointers.png" size="32 32">
+			<Index name="Pointer">
+				<Frame point="12 88"/>
+			</Index>
+		</Group>
+	</Resource>
 	<Resource type="ResourceImageSet" name="LinkPointerImage">
 		<Group name="Pointer" texture="MyGUI_Pointers.png" size="32 32">
 			<Index name="Pointer">

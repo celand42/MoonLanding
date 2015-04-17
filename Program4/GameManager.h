@@ -2,7 +2,7 @@
 #define GAME_MANAGER
 
 #include "GameHeader.h"
-
+#include "CSC2110/ListArray.h"
 #include "InputListener.h"
 #include "tinyxml.h"
 #include <string>
@@ -25,12 +25,12 @@ class GameManager : public InputListener
       AudioManager* audio_manager;
 
       GameManager(std::string scene_file_name);
-      void init();
+      void init(std::string scene_file_name);
 
    public:
       virtual ~GameManager();
       static GameManager* getGameManager(std::string scene_file_name);
-
+	  
       void updateAudio();
       void playAudio(uint32 audio_id, uint32 num_repeats);
 

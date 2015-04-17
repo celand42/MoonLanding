@@ -1,99 +1,52 @@
-
 <gui>
-
    <windows>
-   <window>
-
-      <name>Window1</name>
-      <caption>Window</caption>
-      <skin>WindowC</skin>
-      <position>0,420</position>
-      <size>310,180</size>
-      <align>Default</align>
-      <layer>Overlapped</layer>
-
-   <buttons>
-
-      <button>
-         <name>Yaw</name>
-         <caption>Yaw</caption>
-         <skin>Button</skin>
-         <position>5,10</position>
-         <size>95,40</size>
+      <window>
+         <name>Window1</name>
+         <caption>Anakin's Dark Side</caption>
+         <skin>WindowC</skin>
+         <position>2,500</position>
+         <size>270,100</size>
          <align>Default</align>
-         <font>20</font>
-         <file_name>assets/lua_scripts/rotate_scripts.lua</file_name>
-         <script_name>yaw</script_name>
-      </button>
-
-      <button>
-         <name>Pitch</name>
-         <caption>Pitch</caption>
-         <skin>Button</skin>
-         <position>105,10</position>
-         <size>95,40</size>
-         <align>Default</align>
-         <font>20</font>
-         <file_name>assets/lua_scripts/rotate_scripts.lua</file_name>
-         <script_name>pitch</script_name>
-      </button>
-
-      <button>
-         <name>Roll</name>
-         <caption>Roll</caption>
-         <skin>Button</skin>
-         <position>205,10</position>
-         <size>95,40</size>
-         <align>Default</align>
-         <font>20</font>
-         <file_name>assets/lua_scripts/rotate_scripts.lua</file_name>
-         <script_name>roll</script_name>
-      </button>
-
-   </buttons>
-
-   <combo_boxes>
-
-      <combo_box>
-
-         <name>Select_Object</name>
-         <skin>ComboBox</skin>
-         <position>5,60</position>
-         <size>290,30</size>
-         <align>Default</align>
-         <font>20</font>
-         <selected_index>0</selected_index>
-
-         <selections>
-            <selection>StarShip</selection>
-            <selection>RobotTranNode</selection>
-            <selection>InvalidNode</selection>
-         </selections>
-           
-      </combo_box>
-
-   </combo_boxes>
-
-   <scroll_bars>
-
-      <scroll_bar>
-
-         <name>Select_Degrees</name>
-         <skin>ScrollBarH</skin>
-         <position>5,100</position>
-         <size>290,20</size>
-         <align>Default</align>
-
-         <track_size>20</track_size>
-         <scroll_range>20</scroll_range>
-         <scroll_position>10</scroll_position>
-         <vertical>no</vertical>
-           
-      </scroll_bar>
-
-   </scroll_bars>
-
-   </window>
+         <layer>Overlapped</layer>
+         <buttons>
+            <button>
+               <name>Quotes</name>
+               <caption>Darth</caption>
+               <skin>Vader</skin>
+               <position>5,5</position>
+               <size>95,70</size>
+               <align>Default</align>
+               <font>20</font>
+            </button>
+         </buttons>
+		 <text_boxes>
+			<text_box>
+				<name>Color Crystal</name>
+				<caption>Color Crystal:</caption>
+				<position>75,5</position>
+				<size>150,30</size>
+				<align>Default</align>
+				<font>20</font>
+			</text_box>
+		 </text_boxes>
+         <combo_boxes>
+            <combo_box>
+               <name>Select_Object</name>
+               <skin>ComboBox</skin>
+               <position>75,25</position>
+               <size>175,30</size>
+               <align>Default</align>
+               <font>20</font>
+               <selected_index>0</selected_index>
+               <selections>
+                  <selection>Red</selection>
+                  <selection>Green</selection>
+                  <selection>Blue</selection>
+                  <selection>Orange</selection>
+                  <selection>Purple</selection>
+               </selections>
+            </combo_box>
+         </combo_boxes>
+      </window>
    </windows>
-   
 </gui>

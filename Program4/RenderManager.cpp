@@ -7,6 +7,7 @@
 #include "AnimationRenderListener.h"
 #include "InputRenderListener.h"
 #include "PhysicsRenderListener.h"
+#include "Saber.h"
 
 #include <iostream>
 using namespace std;
@@ -128,11 +129,21 @@ void RenderManager::logComment(std::string comment_message)
    game_manager->logComment(comment_message);
 }
 
+void RenderManager::talk()
+{
+	srand(time(NULL));
+	int random = rand() % 6 + 40;
+	game_manager->playAudio(random, 1);
+}
+
 void RenderManager::setSelectedNode(std::string item)
 {
    try
    {
-      selected_node = scene_manager->getSceneNode(item);
+      //selected_node = scene_manager->getSceneNode(item);
+	  saber->resetAnimation();
+      Entity* entity = scene_manager->getEntity("BladeMesh");
+      entity->setMaterialName(item);
    }
    catch (Ogre::Exception& e)
    {
@@ -182,6 +193,11 @@ void RenderManager::joystickAxisMoved(int* amount)
     camera->setDirection(dir_vector);
     camera->setPosition(pos_vector);
 }
+
+
+
+
+
 
 void RenderManager::updateAudio()
 {
@@ -309,7 +325,7 @@ void RenderManager::init()
    physics_render_listener = NULL;
 
    selected_node = NULL;
-
+   
    try
    {
       root = OGRE_NEW Ogre::Root("","");    //resource/config files go here (we aren't using them)
@@ -371,6 +387,7 @@ void RenderManager::init()
 RenderManager::RenderManager(GameManager* gm)
 {
    game_manager = gm;
+   saber = new Saber(gm);
    init();
 
    //register the listener
@@ -462,13 +479,26 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 
 void RenderManager::processAnimations(float time_step)
 {
-   ListArrayIterator<Ogre::AnimationState>* anim_iter = animation_states->iterator();
-   while(anim_iter->hasNext())
+	saber->processAnimations(time_step, animation_states);
+}
+
+void RenderManager::resetAnimation()
+{
+	saber->resetAnimation();
+}
+
+void RenderManager::keyPressed(std::string game_key)
+{
+   if (game_key == "ESCAPE")
    {
-      Ogre::AnimationState* animation_state = anim_iter->next();
-      animation_state->addTime(time_step);
+     stopRendering();
    }
-   delete anim_iter;
+   
+   else
+   {
+	   cout<<game_key<<endl;
+	   saber->keyPressed(game_key);
+   }
 }
 
 void RenderManager::buildSceneFromXML(std::string file_name)
@@ -732,3 +762,260 @@ void RenderManager::addSceneNodeAnimation(TiXmlNode* animation_node_xml, SceneNo
    animation_states->add(animation_state);
 }
 
+
+void RenderManager::createScene(string fileName)
+{
+    TiXmlDocument sceneDoc(fileName.c_str());
+    
+    if (sceneDoc.LoadFile())
+    {
+		// Grabs root element
+		TiXmlElement* scene = sceneDoc.RootElement();
+		std::string scope_text = GameManager::textFromChildNode(scene, "scope");
+        game_manager->loadResources(scope_text);
+		
+        // Creates camera
+        TiXmlElement* camera_settings = scene->FirstChildElement("camera");
+        
+        // Sets camera position
+        TiXmlElement* camera_position = camera_settings->FirstChildElement("position");
+		TiXmlElement* position_x = camera_position->FirstChildElement("x");
+		TiXmlElement* position_y = camera_position->FirstChildElement("y");
+		TiXmlElement* position_z = camera_position->FirstChildElement("z");
+		Vector3 pos (atof(position_x->GetText()), 
+					 atof(position_y->GetText()), 
+					 atof(position_z->GetText()));
+        camera->setPosition(pos);
+        
+        // Sets camera direction
+        TiXmlElement* camera_direction = camera_settings->FirstChildElement("direction");
+		TiXmlElement* c_direction_x = camera_direction->FirstChildElement("x");
+		TiXmlElement* c_direction_y = camera_direction->FirstChildElement("y");
+		TiXmlElement* c_direction_z = camera_direction->FirstChildElement("z");
+		Vector3 c_dir (atof(c_direction_x->GetText()), 
+					   atof(c_direction_y->GetText()), 
+					   atof(c_direction_z->GetText()));
+        camera->lookAt(c_dir);
+        
+        // Sets camera near clip distance
+        TiXmlElement* camera_near_clip = camera_settings->FirstChildElement("near_clip");
+        camera->setNearClipDistance(atoi(camera_near_clip->GetText()));
+        
+        // Sets camera far clip distance
+        TiXmlElement* camera_far_clip = camera_settings->FirstChildElement("far_clip");
+        camera->setFarClipDistance(atoi(camera_far_clip->GetText()));
+        
+        // Creates and sets up light
+        TiXmlElement* light_settings = scene->FirstChildElement("light");
+        Ogre::Light* light = scene_manager->createLight("Light");
+        
+        // Sets light type
+        light->setType(Ogre::Light::LT_DIRECTIONAL);
+        
+        // Sets light color
+        TiXmlElement* light_color = light_settings->FirstChildElement("color");
+		TiXmlElement* light_r = light_color->FirstChildElement("r");
+		TiXmlElement* light_g = light_color->FirstChildElement("g");
+		TiXmlElement* light_b = light_color->FirstChildElement("b");
+        light->setDiffuseColour(atof(light_r->GetText()),
+                                atof(light_g->GetText()),
+                                atof(light_b->GetText()));
+        
+        // Sets light direction
+        TiXmlElement* light_direction = light_settings->FirstChildElement("direction");
+		TiXmlElement* l_direction_x = light_direction->FirstChildElement("x");
+		TiXmlElement* l_direction_y = light_direction->FirstChildElement("y");
+		TiXmlElement* l_direction_z = light_direction->FirstChildElement("z");
+		Vector3 l_dir (atof(l_direction_x->GetText()), 
+					   atof(l_direction_y->GetText()), 
+					   atof(l_direction_z->GetText()));
+        light->setDirection(l_dir);
+        
+        // Process rest of scene
+        processScene(scene->FirstChildElement("root"), scene_manager->getRootSceneNode());
+    }
+}
+
+
+void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent_node)
+{
+    for (TiXmlElement* element = elements->FirstChildElement(); element != NULL; element = element->NextSiblingElement())
+    {
+        string name = element->FirstChildElement("name")->GetText();
+        string type = element->Value();
+        
+        Ogre::SceneNode* node = scene_manager->createSceneNode(name + "Node");
+        parent_node->addChild(node);
+        
+        if (type == "transform")
+        {
+            TiXmlElement* scale = element->FirstChildElement("scale");
+            TiXmlElement* rotate = element->FirstChildElement("rotate");
+            TiXmlElement* translate = element->FirstChildElement("translate");
+            
+            if (scale)
+			{
+				TiXmlElement* scale_x = scale->FirstChildElement("x");
+				TiXmlElement* scale_y = scale->FirstChildElement("y");
+				TiXmlElement* scale_z = scale->FirstChildElement("z");
+				Vector3 s (atof(scale_x->GetText()), 
+						   atof(scale_y->GetText()), 
+					       atof(scale_z->GetText()));
+				
+                node->scale(s);
+			}
+			
+            if (rotate)
+			{                
+				TiXmlElement* rotate_w = rotate->FirstChildElement("w");
+				TiXmlElement* rotate_x = rotate->FirstChildElement("x");
+				TiXmlElement* rotate_y = rotate->FirstChildElement("y");
+				TiXmlElement* rotate_z = rotate->FirstChildElement("z");
+				Degree d  (atof(rotate_w->GetText()));
+				Vector3 r (atof(rotate_x->GetText()), 
+						   atof(rotate_y->GetText()), 
+					       atof(rotate_z->GetText()));
+				node->rotate(Quaternion(d, r));
+			}
+				
+            if (translate)
+			{
+				TiXmlElement* translate_x = translate->FirstChildElement("x");
+				TiXmlElement* translate_y = translate->FirstChildElement("y");
+				TiXmlElement* translate_z = translate->FirstChildElement("z");
+				Vector3 t (atof(translate_x->GetText()), 
+						   atof(translate_y->GetText()), 
+					       atof(translate_z->GetText()));
+                node->translate(t);
+			}
+        }
+        else if (type == "animation")
+        {
+			TiXmlElement* animationName = element->FirstChildElement("name");
+			//TiXmlElement* animationLength = element->FirstChildElement("length");
+			
+			Vector3 v(-.7071,.7071,0);
+            //Animation* animate = scene_manager->createAnimation(animationName->GetText(), atoi(animationLength->GetText()));	// Second parameter is number of keyframes
+			//animate->setInterpolationMode(Animation::IM_LINEAR);
+			
+			//NodeAnimationTrack* track = animate->createNodeTrack(1, node);
+			
+			//TransformKeyFrame* key;
+			
+			//int count = 1;
+			
+			for (TiXmlElement* keyFrames = element->FirstChildElement("keyframes"); keyFrames != NULL; keyFrames = keyFrames->NextSiblingElement())
+			{
+				string str = keyFrames->Value();
+				
+				if (str == "child")
+					break;
+				
+				
+				
+				TiXmlElement* animationName = keyFrames->FirstChildElement("name");
+				cout << animationName->GetText() << endl;
+				TiXmlElement* animationLength = keyFrames->FirstChildElement("length");
+				
+				Animation* animate = scene_manager->createAnimation(animationName->GetText(), atof(animationLength->GetText()));	// Second parameter is number of keyframes
+				animate->setInterpolationMode(Animation::IM_LINEAR);
+			
+				NodeAnimationTrack* track = animate->createNodeTrack(1, node);
+			
+				TransformKeyFrame* key;
+				
+			
+				for (TiXmlElement* kF = keyFrames->FirstChildElement("key"); kF != NULL; kF = kF->NextSiblingElement())
+				{	
+					TiXmlElement* time = kF->FirstChildElement("time");
+					
+					key = track->createNodeKeyFrame(atof(time->GetText()));
+
+					TiXmlElement* scale = kF->FirstChildElement("scale");
+					TiXmlElement* rotate = kF->FirstChildElement("rotate");
+					TiXmlElement* translate = kF->FirstChildElement("translate");
+					
+					if(scale)
+					{
+						TiXmlElement* scale_x = scale->FirstChildElement("x");
+						TiXmlElement* scale_y = scale->FirstChildElement("y");
+						TiXmlElement* scale_z = scale->FirstChildElement("z");
+						Vector3 s (atof(scale_x->GetText()), 
+								   atof(scale_y->GetText()), 
+								   atof(scale_z->GetText()));
+						key->setScale(s);
+					}
+					
+					if(rotate)
+					{
+						TiXmlElement* rotate_w = rotate->FirstChildElement("w");
+						TiXmlElement* rotate_x = rotate->FirstChildElement("x");
+						TiXmlElement* rotate_y = rotate->FirstChildElement("y");
+						TiXmlElement* rotate_z = rotate->FirstChildElement("z");
+						Degree d  (atof(rotate_w->GetText()));
+						Vector3 r (atof(rotate_x->GetText()), 
+								   atof(rotate_y->GetText()), 
+								   atof(rotate_z->GetText()));
+						Quaternion q(d, r);
+						key->setRotation(q);									
+					}
+					
+					if(translate)
+					{
+						TiXmlElement* translate_x = translate->FirstChildElement("x");
+						TiXmlElement* translate_y = translate->FirstChildElement("y");
+						TiXmlElement* translate_z = translate->FirstChildElement("z");
+						Vector3 t (atof(translate_x->GetText()), 
+								   atof(translate_y->GetText()), 
+								   atof(translate_z->GetText()));
+						key->setTranslate(t);		
+					}
+					
+					
+				}
+				
+			
+			//TransformKeyFrame* key = track->createNodeKeyFrame(0);
+			//Ogre::Quaternion q1(Degree(-10), Vector3(0,0,1));
+			//key->setTranslate(Vector3(-1,0,0));
+			//key->setRotation(q1);		
+			
+			//key = track->createNodeKeyFrame(1);
+			//Ogre::Quaternion q2(Degree(-10), Vector3(0,0,1));
+			//key->setTranslate(Vector3(0,0,0));
+			//key->setTranslate(Vector3(-5,0,0));
+			//key->setRotation(q1);
+			
+				//count++;
+				//cout<< "HIT " +  << endl;
+				
+				AnimationState* animate_state = scene_manager->createAnimationState(animationName->GetText());
+				animate_state->setEnabled(true);
+				animate_state->setLoop(true);
+			
+				animation_states->add(animate_state);
+				//count++;
+				//cout<< count << endl;
+			}
+			
+        }
+        else if (type == "entity")
+        {
+            TiXmlElement* mesh = element->FirstChildElement("mesh");
+            TiXmlElement* material = element->FirstChildElement("material");
+            
+            Entity* entity = scene_manager->createEntity(name, mesh->GetText());
+            entity->setMaterialName(material->GetText());
+			
+            node->attachObject(entity);
+        }
+        
+        TiXmlElement* child = element->FirstChildElement("child");
+        
+        if (child)
+		{
+			processScene(child, node);
+		}
+            
+    }
+}

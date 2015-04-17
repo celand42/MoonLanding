@@ -1,0 +1,15 @@
+
+material Gun
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.0 0.0 0.0 1.0
+            diffuse 0.65 0.65 0.65 1.0
+
+            lighting on
+            shading gouraud
+        }
+    }
+}

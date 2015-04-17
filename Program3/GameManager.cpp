@@ -162,7 +162,7 @@ void GameManager::init(std::string scene_file_name)
    render_manager->createScene(scene_file_name);  //the group name is now stored in this file
    //resource_manager->unloadResources();
    //render_manager->buildSceneFromXML(scene_file_name);
-   playAudio(20, 5);
+   //playAudio(20, 5);
 }
 
 GameManager::GameManager(std::string scene_file_name)

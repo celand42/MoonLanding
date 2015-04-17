@@ -1,229 +1,229 @@
-17:43:33  |  Platform  |  Info  |  * Initialise: RenderManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  43
-17:43:33  |  Platform  |  Info  |  RenderManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  71
-17:43:33  |  Platform  |  Info  |  * Initialise: DataManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  27
-17:43:33  |  Platform  |  Info  |  DataManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  35
-17:43:33  |  Core  |  Info  |  * Initialise: Gui  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  61
-17:43:33  |  Core  |  Info  |  * MyGUI version 3.2.2  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  66
-17:43:33  |  Core  |  Info  |  * Initialise: ResourceManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  32
-17:43:33  |  Core  |  Info  |  ResourceManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  40
-17:43:33  |  Core  |  Info  |  * Initialise: LayerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  33
-17:43:33  |  Core  |  Info  |  LayerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  41
-17:43:33  |  Core  |  Info  |  * Initialise: WidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  53
-17:43:33  |  Core  |  Info  |  WidgetManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  84
-17:43:33  |  Core  |  Info  |  * Initialise: InputManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  46
-17:43:33  |  Core  |  Info  |  InputManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  66
-17:43:33  |  Core  |  Info  |  * Initialise: SubWidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  36
-17:43:33  |  Core  |  Info  |  SubWidgetManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  56
-17:43:33  |  Core  |  Info  |  * Initialise: SkinManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  36
-17:43:33  |  Core  |  Info  |  SkinManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  46
-17:43:33  |  Core  |  Info  |  * Initialise: FontManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  32
-17:43:33  |  Core  |  Info  |  FontManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  42
-17:43:33  |  Core  |  Info  |  * Initialise: ControllerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  33
-17:43:33  |  Core  |  Info  |  ControllerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  42
-17:43:33  |  Core  |  Info  |  * Initialise: PointerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  43
-17:43:33  |  Core  |  Info  |  PointerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  62
-17:43:33  |  Core  |  Info  |  * Initialise: ClipboardManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  32
-17:43:33  |  Core  |  Info  |  ClipboardManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  39
-17:43:33  |  Core  |  Info  |  * Initialise: LayoutManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  28
-17:43:33  |  Core  |  Info  |  LayoutManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  35
-17:43:33  |  Core  |  Info  |  * Initialise: DynLibManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  26
-17:43:33  |  Core  |  Info  |  DynLibManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  30
-17:43:33  |  Core  |  Info  |  * Initialise: PluginManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  30
-17:43:33  |  Core  |  Info  |  PluginManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  34
-17:43:33  |  Core  |  Info  |  * Initialise: LanguageManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  30
-17:43:33  |  Core  |  Info  |  LanguageManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  34
-17:43:33  |  Core  |  Info  |  * Initialise: FactoryManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  25
-17:43:33  |  Core  |  Info  |  FactoryManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  27
-17:43:33  |  Core  |  Info  |  * Initialise: ToolTipManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  33
-17:43:33  |  Core  |  Info  |  ToolTipManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  45
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_GeneratedFonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Fonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using texture size 128 x 256.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  782
-17:43:33  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using real height 15 pixels.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  783
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_CommonSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTheme.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTemplates.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_PointerImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Pointers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Layers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Settings.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Gui successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  111
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_GeneratedFonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'DejaVuSansFontGenerated_15'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Fonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'DejaVuSansFont_15'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using texture size 128 x 256.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  782
-17:43:33  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using real height 15 pixels.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  783
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_CommonSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PanelEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'RotatingSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TextBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ImageBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'Canvas'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'EditClientSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTheme.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MultiListButtonImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'CheckBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'RadioButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonCloseSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonUpSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonLeftSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonRightSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderTrackVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollTrackVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'VaderSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'EditBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuBarSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuItemSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollPanelHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollPanelVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ListBoxItemSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SepDownHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SepUpHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SepDownVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SepUpVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ClientDefaultSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ClientTileSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PanelSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WhiteSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'CaptionEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'CaptionSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'CaptionWithButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowFrameSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowResizeLeftDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowResizeRightDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TabHeaderButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TabHeaderEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TabPanelSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuItemNormalSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuItemPopupButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuItemCheckButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ProgressBarTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MultiListButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTemplates.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'CheckBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'RadioButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollBarH'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollBarV'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderH'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderV'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderHEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SliderVEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'Button'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'Vader'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ButtonImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TextBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'EditBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'EditBoxStretch'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'EditBoxEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WordWrapEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ComboBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'Window'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowC'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowCS'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowCX'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'WindowCSX'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuBar'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuBarButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MenuBarSeparator'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PopupMenu'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PopupMenuSeparator'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PopupMenuNormal'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'PopupMenuPopup'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ProgressBar'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ProgressBarFill'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ListBoxItem'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ItemBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ItemBoxEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollView'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ScrollViewEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TabHeaderButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'TabControl'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MultiListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MultiListButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'MultiSubListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_PointerImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'ArrowPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'BeamPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SizeLeftPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SizeRightPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SizeHorzPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SizeVertPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'HandPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'SaberPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'LinkPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Pointers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'arrow'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'beam'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'size_left'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'size_right'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'size_horz'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'size_vert'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'hand'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'link'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Warning  |  duplicate resource name 'saber'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Layers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:33  |  Core  |  Info  |  Load ini file 'MyGUI_Settings.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
-17:43:43  |  Core  |  Info  |  * Shutdown: Gui  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  125
-17:43:43  |  Core  |  Info  |  * Shutdown: PointerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  69
-17:43:43  |  Core  |  Info  |  PointerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  86
-17:43:43  |  Core  |  Info  |  * Shutdown: InputManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  73
-17:43:43  |  Core  |  Info  |  InputManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  78
-17:43:43  |  Core  |  Info  |  * Shutdown: SkinManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  53
-17:43:43  |  Core  |  Info  |  SkinManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  60
-17:43:43  |  Core  |  Info  |  * Shutdown: SubWidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  63
-17:43:43  |  Core  |  Info  |  SubWidgetManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  83
-17:43:43  |  Core  |  Info  |  * Shutdown: LayerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  48
-17:43:43  |  Core  |  Info  |  destroy layer 'Wallpaper'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Back'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Overlapped'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Middle'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Modal'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Main'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Popup'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'FadeMiddle'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Info'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'ToolTip'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'DragAndDrop'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'FadeBusy'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Pointer'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Fade'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  destroy layer 'Statistic'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
-17:43:43  |  Core  |  Info  |  LayerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  59
-17:43:43  |  Core  |  Info  |  * Shutdown: FontManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  49
-17:43:43  |  Core  |  Info  |  FontManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  57
-17:43:43  |  Core  |  Info  |  * Shutdown: ControllerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  49
-17:43:43  |  Core  |  Info  |  ControllerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  59
-17:43:43  |  Core  |  Info  |  * Shutdown: ClipboardManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  46
-17:43:43  |  Core  |  Info  |  ClipboardManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  54
-17:43:43  |  Core  |  Info  |  * Shutdown: LayoutManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  42
-17:43:43  |  Core  |  Info  |  LayoutManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  49
-17:43:43  |  Core  |  Info  |  * Shutdown: PluginManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  41
-17:43:43  |  Core  |  Info  |  PluginManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  46
-17:43:43  |  Core  |  Info  |  * Shutdown: DynLibManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  37
-17:43:43  |  Core  |  Info  |  DynLibManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  44
-17:43:43  |  Core  |  Info  |  * Shutdown: LanguageManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  41
-17:43:43  |  Core  |  Info  |  LanguageManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  45
-17:43:43  |  Core  |  Info  |  * Shutdown: ResourceManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  47
-17:43:43  |  Core  |  Info  |  ResourceManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  57
-17:43:43  |  Core  |  Info  |  * Shutdown: FactoryManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  34
-17:43:43  |  Core  |  Info  |  FactoryManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  36
-17:43:43  |  Core  |  Info  |  * Shutdown: ToolTipManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  52
-17:43:43  |  Core  |  Info  |  ToolTipManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  57
-17:43:43  |  Core  |  Info  |  * Shutdown: WidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  91
-17:43:43  |  Core  |  Info  |  WidgetManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  100
-17:43:43  |  Core  |  Info  |  Gui successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  171
-17:43:43  |  Platform  |  Info  |  * Shutdown: RenderManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  78
-17:43:43  |  Platform  |  Info  |  RenderManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  86
-17:43:43  |  Platform  |  Info  |  * Shutdown: DataManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  42
-17:43:43  |  Platform  |  Info  |  DataManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  44
+19:22:31  |  Platform  |  Info  |  * Initialise: RenderManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  43
+19:22:31  |  Platform  |  Info  |  RenderManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  71
+19:22:31  |  Platform  |  Info  |  * Initialise: DataManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  27
+19:22:31  |  Platform  |  Info  |  DataManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  35
+19:22:31  |  Core  |  Info  |  * Initialise: Gui  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  61
+19:22:31  |  Core  |  Info  |  * MyGUI version 3.2.2  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  66
+19:22:31  |  Core  |  Info  |  * Initialise: ResourceManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  32
+19:22:31  |  Core  |  Info  |  ResourceManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  40
+19:22:31  |  Core  |  Info  |  * Initialise: LayerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  33
+19:22:31  |  Core  |  Info  |  LayerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  41
+19:22:31  |  Core  |  Info  |  * Initialise: WidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  53
+19:22:31  |  Core  |  Info  |  WidgetManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  84
+19:22:31  |  Core  |  Info  |  * Initialise: InputManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  46
+19:22:31  |  Core  |  Info  |  InputManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  66
+19:22:31  |  Core  |  Info  |  * Initialise: SubWidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  36
+19:22:31  |  Core  |  Info  |  SubWidgetManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  56
+19:22:31  |  Core  |  Info  |  * Initialise: SkinManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  36
+19:22:31  |  Core  |  Info  |  SkinManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  46
+19:22:31  |  Core  |  Info  |  * Initialise: FontManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  32
+19:22:31  |  Core  |  Info  |  FontManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  42
+19:22:31  |  Core  |  Info  |  * Initialise: ControllerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  33
+19:22:31  |  Core  |  Info  |  ControllerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  42
+19:22:31  |  Core  |  Info  |  * Initialise: PointerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  43
+19:22:31  |  Core  |  Info  |  PointerManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  62
+19:22:31  |  Core  |  Info  |  * Initialise: ClipboardManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  32
+19:22:31  |  Core  |  Info  |  ClipboardManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  39
+19:22:31  |  Core  |  Info  |  * Initialise: LayoutManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  28
+19:22:31  |  Core  |  Info  |  LayoutManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  35
+19:22:31  |  Core  |  Info  |  * Initialise: DynLibManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  26
+19:22:31  |  Core  |  Info  |  DynLibManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  30
+19:22:31  |  Core  |  Info  |  * Initialise: PluginManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  30
+19:22:31  |  Core  |  Info  |  PluginManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  34
+19:22:31  |  Core  |  Info  |  * Initialise: LanguageManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  30
+19:22:31  |  Core  |  Info  |  LanguageManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  34
+19:22:31  |  Core  |  Info  |  * Initialise: FactoryManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  25
+19:22:31  |  Core  |  Info  |  FactoryManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  27
+19:22:31  |  Core  |  Info  |  * Initialise: ToolTipManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  33
+19:22:31  |  Core  |  Info  |  ToolTipManager successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  45
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_GeneratedFonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Fonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using texture size 128 x 256.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  782
+19:22:31  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using real height 15 pixels.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  783
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_CommonSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTheme.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTemplates.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_PointerImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Pointers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Layers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Settings.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Gui successfully initialized  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  111
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_GeneratedFonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'DejaVuSansFontGenerated_15'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Fonts.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'DejaVuSansFont_15'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using texture size 128 x 256.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  782
+19:22:31  |  Core  |  Info  |  ResourceTrueTypeFont: Font 'DejaVuSansFont_15' using real height 15 pixels.  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceTrueTypeFont.cpp  |  783
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_CommonSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PanelEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'RotatingSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TextBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ImageBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'Canvas'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'EditClientSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTheme.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MultiListButtonImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteSkins.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'CheckBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'RadioButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonCloseSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonUpSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonLeftSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonRightSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderTrackVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollTrackVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'VaderSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'EditBoxSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuBarSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuItemSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollPanelHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollPanelVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ListBoxItemSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SepDownHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SepUpHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SepDownVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SepUpVSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ClientDefaultSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ClientTileSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PanelSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WhiteSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'CaptionEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'CaptionSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'CaptionWithButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowFrameSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowResizeLeftDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowResizeRightDownSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TabHeaderButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TabHeaderEmptySkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TabPanelSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuItemNormalSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuItemPopupButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuItemCheckButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ProgressBarTrackHSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MultiListButtonSkin'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_BlueWhiteTemplates.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'CheckBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'RadioButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollBarH'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollBarV'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderH'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderV'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderHEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SliderVEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'Button'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'Vader'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ButtonImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TextBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'EditBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'EditBoxStretch'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'EditBoxEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WordWrapEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ComboBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'Window'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowC'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowCS'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowCX'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'WindowCSX'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuBar'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuBarButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MenuBarSeparator'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PopupMenu'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PopupMenuSeparator'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PopupMenuNormal'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'PopupMenuPopup'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ProgressBar'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ProgressBarFill'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ListBoxItem'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ItemBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ItemBoxEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollView'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ScrollViewEmpty'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TabHeaderButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'TabControl'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MultiListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MultiListButton'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'MultiSubListBox'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_PointerImages.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'ArrowPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'BeamPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SizeLeftPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SizeRightPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SizeHorzPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SizeVertPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'HandPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'SaberPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'LinkPointerImage'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Pointers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'arrow'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'beam'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'size_left'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'size_right'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'size_horz'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'size_vert'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'hand'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'link'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Warning  |  duplicate resource name 'saber'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  92
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Layers.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:31  |  Core  |  Info  |  Load ini file 'MyGUI_Settings.xml'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  114
+19:22:35  |  Core  |  Info  |  * Shutdown: Gui  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  125
+19:22:35  |  Core  |  Info  |  * Shutdown: PointerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  69
+19:22:35  |  Core  |  Info  |  PointerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PointerManager.cpp  |  86
+19:22:35  |  Core  |  Info  |  * Shutdown: InputManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  73
+19:22:35  |  Core  |  Info  |  InputManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_InputManager.cpp  |  78
+19:22:35  |  Core  |  Info  |  * Shutdown: SkinManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  53
+19:22:35  |  Core  |  Info  |  SkinManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SkinManager.cpp  |  60
+19:22:35  |  Core  |  Info  |  * Shutdown: SubWidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  63
+19:22:35  |  Core  |  Info  |  SubWidgetManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_SubWidgetManager.cpp  |  83
+19:22:35  |  Core  |  Info  |  * Shutdown: LayerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  48
+19:22:35  |  Core  |  Info  |  destroy layer 'Wallpaper'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Back'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Overlapped'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Middle'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Modal'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Main'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Popup'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'FadeMiddle'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Info'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'ToolTip'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'DragAndDrop'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'FadeBusy'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Pointer'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Fade'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  destroy layer 'Statistic'  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  208
+19:22:35  |  Core  |  Info  |  LayerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayerManager.cpp  |  59
+19:22:35  |  Core  |  Info  |  * Shutdown: FontManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  49
+19:22:35  |  Core  |  Info  |  FontManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FontManager.cpp  |  57
+19:22:35  |  Core  |  Info  |  * Shutdown: ControllerManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  49
+19:22:35  |  Core  |  Info  |  ControllerManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ControllerManager.cpp  |  59
+19:22:35  |  Core  |  Info  |  * Shutdown: ClipboardManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  46
+19:22:35  |  Core  |  Info  |  ClipboardManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ClipboardManager.cpp  |  54
+19:22:35  |  Core  |  Info  |  * Shutdown: LayoutManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  42
+19:22:35  |  Core  |  Info  |  LayoutManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LayoutManager.cpp  |  49
+19:22:35  |  Core  |  Info  |  * Shutdown: PluginManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  41
+19:22:35  |  Core  |  Info  |  PluginManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_PluginManager.cpp  |  46
+19:22:35  |  Core  |  Info  |  * Shutdown: DynLibManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  37
+19:22:35  |  Core  |  Info  |  DynLibManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_DynLibManager.cpp  |  44
+19:22:35  |  Core  |  Info  |  * Shutdown: LanguageManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  41
+19:22:35  |  Core  |  Info  |  LanguageManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_LanguageManager.cpp  |  45
+19:22:35  |  Core  |  Info  |  * Shutdown: ResourceManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  47
+19:22:35  |  Core  |  Info  |  ResourceManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ResourceManager.cpp  |  57
+19:22:35  |  Core  |  Info  |  * Shutdown: FactoryManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  34
+19:22:35  |  Core  |  Info  |  FactoryManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_FactoryManager.cpp  |  36
+19:22:35  |  Core  |  Info  |  * Shutdown: ToolTipManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  52
+19:22:35  |  Core  |  Info  |  ToolTipManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_ToolTipManager.cpp  |  57
+19:22:35  |  Core  |  Info  |  * Shutdown: WidgetManager  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  91
+19:22:35  |  Core  |  Info  |  WidgetManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_WidgetManager.cpp  |  100
+19:22:35  |  Core  |  Info  |  Gui successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\MyGUIEngine\src\MyGUI_Gui.cpp  |  171
+19:22:35  |  Platform  |  Info  |  * Shutdown: RenderManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  78
+19:22:35  |  Platform  |  Info  |  RenderManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreRenderManager.cpp  |  86
+19:22:35  |  Platform  |  Info  |  * Shutdown: DataManager  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  42
+19:22:35  |  Platform  |  Info  |  DataManager successfully shutdown  |  C:\Game_Engine\MyGUI_3.2.2\Platforms\Ogre\OgrePlatform\src\MyGUI_OgreDataManager.cpp  |  44

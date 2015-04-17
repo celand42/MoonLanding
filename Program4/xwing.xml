@@ -15,7 +15,7 @@
       <color>1,1,1</color>
    </light>
 
-   <gravity>0,-9.8,0</gravity>
+   <gravity>0,-100,30</gravity>
 
    <scene_graph>
       <root>

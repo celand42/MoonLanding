@@ -11,6 +11,7 @@ class GameManager;
 class GUIManager;
 class ScriptManager;
 class PhysicsManager;
+class Saber;
 
 struct SceneNodeMotion
 {
@@ -41,6 +42,7 @@ class RenderManager
       ScriptManager* script_manager;
       GUIManager* gui_manager;
       GameManager* game_manager;
+	  Saber* saber;
 
       RenderListener* animation_render_listener;
       RenderListener* input_render_listener;
@@ -66,6 +68,9 @@ class RenderManager
       void mouseMoved(uint32 mouse_x, uint32 mouse_y, int mouse_rel_x, int mouse_rel_y);
       void joystickAxisMoved(int* amount);
 
+	  void createScene(std::string fileName);
+	  void processScene(TiXmlElement* elements, Ogre::SceneNode* parent_node);
+	    	  
       size_t getRenderWindowHandle();
       int getRenderWindowWidth();
       int getRenderWindowHeight();
@@ -91,7 +96,10 @@ class RenderManager
       void stopRendering();
 
       void processAnimations(float time_step);
-
+	  void resetAnimation();
+	  void keyPressed(std::string game_key);
+	  void talk();
+	  
       void setSelectedNode(std::string item);
       void logComment(std::string comment_message);
       void executeRotateScript(std::string file_name, std::string script_name, std::string object_name, int degrees);
