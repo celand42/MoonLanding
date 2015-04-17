@@ -837,12 +837,13 @@ void RenderManager::createScene(string fileName)
 		TiXmlElement* gravity_x = gravity_settings->FirstChildElement("x");
 		TiXmlElement* gravity_y = gravity_settings->FirstChildElement("y");
 		TiXmlElement* gravity_z = gravity_settings->FirstChildElement("z");
-		btVector3 grav (atof(gravity_x->GetText()), 
-					    atof(gravity_y->GetText()), 
-					    atof(gravity_z->GetText()));
-        physics_manager->setGravity(grav);
 		
-		//cout << grav.getX() << " " << grav.getY() << " " << grav.getZ() << endl;
+		float vals[3];
+		vals[0] = atof(gravity_x->GetText());
+		vals[1] = atof(gravity_y->GetText());
+		vals[2] = atof(gravity_z->GetText());
+		
+        physics_manager->setGravity(vals);
 		
         // Process rest of scene
         processScene(scene->FirstChildElement("root"), scene_manager->getRootSceneNode());
@@ -865,7 +866,8 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
             TiXmlElement* scale = element->FirstChildElement("scale");
             TiXmlElement* rotate = element->FirstChildElement("rotate");
             TiXmlElement* translate = element->FirstChildElement("translate");
-            
+			TiXmlElement* physics = element->FirstChildElement("physics");	
+			
             if (scale)
 			{
 				TiXmlElement* scale_x = scale->FirstChildElement("x");
@@ -901,6 +903,37 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
 					       atof(translate_z->GetText()));
                 node->translate(t);
 			}
+			
+			if (physics)
+			{
+				 TiXmlElement* collision_shape = physics->FirstChildElement("collision_shape");
+				 TiXmlElement* collision_parameters = physics->FirstChildElement("collision_parameters");
+				 TiXmlElement* collision_x = collision_parameters->FirstChildElement("x");
+				 TiXmlElement* collision_y = collision_parameters->FirstChildElement("y");
+				 TiXmlElement* collision_z = collision_parameters->FirstChildElement("z");
+				//std::string child_physics_collision_shape = GameManager::textFromChildNode(scene_graph_child_physics, "collision_shape");
+				//std::string child_physics_collision_parameters = GameManager::textFromChildNode(physics, "collision_parameters");
+
+				double* collision_shape_params = new double[3];
+				collision_shape_params[0] = atof(collision_x->GetText());
+				collision_shape_params[1] = atof(collision_y->GetText());
+				collision_shape_params[2] = atof(collision_z->GetText());
+				
+				TiXmlElement* mass = physics->FirstChildElement("mass");			
+				
+				//std::string child_physics_mass = GameManager::textFromChildNode(physics, "mass");
+				//float mass = GameManager::parseFloat(child_physics_mass);
+
+				SceneNodeMotion* scene_node_motion = (SceneNodeMotion*) malloc(sizeof(SceneNodeMotion));
+				scene_node_motion->scene_node = node;
+				physics_manager->createRigidBody(scene_node_motion, name, collision_shape->GetText(), collision_shape_params, atof(mass->GetText()));
+			}
+			
+			
+			
+			
+			
+			
         }
         else if (type == "animation")
         {
@@ -1023,6 +1056,16 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
             node->attachObject(entity);
         }
         
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
         TiXmlElement* child = element->FirstChildElement("child");
         
         if (child)

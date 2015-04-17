@@ -441,11 +441,11 @@
 	</child>
 	
 	<physics>
-	  <collision_shape>box</collision_shape>
+	  <collision_shape>cylinder</collision_shape>
 	  <collision_parameters>
-		  <x>15</x>
-		  <y>0.1</y>
-		  <z>15</z>
+		  <x>1</x>
+		  <y>6</y>
+		  <z>1</z>
 	  </collision_parameters>
 	  <mass>0</mass>
 	</physics>
