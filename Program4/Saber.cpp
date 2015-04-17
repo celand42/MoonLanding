@@ -87,7 +87,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
    // Animate hilt flick and blade extension
    if (saberExtract)
    {   
-		if (animation_states->get(1)->getTimePosition() < 0.99)
+		if (animation_states->get(1)->getTimePosition() + time_step < animation_states->get(1)->getLength())
 			animation_states->get(1)->addTime(time_step);
 
 		if (animation_states->get(1)->getTimePosition() > 0.35 &&
@@ -144,8 +144,12 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 			game_manager->playAudio(23,1);	// Saber slash noise
 		}
 		
-		if (animation_states->get(2)->getTimePosition() < 0.64)
+		if (animation_states->get(2)->getTimePosition() + time_step < animation_states->get(2)->getLength())
+		{
+			//cout << "TIME: " << time_step << " - TIMEPOS: " << animation_states->get(2)->getTimePosition() << endl;
+			//cout << animation_states->get(2)->getLength() << endl;
 			animation_states->get(2)->addTime(time_step);
+		}
 		
 		else
 		{
@@ -164,7 +168,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 			game_manager->playAudio(23,1);	// Saber slash noise
 		}
 		
-		if (animation_states->get(3)->getTimePosition() < 0.64)
+		if (animation_states->get(3)->getTimePosition() + time_step < animation_states->get(3)->getLength())
 			animation_states->get(3)->addTime(time_step);
 		
 		else 
@@ -185,7 +189,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 			game_manager->playAudio(25,1);	// Wilhelm noise
 		}
 		
-		if (animation_states->get(4)->getTimePosition() < 0.49)
+		if (animation_states->get(4)->getTimePosition() + time_step < animation_states->get(4)->getLength())
 			animation_states->get(4)->addTime(time_step);
 		
 		else 
