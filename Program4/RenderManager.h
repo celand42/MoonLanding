@@ -112,7 +112,7 @@ class RenderManager
       void applyTorque(std::string name, float pitch, float yaw, float roll);
       void stepPhysicsSimulation(float elapsed_time);
       DebugDrawer* createOgreBulletDebugDrawer();
-      void drawLine(DebugDrawer* db, int* from_values, int* to_values, int* color_values, int* count);
+      void drawLine(DebugDrawer* db, float* from_values, float* to_values, float* color_values, int* count);
       void clearLines(DebugDrawer* db);
       void destroySceneNodeMotion(SceneNodeMotion* snm);
       void destroyDebugDrawer(DebugDrawer* debug_d);

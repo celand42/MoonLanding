@@ -691,12 +691,14 @@ DebugDrawer* RenderManager::createOgreBulletDebugDrawer()
    DebugDrawer* db = new DebugDrawer;
    db->manual_object = manual_object;
    db->manual_object_node = manual_object_node;
+   
+   return db;
 }
-void RenderManager::drawLine(DebugDrawer* db, int* from_value, int* to_value, int* color_value, int* count)
+void RenderManager::drawLine(DebugDrawer* db, float* from_value, float* to_value, float* color_value, int* count)
 {
    Ogre::ManualObject* manual_object = db->manual_object;
-    Ogre::Vector3 from = Ogre::Vector3(from_value[0], from_value[1], from_value[2]);
-    Ogre::Vector3 to = Ogre::Vector3(to_value[0], to_value[1], to_value[2]);
+   Ogre::Vector3 from = Ogre::Vector3(from_value[0], from_value[1], from_value[2]);
+   Ogre::Vector3 to = Ogre::Vector3(to_value[0], to_value[1], to_value[2]);
    Ogre::Vector3 color = Ogre::Vector3(color_value[0], color_value[1], color_value[2]);
    Ogre::ColourValue c(0, 1, 0);  
    if (count[0] == 2000)
@@ -831,6 +833,17 @@ void RenderManager::createScene(string fileName)
 					   atof(l_direction_z->GetText()));
         light->setDirection(l_dir);
         
+		TiXmlElement* gravity_settings = scene->FirstChildElement("gravity");
+		TiXmlElement* gravity_x = gravity_settings->FirstChildElement("x");
+		TiXmlElement* gravity_y = gravity_settings->FirstChildElement("y");
+		TiXmlElement* gravity_z = gravity_settings->FirstChildElement("z");
+		btVector3 grav (atof(gravity_x->GetText()), 
+					    atof(gravity_y->GetText()), 
+					    atof(gravity_z->GetText()));
+        physics_manager->setGravity(grav);
+		
+		//cout << grav.getX() << " " << grav.getY() << " " << grav.getZ() << endl;
+		
         // Process rest of scene
         processScene(scene->FirstChildElement("root"), scene_manager->getRootSceneNode());
     }

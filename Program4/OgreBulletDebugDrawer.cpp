@@ -33,9 +33,9 @@ void OgreBulletDebugDrawer::drawLine(const btVector3& from, const btVector3& to,
 {
    // make these three arrays with the x,y,z
 
-   int from_value[3] = {(int)from.x(), (int)from.y(),(int)from.z()};
-   int to_value[3] = {(int)from.x(), (int)from.y(),(int)from.z() };
-   int color_value[3] = {(int)from.x(), (int)from.y(),(int)from.z()};
+   float from_value[3] = {(float)from.x(), (float)from.y(),(float)from.z()};
+   float to_value[3] = {(float)to.x(), (float)to.y(),(float)to.z() };
+   float color_value[3] = {(float)color.x(), (float)color.y(),(float)color.z()};
    render_manager->drawLine(db, from_value, to_value, color_value, count);
    count[0]++;
 

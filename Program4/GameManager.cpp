@@ -152,9 +152,11 @@ void GameManager::init(std::string scene_file_name)
    resource_manager->loadFromXMLFile("resources.xml");
    render_manager->createScene(scene_file_name);  //the group name is now stored in this file
 
-   playAudio(20, 5);
+   //resource_manager->loadFromXMLFile("resourcesOld.xml");
+   //render_manager->buildSceneFromXML(scene_file_name);  //the group name is now stored in this file
+   
    cout <<"IMPERIAL MARCH"<<endl;
-   //playAudio(20, 5);
+   playAudio(20, 5);
 }
 
 GameManager::GameManager(std::string scene_file_name)

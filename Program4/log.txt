@@ -1,44 +1,44 @@
 ****COMMENT****
-19:25:12
+22:15:34
 Resource metadata loaded.
 ****************
 ****COMMENT****
-19:25:12
+22:15:34
 Sample Audio Resource Initialization Error: ./assets/audio/audio_1/R2D2-3.mp3
 ****************
 ****ASSERTION FAILURE****
-19:25:12
+22:15:34
 Assertion Failed: 
 Src File: AudioManager.cpp
 Line Number: 67
 *************************
 ****COMMENT****
-19:25:12
+22:15:34
 Sample Audio Resource Initialization Error: ./assets/audio/audio_1/R2D2-Scream.mp3
 ****************
 ****ASSERTION FAILURE****
-19:25:12
+22:15:34
 Assertion Failed: 
 Src File: AudioManager.cpp
 Line Number: 67
 *************************
 ****COMMENT****
-19:25:12
+22:15:34
 Scripts parsed successfully.
 ****************
 ****COMMENT****
-19:25:12
+22:15:34
 Meshes loaded successfully.
 ****************
 ****COMMENT****
-19:25:24
+22:15:44
 Destructor started.
 ****************
 ****COMMENT****
-19:25:24
+22:15:44
 Resources unloaded successfully.
 ****************
 ****COMMENT****
-19:25:24
+22:15:44
 Destructor completed.
 ****************

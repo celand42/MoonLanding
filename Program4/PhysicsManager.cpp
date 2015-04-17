@@ -43,7 +43,7 @@ PhysicsManager::PhysicsManager(RenderManager* rm)
 
    OgreBulletDebugDrawer* debug_drawer = new OgreBulletDebugDrawer(render_manager);
    dynamics_world->setDebugDrawer(debug_drawer);
-   dynamics_world->getDebugDrawer()->setDebugMode(0);  //1 will display the collision box
+   dynamics_world->getDebugDrawer()->setDebugMode(1);  //1 will display the collision box
 }
 
 PhysicsManager::~PhysicsManager()

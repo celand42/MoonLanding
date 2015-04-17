@@ -79,6 +79,7 @@ void GUIManager::loadResourceGroup(std::string resource_group_name)
    try
    {
       buildGUIFromXML("gui.xml");
+	  //buildGUIFromXML("guiOld.xml");
    }
    catch (MyGUI::Exception& e)
    {
