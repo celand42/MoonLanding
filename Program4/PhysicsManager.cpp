@@ -164,6 +164,10 @@ void PhysicsManager::createCompoundRigidBody(SceneNodeMotion* scene_node_motion,
 	   {
 		   col_shape = new btCylinderShape(btVector3(collision_shape_params[count][0], collision_shape_params[count][1], collision_shape_params[count][2]));		   
 	   }
+	   else if (collision_shape[count] == "cylinder_x")
+	   {
+		  col_shape = new btCylinderShapeX(btVector3(collision_shape_params[count][0], collision_shape_params[count][1], collision_shape_params[count][2]));
+	   }
 	   else if (collision_shape[count] == "sphere")
 	   {
 		  col_shape = new btSphereShape(btScalar(collision_shape_params[count][0]));
@@ -230,16 +234,23 @@ void PhysicsManager::resetBall(std::string name, float x, float y, float z)
 {
    RigidBody* rb = rigid_bodies->tableRetrieve(&name);
 
-   cout << "RESETTING MOTHERFUCKER" << endl;
+   
    if (rb)
    {
       
 
 
       btRigidBody* bt_rb = rb->getRigidBody();
+	  bt_rb->clearForces();
+	  btVector3 zeroVector(0,0,0);
+	  bt_rb->setLinearVelocity(zeroVector);
+	  bt_rb->setGravity(btVector3(0,-9.8,0));
+	  bt_rb->setAngularVelocity(zeroVector);
+	  //bt_rb->setWorldTransform(startingTransform); // reset ball position
       BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) bt_rb->getMotionState();
       motion_state->copyNodeTransformIntoBulletTransform();
-      cout << name << endl;
+      //motion_state->copyBulletTransformIntoNodeTransform();
+	  //cout << name << endl;
    }
 
 }
@@ -270,6 +281,7 @@ btScalar TestFunc::addSingleResult(btManifoldPoint& cp,
 		btRigidBody* rigid_body = btRigidBody::upcast(coll);
 		rigid_body->applyTorque(btVector3(0,0,-5000));
 		rigid_body->applyCentralForce(btVector3(0,0,-1000));
+		rigid_body->setGravity(btVector3(0,-100,0));
 		
 		if (sound)
 		{

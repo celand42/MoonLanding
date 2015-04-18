@@ -153,7 +153,7 @@ void RenderManager::executeSlashScript(string script_file_name, string script_fu
 
       sn = scene_manager->getSceneNode(object_name + "Node");
       Vector3 t = sn->getPosition();
-      sn->setPosition(t.x, atof(outputs[1]), atof(outputs[2]));
+      sn->setPosition(atof(outputs[0]), atof(outputs[1]), atof(outputs[2]));
       sn->setOrientation(90,0,1,0);
 
       physics_manager->resetBall(object_name,t.x, atof(outputs[1]), atof(outputs[2]));
@@ -167,7 +167,7 @@ void RenderManager::executeSlashScript(string script_file_name, string script_fu
    }
   for(int i = 0; i < num_outputs; i++)
   {
-      cout << outputs[i] << endl;
+      //cout << outputs[i] << endl;
   }
    for (int i = 0; i < num_inputs; i++)
    {
@@ -548,26 +548,52 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 
 void RenderManager::processAnimations(float time_step)
 {
-	saber->processAnimations(time_step, animation_states);
+   saber->processAnimations(time_step, animation_states);
+   
+   
+   SceneNode::ChildNodeIterator it = scene_manager->getRootSceneNode()->getChildIterator();
+   SceneNode* node;
+   string name;
+
    try
    {
+		while (it.hasMoreElements())
+		{	
+			node = dynamic_cast<Ogre::SceneNode*>(it.getNext());
+			name=node->getName();
+			Vector3 nodePos = node->getPosition();
+				
+			name = name.substr(0, name.size()-4) ;	// Removes "Node" from object name
+			//cout << name << endl;
+				
+			if (nodePos.y < -10)
+			{
+				cout << name << ": LOW" << endl;
+				executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement",name);
+			}
+
+		}
+   
+   
+   
      
-      Ogre::SceneNode* sn = scene_manager->getSceneNode("TestObjectNode");
-      Ogre::SceneNode* sn2 = scene_manager->getSceneNode("TestObject3Node");
-      std::cout <<sn->getName() << std::endl;
-      Vector3 t = sn->getPosition();
-      Vector3 t2 = sn2->getPosition();
-      std::cout <<t.z << "  " << std::endl;
-      if(t.y < 10)
-            executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject");
-      if(t2.y < 10)
-         executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject3");
+      //Ogre::SceneNode* sn = scene_manager->getSceneNode("TestObjectNode");
+      //Ogre::SceneNode* sn2 = scene_manager->getSceneNode("TestObject3Node");
+      //std::cout <<sn->getName() << std::endl;
+      //Vector3 t = sn->getPosition();
+      //Vector3 t2 = sn2->getPosition();
+      //std::cout <<t.z << "  " << std::endl;
+      //if(t.y < -10)
+       //  executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject");
+      //if(t2.y < -10)
+       //  executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject3");
    }
    catch (Ogre::Exception& e)
    {
       game_manager->logComment(e.what());
       ASSERT(false);
    }
+   
 	physics_manager->updateRigidBodies();
 }
 
