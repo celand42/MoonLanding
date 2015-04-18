@@ -95,6 +95,8 @@ class RenderManager
       void startRendering();
       void stopRendering();
 
+	  void playAudio(uint32 audio_id, uint32 num_repeats);
+	  
       void processAnimations(float time_step);
 	  void resetAnimation();
 	  void keyPressed(std::string game_key);

@@ -37,13 +37,15 @@ void PhysicsManager::stepPhysicsSimulation(float time_incr)
 PhysicsManager::PhysicsManager(RenderManager* rm)
 {
    rigid_bodies = new TableAVL<RigidBody, std::string>(&RigidBody::compare_items, &RigidBody::compare_keys);
-
+	cout<<"HI HOW ARE YOU"<<endl;
    render_manager = rm;
+   //render_manager->playAudio(26,1);
+   //callback = new TestFunc(rm);
    init();
 
    OgreBulletDebugDrawer* debug_drawer = new OgreBulletDebugDrawer(render_manager);
    dynamics_world->setDebugDrawer(debug_drawer);
-   dynamics_world->getDebugDrawer()->setDebugMode(1);  //1 will display the collision box
+   dynamics_world->getDebugDrawer()->setDebugMode(0);  //1 will display the collision box
 }
 
 PhysicsManager::~PhysicsManager()
@@ -103,13 +105,12 @@ void PhysicsManager::init()
    dynamics_world = new btDiscreteDynamicsWorld(dispatcher, overlapping_pair_cache, solver, collision_configuration);
 }
 
-void PhysicsManager::createRigidBody(SceneNodeMotion* scene_node_motion, std::string rigid_body_id, std::string collision_shape, double* collision_shape_params, float _mass)
+void PhysicsManager::createSimpleRigidBody(SceneNodeMotion* scene_node_motion, std::string rigid_body_id, std::string collision_shape, double* collision_shape_params, float _mass)
 {
    //create a dynamic rigid body
    btCollisionShape* col_shape = NULL;
 
-   //the constructor takes the half extents
-
+   //the constructor takes the half extents  
    if (collision_shape == "sphere")
    {
       col_shape = new btSphereShape(btScalar(collision_shape_params[0]));
@@ -117,6 +118,10 @@ void PhysicsManager::createRigidBody(SceneNodeMotion* scene_node_motion, std::st
    else if (collision_shape == "cylinder_x")
    {
       col_shape = new btCylinderShapeX(btVector3(collision_shape_params[0], collision_shape_params[1], collision_shape_params[2]));
+   }
+   else if (collision_shape == "cylinder")
+   {
+	   col_shape = new btCylinderShape(btVector3(collision_shape_params[0], collision_shape_params[1], collision_shape_params[2]));
    }
    else
    {
@@ -143,20 +148,117 @@ void PhysicsManager::createRigidBody(SceneNodeMotion* scene_node_motion, std::st
    dynamics_world->addRigidBody(bt_rigid_body);
 }
 
+void PhysicsManager::createCompoundRigidBody(SceneNodeMotion* scene_node_motion, std::string rigid_body_id, std::string* collision_shape, double** collision_shape_params, double** collision_pos_params, float _mass, int numShapes)
+{
+   //create a dynamic rigid body 
+   btCompoundShape* compound = new btCompoundShape();
+
+   for (int count = 0; count < numShapes; count++)
+   {
+	   btCollisionShape* col_shape;
+	   btTransform t;
+	   t.setIdentity();
+	   t.setOrigin(btVector3(collision_pos_params[count][0], collision_pos_params[count][1], collision_pos_params[count][2]));
+	   
+	   if (collision_shape[count] == "cylinder")
+	   {
+		   col_shape = new btCylinderShape(btVector3(collision_shape_params[count][0], collision_shape_params[count][1], collision_shape_params[count][2]));		   
+	   }
+	   else if (collision_shape[count] == "sphere")
+	   {
+		  col_shape = new btSphereShape(btScalar(collision_shape_params[count][0]));
+	   }
+	   else
+	   {
+		  col_shape = new btBoxShape(btVector3(collision_shape_params[count][0], collision_shape_params[count][1], collision_shape_params[count][2]));
+	   }
+   
+	   compound->addChildShape(t, col_shape);
+   }
+   
+   //delete[][] collision_shape_params;
+
+   //the constructor copies the scene node transform into the bullet transform
+   BulletSceneNodeMotionState* motion_state = new BulletSceneNodeMotionState(scene_node_motion, render_manager);
+
+   btScalar mass(_mass);
+   btVector3 local_inertia(0,0,0);  //values filled in next, based on the mass
+
+   compound->calculateLocalInertia(mass, local_inertia);
+
+   btRigidBody::btRigidBodyConstructionInfo rb_info(mass, motion_state, compound, local_inertia);
+   btRigidBody* bt_rigid_body = new btRigidBody(rb_info);
+   bt_rigid_body->setDamping(0.5,0.5);  //stops the forces, linear and angular (i.e. air resistance)
+   bt_rigid_body->setActivationState(DISABLE_DEACTIVATION); //prevent rigid body from sleeping
+
+   RigidBody* rigid_body = new RigidBody(rigid_body_id, bt_rigid_body);
+   rigid_bodies->tableInsert(rigid_body);
+
+   dynamics_world->addRigidBody(bt_rigid_body);
+}
+
 //rigid bodies may have been moved by the user, so the physics manager must be informed of this
 void PhysicsManager::updateRigidBodies()
 {
    int num_collision_objects = dynamics_world->getNumCollisionObjects();
    btAlignedObjectArray<btCollisionObject*> rigid_bodies = dynamics_world->getCollisionObjectArray();
-
+   
    for (int i = num_collision_objects - 1; i >= 0; i--)
    {
+	   
+	   //cout<< i<< endl;
       btRigidBody* rigid_body = btRigidBody::upcast(rigid_bodies[i]);
+	  //cout<< i << " " << rigid_body->getCollisionShape()->getName() << endl;
+	  //rigid_body->applyCentralForce(btVector3(1,-110,1));
+	  //rigid_bodies[i]->forceActivationState(WANTS_DEACTIVATION);
       BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) rigid_body->getMotionState();
 
       btTransform current_transform;
       motion_state->copyNodeTransformIntoBulletTransform();
       motion_state->getWorldTransform(current_transform);
       rigid_body->setWorldTransform(current_transform);
+	  
+	  if (i > 0)
+	  {
+		//render_manager->playAudio(26,1);
+		TestFunc callback = TestFunc(render_manager);
+		dynamics_world->contactPairTest(rigid_bodies[0], rigid_bodies[i], callback);
+	  }
    }
 }
+
+TestFunc::TestFunc(RenderManager* rm)
+{
+	render_manager = rm;
+	sound = true;
+	//rm->playAudio(26,1);
+	//cout<<"TESTFUNC CONSTRUCTOR"<<endl;
+}
+
+TestFunc::~TestFunc()
+{
+	render_manager = NULL;
+	//cout<<"TESTFUNC DESTRUCTOR"<<endl;
+}
+
+btScalar TestFunc::addSingleResult(btManifoldPoint& cp,
+	const btCollisionObjectWrapper* colObj0Wrap,
+	int partId0,
+	int index0,
+	const btCollisionObjectWrapper* colObj1Wrap,
+	int partId1,
+	int index1)
+	{
+		btCollisionObject* coll = (btCollisionObject*) colObj1Wrap->getCollisionObject();
+		btRigidBody* rigid_body = btRigidBody::upcast(coll);
+		rigid_body->applyTorque(btVector3(0,0,-5000));
+		rigid_body->applyCentralForce(btVector3(0,0,-1000));
+		
+		if (sound)
+		{
+			render_manager->playAudio(26, 1);
+			sound = false;
+		}
+		
+		
+	}

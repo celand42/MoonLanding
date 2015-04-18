@@ -136,6 +136,12 @@ void RenderManager::talk()
 	game_manager->playAudio(random, 1);
 }
 
+void RenderManager::playAudio(uint32 audio_id, uint32 num_repeats)
+{
+	//cout<<"AUDIO"<<endl;
+	game_manager->playAudio(audio_id, num_repeats);
+}
+
 void RenderManager::setSelectedNode(std::string item)
 {
    try
@@ -480,6 +486,7 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 void RenderManager::processAnimations(float time_step)
 {
 	saber->processAnimations(time_step, animation_states);
+	physics_manager->updateRigidBodies();
 }
 
 void RenderManager::resetAnimation()
@@ -670,7 +677,7 @@ void RenderManager::addSceneNodeChildren(TiXmlNode* xml_node, SceneNode* parent_
 
             SceneNodeMotion* scene_node_motion = (SceneNodeMotion*) malloc(sizeof(SceneNodeMotion));
             scene_node_motion->scene_node = curr_child_node;
-            physics_manager->createRigidBody(scene_node_motion, child_name_text, child_physics_collision_shape, collision_shape_params, mass);
+            physics_manager->createSimpleRigidBody(scene_node_motion, child_name_text, child_physics_collision_shape, collision_shape_params, mass);
          }
 
          addSceneNodeChildren(child_xml_node->FirstChild("children"), curr_child_node, values);
@@ -863,10 +870,12 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
         
         if (type == "transform")
         {
+			//TiXmlElement* transformName = element->FirstChildElement("name")->GetText();
+			
             TiXmlElement* scale = element->FirstChildElement("scale");
             TiXmlElement* rotate = element->FirstChildElement("rotate");
             TiXmlElement* translate = element->FirstChildElement("translate");
-			TiXmlElement* physics = element->FirstChildElement("physics");	
+			
 			
             if (scale)
 			{
@@ -895,6 +904,7 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
 				
             if (translate)
 			{
+				cout << "HI: " << name << endl;
 				TiXmlElement* translate_x = translate->FirstChildElement("x");
 				TiXmlElement* translate_y = translate->FirstChildElement("y");
 				TiXmlElement* translate_z = translate->FirstChildElement("z");
@@ -902,36 +912,7 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
 						   atof(translate_y->GetText()), 
 					       atof(translate_z->GetText()));
                 node->translate(t);
-			}
-			
-			if (physics)
-			{
-				 TiXmlElement* collision_shape = physics->FirstChildElement("collision_shape");
-				 TiXmlElement* collision_parameters = physics->FirstChildElement("collision_parameters");
-				 TiXmlElement* collision_x = collision_parameters->FirstChildElement("x");
-				 TiXmlElement* collision_y = collision_parameters->FirstChildElement("y");
-				 TiXmlElement* collision_z = collision_parameters->FirstChildElement("z");
-				//std::string child_physics_collision_shape = GameManager::textFromChildNode(scene_graph_child_physics, "collision_shape");
-				//std::string child_physics_collision_parameters = GameManager::textFromChildNode(physics, "collision_parameters");
-
-				double* collision_shape_params = new double[3];
-				collision_shape_params[0] = atof(collision_x->GetText());
-				collision_shape_params[1] = atof(collision_y->GetText());
-				collision_shape_params[2] = atof(collision_z->GetText());
-				
-				TiXmlElement* mass = physics->FirstChildElement("mass");			
-				
-				//std::string child_physics_mass = GameManager::textFromChildNode(physics, "mass");
-				//float mass = GameManager::parseFloat(child_physics_mass);
-
-				SceneNodeMotion* scene_node_motion = (SceneNodeMotion*) malloc(sizeof(SceneNodeMotion));
-				scene_node_motion->scene_node = node;
-				physics_manager->createRigidBody(scene_node_motion, name, collision_shape->GetText(), collision_shape_params, atof(mass->GetText()));
-			}
-			
-			
-			
-			
+			}	
 			
 			
         }
@@ -1057,9 +1038,93 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
         }
         
 		
+		TiXmlElement* physics = element->FirstChildElement("physics");	
 		
-		
-		
+		if (physics)
+		{
+			 TiXmlElement* collision_shape = physics->FirstChildElement("collision_shape");
+			 string coll = collision_shape->GetText();
+			 
+			 if (coll == "compound")	// Compound shape
+			 {
+				 TiXmlElement* numShapesElement = physics->FirstChildElement("num_shapes");
+				 int numShapes = 0;
+				 numShapes = atoi(numShapesElement->GetText());
+				 string* coll_Shapes = new string[numShapes];
+				 double** coll_collParams = new double *[numShapes];
+				 double** coll_posParams = new double *[numShapes];
+				 for (int count = 0; count < numShapes; count++)
+				 {
+					 coll_collParams[count] = new double[3];
+					 coll_posParams[count] = new double[3];
+				 }
+				 
+				 int count = 0;
+				 
+				 for(TiXmlElement* shape = physics->FirstChildElement("shape"); shape != NULL; shape = shape->NextSiblingElement("shape"))
+				 {
+					 cout<< shape->GetText() << endl;
+					 coll_Shapes[count] = shape->GetText();
+					 
+					TiXmlElement* collision_parameters = shape->NextSiblingElement("collision_parameters");
+					TiXmlElement* collision_x = collision_parameters->FirstChildElement("x");
+					TiXmlElement* collision_y = collision_parameters->FirstChildElement("y");
+					TiXmlElement* collision_z = collision_parameters->FirstChildElement("z");
+					
+					coll_collParams[count][0] = atof(collision_x->GetText());
+					coll_collParams[count][1] = atof(collision_y->GetText());
+					coll_collParams[count][2] = atof(collision_z->GetText());
+					
+					TiXmlElement* position_parameters = shape->NextSiblingElement("position_parameters");
+					TiXmlElement* coll_position_x = position_parameters->FirstChildElement("x");
+					TiXmlElement* coll_position_y = position_parameters->FirstChildElement("y");
+				    TiXmlElement* coll_position_z = position_parameters->FirstChildElement("z");
+					
+					coll_posParams[count][0] = atof(coll_position_x->GetText());
+					coll_posParams[count][1] = atof(coll_position_y->GetText());
+					coll_posParams[count][2] = atof(coll_position_z->GetText());
+					
+							
+					
+					//std::string child_physics_mass = GameManager::textFromChildNode(physics, "mass");
+					//float mass = GameManager::parseFloat(child_physics_mass);
+
+					count++;	 
+				 }
+				
+				 TiXmlElement* mass = physics->FirstChildElement("mass");	
+				
+				 SceneNodeMotion* scene_node_motion = (SceneNodeMotion*) malloc(sizeof(SceneNodeMotion));
+				 scene_node_motion->scene_node = node;
+				 physics_manager->createCompoundRigidBody(scene_node_motion, name, coll_Shapes, coll_collParams, coll_posParams, atof(mass->GetText()), numShapes);
+				 
+			 }
+
+			 else	// Single shape
+			 {
+
+				 TiXmlElement* collision_parameters = physics->FirstChildElement("collision_parameters");
+				 TiXmlElement* collision_x = collision_parameters->FirstChildElement("x");
+				 TiXmlElement* collision_y = collision_parameters->FirstChildElement("y");
+				 TiXmlElement* collision_z = collision_parameters->FirstChildElement("z");
+				//std::string child_physics_collision_shape = GameManager::textFromChildNode(scene_graph_child_physics, "collision_shape");
+				//std::string child_physics_collision_parameters = GameManager::textFromChildNode(physics, "collision_parameters");
+
+				double* collision_shape_params = new double[3];
+				collision_shape_params[0] = atof(collision_x->GetText());
+				collision_shape_params[1] = atof(collision_y->GetText());
+				collision_shape_params[2] = atof(collision_z->GetText());
+				
+				TiXmlElement* mass = physics->FirstChildElement("mass");			
+				
+				//std::string child_physics_mass = GameManager::textFromChildNode(physics, "mass");
+				//float mass = GameManager::parseFloat(child_physics_mass);
+
+				SceneNodeMotion* scene_node_motion = (SceneNodeMotion*) malloc(sizeof(SceneNodeMotion));
+				scene_node_motion->scene_node = node;
+				physics_manager->createSimpleRigidBody(scene_node_motion, name, collision_shape->GetText(), collision_shape_params, atof(mass->GetText()));
+			}
+		}
 		
 		
 		

@@ -3,10 +3,33 @@
 
 #include "btBulletDynamicsCommon.h"
 #include "RigidBody.h"
+#include "RenderManager.h"
 #include "CSC2110/TableAVL.h"
 #include <string>
 struct SceneNodeMotion;
 class RenderManager;
+
+
+struct TestFunc : public btCollisionWorld::ContactResultCallback
+{
+	RenderManager* render_manager;
+	bool sound;
+	
+	TestFunc(RenderManager* rm);
+	~TestFunc();
+	
+	btScalar addSingleResult(btManifoldPoint& cp,
+        const btCollisionObjectWrapper* colObj0Wrap,
+        int partId0,
+        int index0,
+        const btCollisionObjectWrapper* colObj1Wrap,
+        int partId1,
+        int index1);
+		
+	
+	
+};
+
 
 class PhysicsManager
 {
@@ -22,6 +45,8 @@ class PhysicsManager
       btSequentialImpulseConstraintSolver* solver;
       btDiscreteDynamicsWorld* dynamics_world;
 
+	  //struct TestFunc callback;
+	  
       void init();
 
    public:
@@ -29,12 +54,23 @@ class PhysicsManager
       virtual ~PhysicsManager();
 
       void updateRigidBodies();
-      void createRigidBody(SceneNodeMotion* scene_node, std::string rigid_body_id, std::string collision_shape, double* collision_shape_params, float _mass);
+      void createSimpleRigidBody(SceneNodeMotion* scene_node, std::string rigid_body_id, std::string collision_shape, double* collision_shape_params, float _mass);
+	  void createCompoundRigidBody(SceneNodeMotion* scene_node, std::string rigid_body_id, std::string* collision_shape, double** collision_shape_params, double** collision_pos_params,  float _mass, int numShapes);
       void stepPhysicsSimulation(float time_incr);
 
       void applyTorque(std::string name, float pitch, float yaw, float roll);
       void setGravity(float* values);
+	  
+	  void testFunc();
 
 };
+
+
+#endif
+
+#ifndef CALLBACK
+#define CALLBACK
+
+
 
 #endif

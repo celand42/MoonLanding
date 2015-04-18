@@ -20,7 +20,7 @@ Saber::~Saber()
 
 void Saber::init()
 {
-	saberExtract = false;
+	saberExtract = true;
 	saberLeft = false;
 	saberRight = false;
 	saberThrust = false;
@@ -37,7 +37,7 @@ void Saber::init()
 
 void Saber::keyPressed(std::string key)
 {
-	if (key == "SPACE")
+	/*if (key == "SPACE")
 	{
 		if(animationFinished)
 		{
@@ -48,9 +48,9 @@ void Saber::keyPressed(std::string key)
 			else
 				saberExtract = false;
 		}
-	}
+	}*/
 	
-	else if (key == "A" || key == "LEFT")
+	/*else*/ if (key == "A" || key == "LEFT")
 	{
 		if (!saberRight)
 			saberLeft = true;
@@ -104,7 +104,10 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 		}
 		
 		if (animation_states->get(5)->getTimePosition() > 0.5)
+		{
+			animation_states->get(5)->setTimePosition(0.5);
 			animationFinished = true;
+		}
 
 		
 		//animation_states->get(1)->addTime(time_step);		
@@ -113,7 +116,7 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
    // Animate blade retraction
 	else
 	{		
-		if (animation_states->get(5)->getTimePosition() > 0.5)
+		if (animation_states->get(5)->getTimePosition() >= 0.5)
 		{
 			if (saberOffSound)
 			{

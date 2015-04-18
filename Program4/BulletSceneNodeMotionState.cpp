@@ -29,6 +29,7 @@ void BulletSceneNodeMotionState::setWorldTransform(const btTransform& current_tr
 {
    bullet_transform = current_transform;
    copyBulletTransformIntoNodeTransform();
+   //copyNodeTransformIntoBulletTransform();
 }
 
 //needed by simulation (every frame)
