@@ -19,6 +19,14 @@ function roll(x, y, z)
    return x, y, z
 
 end
+function placement()
+	math.randomseed(os.time())
+	local x = math.random(1,2);
+	local y = math.random(70,85);
+	local z = math.random(1,2);
+	
+	return x, y, z
+end 
     
 
 

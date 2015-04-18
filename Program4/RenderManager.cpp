@@ -123,6 +123,69 @@ void RenderManager::executeRotateScript(string script_file_name, string script_f
    delete[] inputs;
    delete[] outputs;
 }
+void RenderManager::executeSlashScript(string script_file_name, string script_function_name, string object_name)
+{
+   int degrees = 90;
+ 
+  
+   const int num_inputs = 0;
+   const int num_outputs = 3;
+
+   const char** inputs = new const char*[num_inputs];
+    inputs[0] = 0;
+   
+   char** outputs = new char*[num_outputs];
+
+   int output_len = 20;
+   for (int i = 0; i < num_outputs; i++)
+   {
+      outputs[i] = new char[output_len + 1];
+   }
+
+  
+   script_manager->executeScript(script_file_name, script_function_name, num_inputs, num_outputs, NULL, outputs);
+   
+   Ogre::SceneNode* sn;
+  
+   //Ogre::SceneNode* sn = scene_manager->getSceneNode("BallTransformNode ");
+   try
+   {
+
+      sn = scene_manager->getSceneNode(object_name + "Node");
+      Vector3 t = sn->getPosition();
+      sn->setPosition(t.x, atof(outputs[1]), atof(outputs[2]));
+      sn->setOrientation(90,0,1,0);
+
+      physics_manager->resetBall(object_name,t.x, atof(outputs[1]), atof(outputs[2]));
+     
+
+   }
+   catch (Ogre::Exception& e)
+   {
+      game_manager->logComment(e.what());
+      ASSERT(false);
+   }
+  for(int i = 0; i < num_outputs; i++)
+  {
+      cout << outputs[i] << endl;
+  }
+   for (int i = 0; i < num_inputs; i++)
+   {
+      delete[] inputs[i];
+   }
+
+   for (int i = 0; i < num_outputs; i++)  //why does this delete crash?
+   {
+      delete[] outputs[i];
+   }
+   //scene_manager->destroySceneNode(node);
+
+   delete[] inputs;
+   delete[] outputs;
+   
+
+  
+}
 
 void RenderManager::logComment(std::string comment_message)
 {
@@ -486,6 +549,25 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 void RenderManager::processAnimations(float time_step)
 {
 	saber->processAnimations(time_step, animation_states);
+   try
+   {
+     
+      Ogre::SceneNode* sn = scene_manager->getSceneNode("TestObjectNode");
+      Ogre::SceneNode* sn2 = scene_manager->getSceneNode("TestObject3Node");
+      std::cout <<sn->getName() << std::endl;
+      Vector3 t = sn->getPosition();
+      Vector3 t2 = sn2->getPosition();
+      std::cout <<t.z << "  " << std::endl;
+      if(t.y < 10)
+            executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject");
+      if(t2.y < 10)
+         executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement","TestObject3");
+   }
+   catch (Ogre::Exception& e)
+   {
+      game_manager->logComment(e.what());
+      ASSERT(false);
+   }
 	physics_manager->updateRigidBodies();
 }
 

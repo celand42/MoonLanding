@@ -226,6 +226,23 @@ void PhysicsManager::updateRigidBodies()
 	  }
    }
 }
+void PhysicsManager::resetBall(std::string name, float x, float y, float z)
+{
+   RigidBody* rb = rigid_bodies->tableRetrieve(&name);
+
+   cout << "RESETTING MOTHERFUCKER" << endl;
+   if (rb)
+   {
+      
+
+
+      btRigidBody* bt_rb = rb->getRigidBody();
+      BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) bt_rb->getMotionState();
+      motion_state->copyNodeTransformIntoBulletTransform();
+      cout << name << endl;
+   }
+
+}
 
 TestFunc::TestFunc(RenderManager* rm)
 {

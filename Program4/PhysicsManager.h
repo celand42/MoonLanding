@@ -60,6 +60,7 @@ class PhysicsManager
 
       void applyTorque(std::string name, float pitch, float yaw, float roll);
       void setGravity(float* values);
+      void resetBall(std::string name, float x, float y, float z);
 	  
 	  void testFunc();
 
