@@ -62,6 +62,8 @@ class PhysicsManager
       void setGravity(float* values);
       void resetBall(std::string name, float x, float y, float z);
 	  
+	  void applyForce(std::string name, float x, float y, float z);
+	  
 	  //void CollisionDetect();
 
 };

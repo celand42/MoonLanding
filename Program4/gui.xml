@@ -4,8 +4,8 @@
          <name>Window1</name>
          <caption>Anakin's Dark Side</caption>
          <skin>WindowC</skin>
-         <position>2,500</position>
-         <size>270,100</size>
+         <position>2,470</position>
+         <size>230,130</size>
          <align>Default</align>
          <layer>Overlapped</layer>
          <buttons>
@@ -18,12 +18,21 @@
                <align>Default</align>
                <font>20</font>
             </button>
+			<button>
+               <name>Force</name>
+               <caption>Use the Force!</caption>
+               <skin>Button</skin>
+               <position>5,65</position>
+               <size>210,25</size>
+               <align>Default</align>
+               <font>20</font>
+            </button>
          </buttons>
 		 <text_boxes>
 			<text_box>
 				<name>Color Crystal</name>
 				<caption>Color Crystal:</caption>
-				<position>75,5</position>
+				<position>60,5</position>
 				<size>150,30</size>
 				<align>Default</align>
 				<font>20</font>
@@ -33,8 +42,8 @@
             <combo_box>
                <name>Select_Object</name>
                <skin>ComboBox</skin>
-               <position>75,25</position>
-               <size>175,30</size>
+               <position>60,25</position>
+               <size>150,30</size>
                <align>Default</align>
                <font>20</font>
                <selected_index>0</selected_index>

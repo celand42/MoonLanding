@@ -33,11 +33,14 @@ void Saber::init()
 	saberThrustSound = true;
 	
 	resetAnimate = false;
+	
+	gameOver = false;
+	gameOverTimer = 0.0;
 }
 
 void Saber::keyPressed(std::string key)
 {
-	/*if (key == "SPACE")
+	if (key == "ESCAPE")
 	{
 		if(animationFinished)
 		{
@@ -48,9 +51,9 @@ void Saber::keyPressed(std::string key)
 			else
 				saberExtract = false;
 		}
-	}*/
+	}
 	
-	/*else*/ if (key == "A" || key == "LEFT")
+	else if (key == "A" || key == "LEFT")
 	{
 		if (!saberRight)
 			saberLeft = true;
@@ -69,6 +72,11 @@ void Saber::keyPressed(std::string key)
 
 void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* animation_states)
 {
+	if (gameOver)
+	{
+		gameOverTimer += time_step;
+	}
+	
    // Animation State Indices
    // 1: Hilt
    // 2: Swing Left
@@ -134,7 +142,8 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 		if (animation_states->get(5)->getTimePosition() < 0.5)
 		{
 			animation_states->get(5)->setTimePosition(0);
-			animationFinished = true;			
+			animationFinished = true;	
+			gameOver = true;
 		}
 	}
 	
@@ -207,4 +216,9 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 void Saber::resetAnimation()
 {
 	resetAnimate = true;
+}
+
+bool Saber::gameFinished()
+{
+	return gameOverTimer > 1;
 }

@@ -123,16 +123,16 @@ void RenderManager::executeRotateScript(string script_file_name, string script_f
    delete[] inputs;
    delete[] outputs;
 }
-void RenderManager::executeSlashScript(string script_file_name, string script_function_name, string object_name)
+void RenderManager::executeSlashScript(string script_file_name, string script_function_name, string object_name, int counter)
 {
    int degrees = 90;
  
   
-   const int num_inputs = 0;
+   const int num_inputs = 1;
    const int num_outputs = 3;
 
    const char** inputs = new const char*[num_inputs];
-    inputs[0] = 0;
+   inputs[0] = GameManager::f_to_a(counter);
    
    char** outputs = new char*[num_outputs];
 
@@ -143,7 +143,7 @@ void RenderManager::executeSlashScript(string script_file_name, string script_fu
    }
 
   
-   script_manager->executeScript(script_file_name, script_function_name, num_inputs, num_outputs, NULL, outputs);
+   script_manager->executeScript(script_file_name, script_function_name, num_inputs, num_outputs, inputs, outputs);
    
    Ogre::SceneNode* sn;
   
@@ -187,6 +187,77 @@ void RenderManager::executeSlashScript(string script_file_name, string script_fu
   
 }
 
+void RenderManager::executeForceScript(string script_file_name, string script_function_name, string object_name, int counter)
+{
+   int degrees = 90;
+   
+  
+   const int num_inputs = 1;
+   const int num_outputs = 3;
+
+   const char** inputs = new const char*[num_inputs];
+   inputs[0] = GameManager::f_to_a(counter);
+   
+   char** outputs = new char*[num_outputs];
+
+   int output_len = 20;
+   for (int i = 0; i < num_outputs; i++)
+   {
+      outputs[i] = new char[output_len + 1];
+   }
+
+  
+   script_manager->executeScript(script_file_name, script_function_name, num_inputs, num_outputs, inputs, outputs);
+   
+   Ogre::SceneNode* sn;
+  
+   //Ogre::SceneNode* sn = scene_manager->getSceneNode("BallTransformNode ");
+   try
+   {
+
+      //sn = scene_manager->getSceneNode(object_name + "Node");
+      //Vector3 t = sn->getPosition();
+      physics_manager->applyForce(object_name, atof(outputs[0]), atof(outputs[1]), atof(outputs[2]));
+      //sn->setOrientation(90,0,180,0);
+
+      //physics_manager->resetBall(object_name,t.x, atof(outputs[1]), atof(outputs[2]));
+     
+
+   }
+   catch (Ogre::Exception& e)
+   {
+      game_manager->logComment(e.what());
+      ASSERT(false);
+   }
+  for(int i = 0; i < num_outputs; i++)
+  {
+      //cout << outputs[i] << endl;
+  }
+   for (int i = 0; i < num_inputs; i++)
+   {
+      delete[] inputs[i];
+   }
+
+   for (int i = 0; i < num_outputs; i++)  //why does this delete crash?
+   {
+      delete[] outputs[i];
+   }
+   //scene_manager->destroySceneNode(node);
+
+   delete[] inputs;
+   delete[] outputs;
+   
+
+  
+}
+
+
+
+
+
+
+
+
 void RenderManager::logComment(std::string comment_message)
 {
    game_manager->logComment(comment_message);
@@ -197,6 +268,31 @@ void RenderManager::talk()
 	srand(time(NULL));
 	int random = rand() % 6 + 40;
 	game_manager->playAudio(random, 1);
+}
+
+void RenderManager::force()
+{
+   SceneNode::ChildNodeIterator it = scene_manager->getRootSceneNode()->getChildIterator();
+   SceneNode* node;
+   string name;
+   int counter = 0;
+   
+	while (it.hasMoreElements())
+	{	
+		node = dynamic_cast<Ogre::SceneNode*>(it.getNext());
+		name=node->getName();
+		Vector3 nodePos = node->getPosition();
+			
+		name = name.substr(0, name.size()-4) ;	// Removes "Node" from object name
+
+		if (name != "Saber")
+		{
+			executeForceScript("assets/lua_scripts/placement.lua","force",name, counter);
+			counter++;
+		}
+
+	}
+	
 }
 
 void RenderManager::playAudio(uint32 audio_id, uint32 num_repeats)
@@ -548,13 +644,17 @@ Ogre::SceneManager* RenderManager::getSceneManager()
 
 void RenderManager::processAnimations(float time_step)
 {
+	if (saber->gameFinished())	// GAME OVER
+		stopRendering();
+	
    saber->processAnimations(time_step, animation_states);
    
    
    SceneNode::ChildNodeIterator it = scene_manager->getRootSceneNode()->getChildIterator();
    SceneNode* node;
    string name;
-
+   int counter = 0;
+   
    try
    {
 		while (it.hasMoreElements())
@@ -569,8 +669,15 @@ void RenderManager::processAnimations(float time_step)
 			if (nodePos.y < -25)
 			{
 				//cout << name << ": LOW" << endl;
-				executeSlashScript("assets/lua_scripts/placement.lua","placement",name);
+				executeSlashScript("assets/lua_scripts/placement.lua","placement",name, counter);
+				counter++;
 			}
+			
+			
+			
+			
+			
+			
 
 		}
    
@@ -606,7 +713,8 @@ void RenderManager::keyPressed(std::string game_key)
 {
    if (game_key == "ESCAPE")
    {
-     stopRendering();
+	 saber->keyPressed(game_key);  
+     //stopRendering();
    }
    
    else

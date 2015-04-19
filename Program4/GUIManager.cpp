@@ -97,6 +97,13 @@ void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, 
    {
       render_manager->talk();
    }
+   
+   else if (name == "Force")
+   {
+	   cout <<"FORCE"<<endl;
+	   render_manager->force();
+	   render_manager->playAudio(27, 1);
+   }
    // GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&name);
    // if (widget_script)
    // {

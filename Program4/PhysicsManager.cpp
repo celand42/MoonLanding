@@ -255,6 +255,35 @@ void PhysicsManager::resetBall(std::string name, float x, float y, float z)
 
 }
 
+void PhysicsManager::applyForce(std::string name, float x, float y, float z)
+{
+	RigidBody* rb = rigid_bodies->tableRetrieve(&name);
+	
+	//cout<<name<<endl;
+	
+	if (rb)
+	{
+		btRigidBody* bt_rb = rb->getRigidBody();
+		cout<<name<<endl;
+		cout << x << " " << y << " " << z;
+		//bt_rb->applyCentralForce(btVector3(x, y, z));
+		bt_rb->applyTorqueImpulse(btVector3(x, y, z));
+		bt_rb->applyCentralImpulse(btVector3(x, y, z));
+		bt_rb->setGravity(btVector3(0,-50,0));
+
+		
+		
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
 CollisionDetect::CollisionDetect(RenderManager* rm)
 {
 	render_manager = rm;

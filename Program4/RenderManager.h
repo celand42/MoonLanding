@@ -101,11 +101,12 @@ class RenderManager
 	  void resetAnimation();
 	  void keyPressed(std::string game_key);
 	  void talk();
+	  void force();
 	  
       void setSelectedNode(std::string item);
       void logComment(std::string comment_message);
       void executeRotateScript(std::string file_name, std::string script_name, std::string object_name, int degrees);
-      void executeSlashScript(std::string script_file_name, std::string script_function_name, std::string object_name);
+      void executeSlashScript(std::string script_file_name, std::string script_function_name, std::string object_name, int count);
       void setOrientation(SceneNodeMotion* scene_node_motion, double w, double x, double y, double z);
       void setPosition(SceneNodeMotion* scene_node_motion, double x, double y, double z);
       float* getOrientation(SceneNodeMotion* scene_node_motion);
@@ -118,6 +119,8 @@ class RenderManager
       void clearLines(DebugDrawer* db);
       void destroySceneNodeMotion(SceneNodeMotion* snm);
       void destroyDebugDrawer(DebugDrawer* debug_d);
+	  
+	  void executeForceScript(std::string script_file_name, std::string script_function_name, std::string object_name, int count);
 };
 
 #endif

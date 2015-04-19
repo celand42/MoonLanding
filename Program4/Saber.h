@@ -34,6 +34,11 @@ class Saber
 	// Reset
 	bool resetAnimate;
 	
+	// Game Over
+	bool gameOver;
+	
+	float gameOverTimer;
+	
 	public:
 	
 	Saber(GameManager* gm);
@@ -43,6 +48,7 @@ class Saber
 	
 	void processAnimations(float time_step, ListArray<Ogre::AnimationState>* animation_states);
 	void resetAnimation();
+	bool gameFinished();
 	
 	
 	
