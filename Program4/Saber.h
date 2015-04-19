@@ -50,22 +50,8 @@ class Saber
 	void resetAnimation();
 	bool gameFinished();
 	
-	
-	
-	
-	
+
 };
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif

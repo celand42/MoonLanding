@@ -37,10 +37,7 @@ void PhysicsManager::stepPhysicsSimulation(float time_incr)
 PhysicsManager::PhysicsManager(RenderManager* rm)
 {
    rigid_bodies = new TableAVL<RigidBody, std::string>(&RigidBody::compare_items, &RigidBody::compare_keys);
-	//cout<<"HI HOW ARE YOU"<<endl;
    render_manager = rm;
-   //render_manager->playAudio(26,1);
-   //callback = new CollisionDetect(rm);
    init();
 
    OgreBulletDebugDrawer* debug_drawer = new OgreBulletDebugDrawer(render_manager);
@@ -179,8 +176,6 @@ void PhysicsManager::createCompoundRigidBody(SceneNodeMotion* scene_node_motion,
    
 	   compound->addChildShape(t, col_shape);
    }
-   
-   //delete[][] collision_shape_params;
 
    //the constructor copies the scene node transform into the bullet transform
    BulletSceneNodeMotionState* motion_state = new BulletSceneNodeMotionState(scene_node_motion, render_manager);
@@ -209,12 +204,7 @@ void PhysicsManager::updateRigidBodies()
    
    for (int i = num_collision_objects - 1; i >= 0; i--)
    {
-	   
-	   //cout<< i<< endl;
       btRigidBody* rigid_body = btRigidBody::upcast(rigid_bodies[i]);
-	  //cout<< i << " " << rigid_body->getCollisionShape()->getName() << endl;
-	  //rigid_body->applyCentralForce(btVector3(1,-110,1));
-	  //rigid_bodies[i]->forceActivationState(WANTS_DEACTIVATION);
       BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) rigid_body->getMotionState();
 
       btTransform current_transform;
@@ -224,7 +214,6 @@ void PhysicsManager::updateRigidBodies()
 	  
 	  if (i > 0)
 	  {
-		//render_manager->playAudio(26,1);
 		CollisionDetect callback = CollisionDetect(render_manager);
 		dynamics_world->contactPairTest(rigid_bodies[0], rigid_bodies[i], callback);
 	  }
@@ -237,20 +226,14 @@ void PhysicsManager::resetBall(std::string name, float x, float y, float z)
    
    if (rb)
    {
-      
-
-
       btRigidBody* bt_rb = rb->getRigidBody();
 	  bt_rb->clearForces();
 	  btVector3 zeroVector(0,0,0);
 	  bt_rb->setLinearVelocity(zeroVector);
 	  bt_rb->setGravity(btVector3(0,-15,0));
 	  bt_rb->setAngularVelocity(zeroVector);
-	  //bt_rb->setWorldTransform(startingTransform); // reset ball position
       BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) bt_rb->getMotionState();
       motion_state->copyNodeTransformIntoBulletTransform();
-      //motion_state->copyBulletTransformIntoNodeTransform();
-	  //cout << name << endl;
    }
 
 }
@@ -259,43 +242,27 @@ void PhysicsManager::applyForce(std::string name, float x, float y, float z)
 {
 	RigidBody* rb = rigid_bodies->tableRetrieve(&name);
 	
-	//cout<<name<<endl;
-	
 	if (rb)
 	{
 		btRigidBody* bt_rb = rb->getRigidBody();
-		cout<<name<<endl;
-		cout << x << " " << y << " " << z;
-		//bt_rb->applyCentralForce(btVector3(x, y, z));
+		//cout<<name<<endl;
+		//cout << x << " " << y << " " << z;
 		bt_rb->applyTorqueImpulse(btVector3(x, y, z));
 		bt_rb->applyCentralImpulse(btVector3(x, y, z));
-		bt_rb->setGravity(btVector3(0,-50,0));
-
-		
-		
+		bt_rb->setGravity(btVector3(0,-50,0));	
 	}
-	
-	
-	
-	
+
 }
-
-
-
-
 
 CollisionDetect::CollisionDetect(RenderManager* rm)
 {
 	render_manager = rm;
 	sound = true;
-	//rm->playAudio(26,1);
-	//cout<<"CollisionDetect CONSTRUCTOR"<<endl;
 }
 
 CollisionDetect::~CollisionDetect()
 {
 	render_manager = NULL;
-	//cout<<"CollisionDetect DESTRUCTOR"<<endl;
 }
 
 btScalar CollisionDetect::addSingleResult(btManifoldPoint& cp,
@@ -305,18 +272,18 @@ btScalar CollisionDetect::addSingleResult(btManifoldPoint& cp,
 	const btCollisionObjectWrapper* colObj1Wrap,
 	int partId1,
 	int index1)
+{
+	btCollisionObject* coll = (btCollisionObject*) colObj1Wrap->getCollisionObject();
+	btRigidBody* rigid_body = btRigidBody::upcast(coll);
+	rigid_body->applyTorque(btVector3(0,0,-5000));
+	rigid_body->applyCentralForce(btVector3(0,0,-2000));
+	rigid_body->setGravity(btVector3(0,-100,0));
+	
+	if (sound)
 	{
-		btCollisionObject* coll = (btCollisionObject*) colObj1Wrap->getCollisionObject();
-		btRigidBody* rigid_body = btRigidBody::upcast(coll);
-		rigid_body->applyTorque(btVector3(0,0,-5000));
-		rigid_body->applyCentralForce(btVector3(0,0,-2000));
-		rigid_body->setGravity(btVector3(0,-100,0));
-		
-		if (sound)
-		{
-			render_manager->playAudio(26, 1);
-			sound = false;
-		}
-		
-		
+		render_manager->playAudio(26, 1);
+		sound = false;
 	}
+	
+	
+}

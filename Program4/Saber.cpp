@@ -118,7 +118,6 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 		}
 
 		
-		//animation_states->get(1)->addTime(time_step);		
    }
    
    // Animate blade retraction
@@ -158,8 +157,6 @@ void Saber::processAnimations(float time_step, ListArray<Ogre::AnimationState>* 
 		
 		if (animation_states->get(2)->getTimePosition() + time_step < animation_states->get(2)->getLength())
 		{
-			//cout << "TIME: " << time_step << " - TIMEPOS: " << animation_states->get(2)->getTimePosition() << endl;
-			//cout << animation_states->get(2)->getLength() << endl;
 			animation_states->get(2)->addTime(time_step);
 		}
 		

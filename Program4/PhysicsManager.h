@@ -45,7 +45,6 @@ class PhysicsManager
       btSequentialImpulseConstraintSolver* solver;
       btDiscreteDynamicsWorld* dynamics_world;
 
-	  //struct CollisionDetect callback;
 	  
       void init();
 
@@ -64,7 +63,6 @@ class PhysicsManager
 	  
 	  void applyForce(std::string name, float x, float y, float z);
 	  
-	  //void CollisionDetect();
 
 };
 

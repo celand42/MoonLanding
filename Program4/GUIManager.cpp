@@ -104,45 +104,8 @@ void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, 
 	   render_manager->force();
 	   render_manager->playAudio(27, 1);
    }
-   // GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&name);
-   // if (widget_script)
-   // {
-   //    string file_name = widget_script->getFileName();
-   //    string script_name = widget_script->getScriptName();
 
-   //    //obtain a reference to the combo box
-   //    MyGUI::ComboBox* combo = MyGUI::Gui::getInstance().findWidget<MyGUI::ComboBox>("Select_Object");
-   //    int selected_index = combo->getIndexSelected();
-   //    string object_name = combo->getItemNameAt(selected_index);
-
-   //    render_manager->executeScript(file_name, script_name, object_name);
-   // }
 }
-
-/*
-void GUIManager::buttonRotateGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, MyGUI::MouseButton _id) 
-{
-   const string& _name = _sender->getName();
-   string name = _name;
-
-   GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&name);
-   if (widget_script)
-   {
-      string script_file_name = widget_script->getFileName();
-      string script_function_name = widget_script->getScriptName();
-
-      //obtain a reference to the combo box
-      MyGUI::ComboBox* combo = MyGUI::Gui::getInstance().findWidget<MyGUI::ComboBox>("Select_Object");
-      int selected_index = combo->getIndexSelected();
-      string object_name = combo->getItemNameAt(selected_index);
-
-      MyGUI::ScrollBar* scroll = MyGUI::Gui::getInstance().findWidget<MyGUI::ScrollBar>("Select_Degrees");
-      int degrees = -1*(scroll->getTrackSize()/2) + scroll->getScrollPosition();
-
-      render_manager->executeRotateScript(script_file_name, script_function_name, object_name, degrees);
-   }
-}
-*/
 
 void GUIManager::comboGUIDelegate(MyGUI::ComboBox* _sender, uint32 index) 
 {
