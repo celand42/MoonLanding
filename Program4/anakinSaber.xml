@@ -42,7 +42,7 @@
 	</light>
 	<gravity>
 		<x>0</x>
-		<y>-9.8</y>
+		<y>-15</y>
 		<z>0</z>
 	</gravity>
 	<root>
@@ -419,153 +419,129 @@
 				</animation>
 			</child>
 		</transform>
+		
 		<transform>
-			<name>TestObject</name>
+			<name>Falcon1</name>
 			<translate>
-				<x>-10</x>
-				<y>50</y>
+				<x>20</x>
+				<y>130</y>
 				<z>-10</z>
 			</translate>
 			<scale>
 				<x>1</x>
-				<y>4</y>
+				<y>1</y>
 				<z>1</z>
 			</scale>
+			<rotate>
+				<w>145</w>
+				<x>0</x>
+				<y>1</y>
+				<z>0</z>
+			</rotate>
 			<child>
 				<entity>
-					<name>TestMesh</name>
-					<mesh>Hilt.mesh</mesh>
-					<material>Blue</material>
+					<name>FalconMesh1</name>
+					<mesh>Falcon.mesh</mesh>
+					<material>DarkGray</material>
 				</entity>
 			</child>
 			<physics>
 				<collision_shape>box</collision_shape>
 				<collision_parameters>
-					<x>1</x>
-					<y>5.5</y>
-					<z>1</z>
+					<x>2.5</x>
+					<y>0.5</y>
+					<z>3</z>
 				</collision_parameters>
 				<position_parameters>
 					<x>0</x>
-					<y>1.5</y>
+					<y>0</y>
 					<z>0</z>
 				</position_parameters>
 				<mass>0.5</mass>
 			</physics>
 		</transform>
+		
 		<transform>
-			<name>TestObject2</name>
+			<name>Falcon2</name>
 			<translate>
-				<x>-10</x>
-				<y>0</y>
+				<x>-20</x>
+				<y>100</y>
 				<z>-10</z>
 			</translate>
 			<scale>
-				<x>1</x>
-				<y>4</y>
-				<z>1</z>
+				<x>1.5</x>
+				<y>1.5</y>
+				<z>1.5</z>
 			</scale>
 			<rotate>
-				<w>90</w>
+				<w>145</w>
 				<x>0</x>
-				<y>0</y>
-				<z>1</z>
+				<y>1</y>
+				<z>0</z>
 			</rotate>
 			<child>
 				<entity>
-					<name>TestMesh2</name>
-					<mesh>Hilt.mesh</mesh>
-					<material>Blue</material>
+					<name>FalconMesh2</name>
+					<mesh>Falcon.mesh</mesh>
+					<material>DarkGray</material>
 				</entity>
 			</child>
 			<physics>
 				<collision_shape>box</collision_shape>
 				<collision_parameters>
-					<x>1</x>
-					<y>5.5</y>
-					<z>1</z>
+					<x>5</x>
+					<y>1</y>
+					<z>6</z>
 				</collision_parameters>
 				<position_parameters>
 					<x>0</x>
-					<y>1.5</y>
+					<y>0</y>
 					<z>0</z>
 				</position_parameters>
-				<mass>0</mass>
+				<mass>1</mass>
 			</physics>
 		</transform>
+		
 		<transform>
-			<name>TestObject3</name>
+			<name>Falcon3</name>
 			<translate>
-				<x>10</x>
+				<x>20</x>
 				<y>70</y>
 				<z>-10</z>
 			</translate>
 			<scale>
-				<x>1</x>
-				<y>4</y>
-				<z>1</z>
-			</scale>
-			<child>
-				<entity>
-					<name>TestMesh3</name>
-					<mesh>Hilt.mesh</mesh>
-					<material>Blue</material>
-				</entity>
-			</child>
-			<physics>
-				<collision_shape>box</collision_shape>
-				<collision_parameters>
-					<x>1</x>
-					<y>5.5</y>
-					<z>1</z>
-				</collision_parameters>
-				<position_parameters>
-					<x>0</x>
-					<y>1.5</y>
-					<z>0</z>
-				</position_parameters>
-				<mass>0.5</mass>
-			</physics>
-		</transform>
-		<transform>
-			<name>TestObject4</name>
-			<translate>
-				<x>10</x>
-				<y>0</y>
-				<z>-10</z>
-			</translate>
-			<scale>
-				<x>1</x>
-				<y>4</y>
-				<z>1</z>
+				<x>2</x>
+				<y>2</y>
+				<z>2</z>
 			</scale>
 			<rotate>
-				<w>90</w>
+				<w>145</w>
 				<x>0</x>
-				<y>0</y>
-				<z>1</z>
+				<y>1</y>
+				<z>0</z>
 			</rotate>
 			<child>
 				<entity>
-					<name>TestMesh4</name>
-					<mesh>Hilt.mesh</mesh>
-					<material>Blue</material>
+					<name>FalconMesh3</name>
+					<mesh>Falcon.mesh</mesh>
+					<material>DarkGray</material>
 				</entity>
 			</child>
 			<physics>
 				<collision_shape>box</collision_shape>
 				<collision_parameters>
-					<x>1</x>
-					<y>5.5</y>
-					<z>1</z>
+					<x>5</x>
+					<y>1</y>
+					<z>6</z>
 				</collision_parameters>
 				<position_parameters>
 					<x>0</x>
-					<y>1.5</y>
+					<y>0</y>
 					<z>0</z>
 				</position_parameters>
-				<mass>0</mass>
+				<mass>1.5</mass>
 			</physics>
 		</transform>
+		
 	</root>
 </scene>

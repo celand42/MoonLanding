@@ -80,6 +80,13 @@
    </resource>
    
    <resource>
+      <uid>14</uid>
+	  <scope>1</scope>
+	  <resource_type>mesh</resource_type>
+	  <file_name>Falcon.mesh</file_name>
+   </resource>
+   
+   <resource>
       <uid>9</uid>
 	  <scope>1</scope>
 	  <resource_type>mesh</resource_type>

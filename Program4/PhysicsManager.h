@@ -10,13 +10,13 @@ struct SceneNodeMotion;
 class RenderManager;
 
 
-struct TestFunc : public btCollisionWorld::ContactResultCallback
+struct CollisionDetect : public btCollisionWorld::ContactResultCallback
 {
 	RenderManager* render_manager;
 	bool sound;
 	
-	TestFunc(RenderManager* rm);
-	~TestFunc();
+	CollisionDetect(RenderManager* rm);
+	~CollisionDetect();
 	
 	btScalar addSingleResult(btManifoldPoint& cp,
         const btCollisionObjectWrapper* colObj0Wrap,
@@ -45,7 +45,7 @@ class PhysicsManager
       btSequentialImpulseConstraintSolver* solver;
       btDiscreteDynamicsWorld* dynamics_world;
 
-	  //struct TestFunc callback;
+	  //struct CollisionDetect callback;
 	  
       void init();
 
@@ -62,16 +62,9 @@ class PhysicsManager
       void setGravity(float* values);
       void resetBall(std::string name, float x, float y, float z);
 	  
-	  void testFunc();
+	  //void CollisionDetect();
 
 };
-
-
-#endif
-
-#ifndef CALLBACK
-#define CALLBACK
-
 
 
 #endif

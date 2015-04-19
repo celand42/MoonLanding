@@ -37,10 +37,10 @@ void PhysicsManager::stepPhysicsSimulation(float time_incr)
 PhysicsManager::PhysicsManager(RenderManager* rm)
 {
    rigid_bodies = new TableAVL<RigidBody, std::string>(&RigidBody::compare_items, &RigidBody::compare_keys);
-	cout<<"HI HOW ARE YOU"<<endl;
+	//cout<<"HI HOW ARE YOU"<<endl;
    render_manager = rm;
    //render_manager->playAudio(26,1);
-   //callback = new TestFunc(rm);
+   //callback = new CollisionDetect(rm);
    init();
 
    OgreBulletDebugDrawer* debug_drawer = new OgreBulletDebugDrawer(render_manager);
@@ -225,7 +225,7 @@ void PhysicsManager::updateRigidBodies()
 	  if (i > 0)
 	  {
 		//render_manager->playAudio(26,1);
-		TestFunc callback = TestFunc(render_manager);
+		CollisionDetect callback = CollisionDetect(render_manager);
 		dynamics_world->contactPairTest(rigid_bodies[0], rigid_bodies[i], callback);
 	  }
    }
@@ -244,7 +244,7 @@ void PhysicsManager::resetBall(std::string name, float x, float y, float z)
 	  bt_rb->clearForces();
 	  btVector3 zeroVector(0,0,0);
 	  bt_rb->setLinearVelocity(zeroVector);
-	  bt_rb->setGravity(btVector3(0,-9.8,0));
+	  bt_rb->setGravity(btVector3(0,-15,0));
 	  bt_rb->setAngularVelocity(zeroVector);
 	  //bt_rb->setWorldTransform(startingTransform); // reset ball position
       BulletSceneNodeMotionState* motion_state = (BulletSceneNodeMotionState*) bt_rb->getMotionState();
@@ -255,21 +255,21 @@ void PhysicsManager::resetBall(std::string name, float x, float y, float z)
 
 }
 
-TestFunc::TestFunc(RenderManager* rm)
+CollisionDetect::CollisionDetect(RenderManager* rm)
 {
 	render_manager = rm;
 	sound = true;
 	//rm->playAudio(26,1);
-	//cout<<"TESTFUNC CONSTRUCTOR"<<endl;
+	//cout<<"CollisionDetect CONSTRUCTOR"<<endl;
 }
 
-TestFunc::~TestFunc()
+CollisionDetect::~CollisionDetect()
 {
 	render_manager = NULL;
-	//cout<<"TESTFUNC DESTRUCTOR"<<endl;
+	//cout<<"CollisionDetect DESTRUCTOR"<<endl;
 }
 
-btScalar TestFunc::addSingleResult(btManifoldPoint& cp,
+btScalar CollisionDetect::addSingleResult(btManifoldPoint& cp,
 	const btCollisionObjectWrapper* colObj0Wrap,
 	int partId0,
 	int index0,
@@ -280,7 +280,7 @@ btScalar TestFunc::addSingleResult(btManifoldPoint& cp,
 		btCollisionObject* coll = (btCollisionObject*) colObj1Wrap->getCollisionObject();
 		btRigidBody* rigid_body = btRigidBody::upcast(coll);
 		rigid_body->applyTorque(btVector3(0,0,-5000));
-		rigid_body->applyCentralForce(btVector3(0,0,-1000));
+		rigid_body->applyCentralForce(btVector3(0,0,-2000));
 		rigid_body->setGravity(btVector3(0,-100,0));
 		
 		if (sound)

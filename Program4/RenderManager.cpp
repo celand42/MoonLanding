@@ -103,7 +103,7 @@ void RenderManager::executeRotateScript(string script_file_name, string script_f
    }
 
    script_manager->executeScript(script_file_name, script_function_name, num_inputs, num_outputs, inputs, outputs);
-   std::cout <<selected_node->getName()<< outputs[0] << std::endl;
+   //std::cout <<selected_node->getName()<< outputs[0] << std::endl;
    float w = GameManager::a_to_f(outputs[0]);
    float x = GameManager::a_to_f(outputs[1]);
    float y = GameManager::a_to_f(outputs[2]);
@@ -154,7 +154,7 @@ void RenderManager::executeSlashScript(string script_file_name, string script_fu
       sn = scene_manager->getSceneNode(object_name + "Node");
       Vector3 t = sn->getPosition();
       sn->setPosition(atof(outputs[0]), atof(outputs[1]), atof(outputs[2]));
-      sn->setOrientation(90,0,1,0);
+      sn->setOrientation(90,0,180,0);
 
       physics_manager->resetBall(object_name,t.x, atof(outputs[1]), atof(outputs[2]));
      
@@ -566,10 +566,10 @@ void RenderManager::processAnimations(float time_step)
 			name = name.substr(0, name.size()-4) ;	// Removes "Node" from object name
 			//cout << name << endl;
 				
-			if (nodePos.y < -10)
+			if (nodePos.y < -25)
 			{
-				cout << name << ": LOW" << endl;
-				executeSlashScript("assets/lua_scripts/rotate_scripts.lua","placement",name);
+				//cout << name << ": LOW" << endl;
+				executeSlashScript("assets/lua_scripts/placement.lua","placement",name);
 			}
 
 		}
