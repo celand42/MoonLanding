@@ -1,0 +1,451 @@
+
+<scene>
+   <scope>1</scope>
+
+   <camera>
+      <position>0,20,40</position>
+      <look_at>0,0,0</look_at>
+      <clip_distance>2,100</clip_distance>
+   </camera>
+
+   <light>
+      <name>Light</name>
+      <type>directional</type>
+      <position>0,-1,-1</position>
+      <color>1,1,1</color>
+   </light>
+
+   <gravity>0,-9.8,0</gravity>
+
+   <scene_graph>
+      <root>
+         <children>
+            <child>
+
+               <name>GroundNode</name>
+               <entity>
+                  <name>Ground Entity</name>
+                  <mesh>Ground.mesh</mesh>
+                  <material>Ground</material>
+               </entity>
+               <translation>0,0,0</translation>
+               <rotation>1,0,0,0</rotation>
+               <scale>30,.5,30</scale>
+
+               <physics>
+                  <object>GroundNode</object>
+                  <collision_shape>box</collision_shape>
+                  <translation>0,0,0</translation>
+                  <rotation>0,0,1,0</rotation>
+                  <collision_parameters>30,.1,30</collision_parameters>
+                  <mass>0</mass>
+               </physics>
+
+               <children>
+               </children>
+
+            </child>
+
+            <child>
+               <name>StarShip</name>
+               <translation>0,20,0</translation>
+               <rotation>40,1,1,0</rotation>
+               <scale>1,1,1</scale>
+
+               <physics>
+                  <object>StarShip</object>
+                  <collision_shape>cylinder_z</collision_shape>
+                  <translation>0,0,0</translation>
+                  <rotation>0,0,1,0</rotation>
+                  <collision_parameters>1,1,5</collision_parameters>
+                  <mass>10</mass>
+               </physics>
+
+               <children>
+
+                  <child>
+                     <name>BodyWithRobot</name>
+                     <translation>0,0,0</translation>
+                     <rotation>0,0,0,1</rotation>
+                     <scale>0.9,0.9,0.9</scale>
+                     <children>
+
+                        <child>
+                           <name>BodyNode</name>
+                           <entity>
+                              <name>Body</name>
+                              <mesh>Body.mesh</mesh>
+                              <material>Body</material>
+                           </entity>
+                           <translation>0,0,0</translation>
+                           <rotation>90,1,0,0</rotation>
+                           <scale>1,1,1</scale>
+                           <children>
+                           </children>
+                        </child>
+
+                        <child>
+                           <name>RobotTranNode</name>
+                           <translation>0,0.85,-3.75</translation>
+                           <rotation>0,0,0,1</rotation>
+                           <scale>1,1,1</scale>
+                           <children>
+
+                              <child>
+                                 <name>RobotNode</name>
+                                 <entity>
+                                    <name>Robot</name>
+                                    <mesh>Robot.mesh</mesh>
+                                    <material>Robot</material>
+                                 </entity>
+                                 <translation>0,0,0</translation>
+                                 <rotation>0,0,0,1</rotation>
+                                 <scale>0.5,0.5,0.5</scale>
+                                 <children>
+                                 </children>
+                              </child>
+
+                           </children>
+                        </child>
+
+                     </children>
+                  </child>
+                  <child>
+                     <name>URWingNodeTR</name>
+                     <translation>0.8,0,0</translation>
+                     <rotation>0,0,0,1</rotation>
+                     <scale>1,1,1</scale>
+
+                     <physics>
+                        <object>StarShip</object>
+                        <collision_shape>box</collision_shape>
+                        <translation>2,0,-4.8</translation>
+                        <rotation>0,0,1,0</rotation>
+                        <collision_parameters>2.5,0.5,3.5</collision_parameters>
+                        <mass>3</mass>
+                     </physics>
+
+                     <children>
+
+                        <child>
+                           <name>URWingNode</name>
+                           <translation>0.85,0,-4.8</translation>
+                           <rotation>0,0,0,1</rotation>
+                           <scale>1,1,1</scale>
+                           <children>
+
+                           <child>
+                              <name>WingNode1</name>
+                              <entity>
+                                 <name>Wing1</name>
+                                 <mesh>Wing.mesh</mesh>
+                                 <material>Wing</material>
+                              </entity>
+                              <translation>0,0,0</translation>
+                              <rotation>-90,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                              </children>
+                           </child>
+
+                           <child>
+                              <name>EngineTranNode1</name>
+                              <translation>-0.35,0.5,-0.45</translation>
+                              <rotation>0,0,0,1</rotation>
+                             <scale>1,1,1</scale>
+                             <children>
+                        
+                                 <child>
+                                    <name>EngineNode1</name>
+                                    <entity>
+                                       <name>Engine1</name>
+                                       <mesh>Engine.mesh</mesh>
+                                       <material>Engine</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.45,0.45,0.45</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+
+                              </children>
+                           </child>
+
+                           <child>
+                              <name>GunTranNode1</name>
+                              <translation>2.55,0.2,1.85</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                                 <child>
+                                    <name>GunNode1</name>
+                                    <entity>
+                                       <name>Gun1</name>
+                                       <mesh>Gun.mesh</mesh>
+                                       <material>Gun</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.225,0.225,0.225</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+                              </children>
+                           </child>
+                           </children>
+                        </child>
+                     </children>
+                  </child>
+
+                  <child>
+                     <name>LRWingNodeTR</name>
+                     <translation>0.8,-0.2,0</translation>
+                     <rotation>0,0,0,1</rotation>
+                     <scale>1,1,1</scale>
+                     <children>
+
+                        <child>
+                           <name>LRWingNode</name>
+                           <translation>0.85,0,-4.8</translation>
+                           <rotation>0,0,0,1</rotation>
+                           <scale>1,1,1</scale>
+                           <children>
+      
+                           <child>
+                              <name>WingNode2</name>
+                              <entity>
+                                 <name>Wing2</name>
+                                 <mesh>Wing.mesh</mesh>
+                                 <material>Wing</material>
+                              </entity>
+                              <translation>0,0,0</translation>
+                              <rotation>-90,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                              </children>
+                           </child>
+      
+                           <child>
+                              <name>EngineTranNode2</name>
+                              <translation>-0.35,-0.5,-0.45</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                              
+                                 <child>
+                                    <name>EngineNode2</name>
+                                    <entity>
+                                       <name>Engine2</name>
+                                       <mesh>Engine.mesh</mesh>
+                                       <material>Engine</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.45,0.45,0.45</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+      
+                              </children>
+                           </child>
+      
+                           <child>
+                              <name>GunTranNode2</name>
+                              <translation>2.55,-0.2,1.85</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                                 <child>
+                                    <name>GunNode2</name>
+                                    <entity>
+                                       <name>Gun2</name>
+                                       <mesh>Gun.mesh</mesh>
+                                       <material>Gun</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.225,0.225,0.225</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+                              </children>
+                           </child>
+                           </children>
+                        </child>
+                     </children>
+                  </child>
+                  
+                  <child>
+                     <name>ULWingNodeTR</name>
+                     <translation>-0.8,0,0</translation>
+                     <rotation>0,0,0,1</rotation>
+                     <scale>1,1,1</scale>
+
+                     <physics>
+                        <object>StarShip</object>
+                        <collision_shape>box</collision_shape>
+                        <translation>-2,0,-4.8</translation>
+                        <rotation>0,0,1,0</rotation>
+                        <collision_parameters>2.5,0.5,3.5</collision_parameters>
+                        <mass>3</mass>
+                     </physics>
+
+                        <children>
+
+                           <child>
+                              <name>ULWingNode</name>
+                              <translation>-0.85,0,-4.8</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+         
+                              <child>
+                                 <name>WingNode3</name>
+                                 <entity>
+                                    <name>Wing3</name>
+                                    <mesh>Wing.mesh</mesh>
+                                    <material>Wing</material>
+                                 </entity>
+                                 <translation>0,0,0</translation>
+                                 <rotation>90,0,0,1</rotation>
+                                 <scale>1,1,1</scale>
+                                 <children>
+                                 </children>
+                              </child>
+         
+                              <child>
+                                 <name>EngineTranNode3</name>
+                                 <translation>0.35,0.5,-0.45</translation>
+                                 <rotation>0,0,0,1</rotation>
+                                 <scale>1,1,1</scale>
+                                 <children>
+                                 
+                                    <child>
+                                       <name>EngineNode3</name>
+                                       <entity>
+                                          <name>Engine3</name>
+                                          <mesh>Engine.mesh</mesh>
+                                          <material>Engine</material>
+                                       </entity>
+                                       <translation>0,0,0</translation>
+                                       <rotation>90,1,0,0</rotation>
+                                       <scale>0.45,0.45,0.45</scale>
+                                       <children>
+                                       </children>
+                                    </child>
+         
+                                 </children>
+                              </child>
+         
+                              <child>
+                                 <name>GunTranNode3</name>
+                                 <translation>-2.55,0.2,1.85</translation>
+                                 <rotation>0,0,0,1</rotation>
+                                 <scale>1,1,1</scale>
+                                 <children>
+                                    <child>
+                                       <name>GunNode3</name>
+                                       <entity>
+                                          <name>Gun3</name>
+                                          <mesh>Gun.mesh</mesh>
+                                          <material>Gun</material>
+                                       </entity>
+                                       <translation>0,0,0</translation>
+                                       <rotation>90,1,0,0</rotation>
+                                       <scale>0.225,0.225,0.225</scale>
+                                       <children>
+                                       </children>
+                                    </child>
+                                 </children>
+                              </child>
+                              </children>
+                           </child>
+                        </children>
+                  </child>
+                     
+                  <child>
+                     <name>LLWingNodeTR</name>
+                        <translation>-0.8,-0.2,0</translation>
+                        <rotation>0,0,0,1</rotation>
+                        <scale>1,1,1</scale>
+                        <children>
+   
+                        <child>
+                           <name>LLWingNode</name>
+                           <translation>-0.85,0,-4.8</translation>
+                           <rotation>0,0,0,1</rotation>
+                           <scale>1,1,1</scale>
+                           <children>
+      
+                           <child>
+                              <name>WingNode4</name>
+                              <entity>
+                                 <name>Wing4</name>
+                                 <mesh>Wing.mesh</mesh>
+                                 <material>Wing</material>
+                              </entity>
+                              <translation>0,0,0</translation>
+                              <rotation>90,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                              </children>
+                           </child>
+      
+                           <child>
+                              <name>EngineTranNode4</name>
+                              <translation>0.35,-0.5,-0.45</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                              
+                                 <child>
+                                    <name>EngineNode4</name>
+                                    <entity>
+                                       <name>Engine4</name>
+                                       <mesh>Engine.mesh</mesh>
+                                       <material>Engine</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.45,0.45,0.45</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+      
+                              </children>
+                           </child>
+      
+                           <child>
+                              <name>GunTranNode4</name>
+                              <translation>-2.55,-0.2,1.85</translation>
+                              <rotation>0,0,0,1</rotation>
+                              <scale>1,1,1</scale>
+                              <children>
+                                 <child>
+                                    <name>GunNode4</name>
+                                    <entity>
+                                       <name>Gun4</name>
+                                       <mesh>Gun.mesh</mesh>
+                                       <material>Gun</material>
+                                    </entity>
+                                    <translation>0,0,0</translation>
+                                    <rotation>90,1,0,0</rotation>
+                                    <scale>0.225,0.225,0.225</scale>
+                                    <children>
+                                    </children>
+                                 </child>
+                              </children>
+                           </child>
+                           </children>
+                        </child>
+                     </children>
+                  </child>
+               </children>
+            </child>
+
+         </children>
+
+      </root>
+   </scene_graph>
+</scene>
