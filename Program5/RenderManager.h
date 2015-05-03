@@ -131,8 +131,9 @@ class RenderManager
       void setGravity(std::string gravity_str);
       std::string networkSendReceive(std::string message_send);
       int getScrollBarSetting();
-	  
-	  void increaseScore();
+      int get_score();
+      void set_score(int value);
+      void increaseScore();
 };
 
 #endif

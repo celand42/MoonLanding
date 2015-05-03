@@ -155,7 +155,7 @@ void GameManager::init()
    input_manager = new InputManager(this);
    resource_manager = new ResourceManager(this);
    network_manager = new NetworkManager(this, 100);  //buffer size specified via constructor
-   //network_manager->createSocketAddress("localhost", 6789);
+   network_manager->createSocketAddress("localhost", 6789);
 }
 
 GameManager::GameManager(std::string scene_file_name)
@@ -173,7 +173,7 @@ GameManager::~GameManager()
    log_manager->logComment("Destructor started.");
    resource_manager->unloadResources();
 
-   //delete network_manager;
+   delete network_manager;
    delete resource_manager;
    delete audio_manager;  //crashes here (not anymore?)
    delete input_manager;

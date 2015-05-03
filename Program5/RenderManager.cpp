@@ -16,7 +16,15 @@ using namespace std;
 using namespace Ogre;
 
 
-
+int RenderManager::get_score()
+{
+   return saber->getScore();
+}
+void RenderManager::set_score(int value)
+{
+   cout <<"CURRENT SCORE MOTHER FUCKER" <<    value << endl;
+   gui_manager->updateScore(value, false);
+}
 string RenderManager::networkSendReceive(string message_send)
 {
    return game_manager->networkSendReceive(message_send);
@@ -240,7 +248,9 @@ void RenderManager::executeForceScript(string script_file_name, string script_fu
    
    try
    {
-      physics_manager->applyForce(object_name, atof(outputs[0]), atof(outputs[1]), atof(outputs[2]));
+      //if(user !=1)
+         physics_manager->applyForce(object_name, atof(outputs[0]), atof(outputs[1]), atof(outputs[2]));
+     
    }
    catch (Ogre::Exception& e)
    {
@@ -287,7 +297,6 @@ void RenderManager::force()
    SceneNode* node;
    string name;
    int counter = 0;
-   
 	while (it.hasMoreElements())
 	{	
 		node = dynamic_cast<Ogre::SceneNode*>(it.getNext());
@@ -731,7 +740,7 @@ void RenderManager::processAnimations(float time_step)
    
 	physics_manager->updateRigidBodies();
 	
-	gui_manager->updateScore(saber->getScore());
+	gui_manager->updateScore(saber->getScore(), true);
 }
 
 void RenderManager::increaseScore()

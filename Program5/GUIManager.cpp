@@ -13,17 +13,25 @@ GUIManager::GUIManager(RenderManager* rm)
    all_widgets = new TableAVL<GUIWidgetScript, std::string >(&GUIWidgetScript::compare_items, &GUIWidgetScript::compare_keys);
 }
 
-void GUIManager::updateScore(int score)
+void GUIManager::updateScore(int s, bool user)
 {
-	 std::stringstream ss;
-     ss << score;
+	std::stringstream ss;
+   ss << s;
 
-     std::string str;
-     ss >> str;
+   std::string score;
+   ss >> score;
 	  
-	 MyGUI::Widget* win = my_gui->findWidgetT("UserScore");
-	 MyGUI::TextBox* win2 = (MyGUI::TextBox*)win->findWidget("UserScoreText");
-	 win2->setCaption("Score: " + str);	
+   std::string player;
+
+   if (user)
+      player ="User";
+   else
+      player ="Enemy";
+
+
+   MyGUI::Widget* win = my_gui->findWidgetT(player + "Score");
+       MyGUI::TextBox* win2 = (MyGUI::TextBox*)win->findWidget(player + "ScoreText");
+       win2->setCaption("Score: " + score); 
 }
 
 GUIManager::~GUIManager()

@@ -16,7 +16,7 @@ class GUIManager
       MyGUI::Gui* my_gui;
       MyGUI::OgrePlatform* ogre_platform;
       TableAVL<GUIWidgetScript, std::string>* all_widgets;
-
+      std::string buttonPressed;
       RenderManager* render_manager;
 
       void addButtons(TiXmlNode* buttons_node, float* values, MyGUI::Window* w);
@@ -39,9 +39,11 @@ class GUIManager
 
       void buttonRotateGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, MyGUI::MouseButton _id);
       void buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, MyGUI::MouseButton _id);
-	  void comboGUIDelegate(MyGUI::ComboBox* _sender, uint32 index);
+	void comboGUIDelegate(MyGUI::ComboBox* _sender, uint32 index);
+      std::string getButtonSetting();
+      void setButtonSetting(std::string button_value);
+      void updateScore(int score, bool user);
 
-      void updateScore(int score);
 
 };
 
