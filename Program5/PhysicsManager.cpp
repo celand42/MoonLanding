@@ -286,13 +286,18 @@ btScalar CollisionDetect::addSingleResult(btManifoldPoint& cp,
 {
 	btCollisionObject* coll = (btCollisionObject*) colObj1Wrap->getCollisionObject();
 	btRigidBody* rigid_body = btRigidBody::upcast(coll);
+	
+	if (rigid_body->getGravity().getY() != -100)
+	{
+		render_manager->increaseScore();
+	}
+	
 	rigid_body->applyTorque(btVector3(0,0,-5000));
 	rigid_body->applyCentralForce(btVector3(0,0,-2000));
 	rigid_body->setGravity(btVector3(0,-100,0));
 	
 	if (sound)
 	{
-		render_manager->increaseScore();
 		render_manager->playAudio(26, 1);
 		sound = false;
 	}
