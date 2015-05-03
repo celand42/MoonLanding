@@ -579,7 +579,7 @@ RenderManager::RenderManager(GameManager* gm)
    root->addFrameListener(input_render_listener);
 
    gui_manager = new GUIManager(this);
-   script_manager = new ScriptManager(this);
+   script_manager = new ScriptManager();
    physics_manager = new PhysicsManager(this);
 
    physics_render_listener = new PhysicsRenderListener(this);

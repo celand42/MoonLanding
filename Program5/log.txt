@@ -1,84 +1,24 @@
 ****COMMENT****
-15:21:56
+23:45:10
 Resource metadata loaded.
 ****************
 ****COMMENT****
-15:21:56
+23:45:10
 Scripts parsed successfully.
 ****************
 ****COMMENT****
-15:21:56
+23:45:10
 Meshes loaded successfully.
 ****************
 ****COMMENT****
-15:21:56
-Entity Ground Entity successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Body successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Robot successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Wing1 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Engine1 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Gun1 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Wing2 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Engine2 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Gun2 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Wing3 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Engine3 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Gun3 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Wing4 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Engine4 successfully placed in scene graph.
-****************
-****COMMENT****
-15:21:56
-Entity Gun4 successfully placed in scene graph.
-****************
-****COMMENT****
-15:23:00
+23:47:54
 Destructor started.
 ****************
 ****COMMENT****
-15:23:00
+23:47:54
 Resources unloaded successfully.
 ****************
 ****COMMENT****
-15:23:00
+23:47:54
 Destructor completed.
 ****************

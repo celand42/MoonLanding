@@ -13,6 +13,7 @@ class LogManager;
 class InputManager;
 class AudioManager;
 class NetworkManager;
+class AIManager;
 
 struct AudioResourceInfo;
 
@@ -26,6 +27,8 @@ class GameManager : public InputListener
       InputManager* input_manager;
       AudioManager* audio_manager;
       NetworkManager* network_manager;
+      AIManager* ai_manager;
+
 
       GameManager(std::string scene_file_name);
       void init();
@@ -78,6 +81,9 @@ class GameManager : public InputListener
       static float a_to_f(const char* str);
       static void parseFloats(std::string& str, float* values);
       static std::string textFromChildNode(TiXmlNode* parent_node, const char* child_element_name);
+
+      void executeMotionScript(float* r_i, float* r_f, float* v_i, float* v_f, float* gravity, float t, float* a_req);
+        void executeFindPathScript(std::string vertices_file, std::string edges_file, std::string start_vertex, std::string end_vertex);
 
 };
 

@@ -10,7 +10,7 @@ LIBS=-lboost_system-mgw48-mt-1_57 -lboost_thread-mgw48-mt-1_57 -ltinyxml -lOIS -
 COMPILE = $(CC) $(INC_DIRS) -c 
 LINK = $(CC) $(LIB_DIRS) -o
 
-GAME_FILES = Main.o GameManager.o RenderListener.o AnimationRenderListener.o InputRenderListener.o PhysicsRenderListener.o NetworkRenderListener.o RenderManager.o LogManager.o GameResource.o PathResource.o MeshResource.o ResourceManager.o InputManager.o AudioResource.o AudioPlayer.o AudioManager.o GUIManager.o ScriptManager.o GUIWidgetScript.o PhysicsManager.o RigidBody.o BulletSceneNodeMotionState.o BulletDebugDrawer.o CompoundShape.o NetworkUtils.o NetworkManager.o Saber.o
+GAME_FILES = Main.o GameManager.o RenderListener.o AnimationRenderListener.o InputRenderListener.o PhysicsRenderListener.o NetworkRenderListener.o RenderManager.o LogManager.o GameResource.o PathResource.o MeshResource.o ResourceManager.o InputManager.o AudioResource.o AudioPlayer.o AudioManager.o GUIManager.o ScriptManager.o GUIWidgetScript.o PhysicsManager.o RigidBody.o BulletSceneNodeMotionState.o BulletDebugDrawer.o CompoundShape.o NetworkUtils.o NetworkManager.o Saber.o AIManager.o
 QUAT_FILES = Quaternion.o
 SERVER_FILES = GameConnection.o GameServer.o NetworkUtils.o
 
@@ -118,7 +118,7 @@ GameServer.o:		GameServer.cpp
 Saber.o:		Saber.cpp
 			$(COMPILE) Saber.cpp
 
-# AIManager.o:		AIManager.h AIManager.cpp
-# 			$(COMPILE) AIManager.cpp
+AIManager.o:		AIManager.h AIManager.cpp
+			$(COMPILE) AIManager.cpp
 
 

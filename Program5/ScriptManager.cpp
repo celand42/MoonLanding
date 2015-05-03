@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-ScriptManager::ScriptManager(RenderManager* rm)
+ScriptManager::ScriptManager()
 {
-   render_manager = rm;
+   //render_manager = rm;
    L = luaL_newstate();
    luaL_openlibs(L);
 }
@@ -13,7 +13,7 @@ ScriptManager::ScriptManager(RenderManager* rm)
 ScriptManager::~ScriptManager()
 {
    lua_close(L);
-   render_manager = NULL;
+   //render_manager = NULL;
 }
 
 /*

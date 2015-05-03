@@ -5,8 +5,18 @@
 #include "InputManager.h"
 #include "AudioManager.h"
 #include "NetworkManager.h"
+#include "AIManager.h"
 
 #include <stdlib.h>  //atoi, atof (actual include not needed?)
+
+void GameManager::executeMotionScript(float* r_i, float* r_f, float* v_i, float* v_f, float* gravity, float t, float* a_req)
+{
+   ai_manager->executeMotionScript(r_i, r_f, v_i, v_f, gravity, t, a_req);
+}
+void GameManager::executeFindPathScript(string vertices_file, string edges_file, string start_vertex, string end_vertex)
+{
+   ai_manager->executeFindPathScript(vertices_file, edges_file, start_vertex, end_vertex);
+}
 
 string GameManager::networkSendReceive(string message_send)
 {
@@ -22,8 +32,8 @@ void GameManager::playAudio(uint32 audio_id, uint32 num_repeats)
    {
       audio_manager->playAudio((AudioResource*) game_resource, num_repeats);
    }
-}
 
+}
 void GameManager::updateAudio()
 {
    audio_manager->updateAudio();
@@ -156,6 +166,7 @@ void GameManager::init()
    resource_manager = new ResourceManager(this);
    network_manager = new NetworkManager(this, 100);  //buffer size specified via constructor
    network_manager->createSocketAddress("localhost", 6789);
+   ai_manager = new AIManager(this);
 }
 
 GameManager::GameManager(std::string scene_file_name)
@@ -173,6 +184,7 @@ GameManager::~GameManager()
    log_manager->logComment("Destructor started.");
    resource_manager->unloadResources();
 
+   delete ai_manager;
    delete network_manager;
    delete resource_manager;
    delete audio_manager;  //crashes here (not anymore?)
