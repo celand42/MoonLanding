@@ -20,17 +20,17 @@ bool NetworkRenderListener::frameStarted(const Ogre::FrameEvent& event)
    float time_step = event.timeSinceLastFrame;
    RenderManager* render_manager = getRenderManager();
 
-   int scroll_bar_setting = render_manager->getScrollBarSetting();
-cout << scroll_bar_setting << endl;
-   const char* scroll_bar_ascii = GameManager::i_to_a(scroll_bar_setting);
-   string gravity_str("0, ");
-   gravity_str.append(scroll_bar_ascii);
-   delete[] scroll_bar_ascii;
-   gravity_str.append(", 0");
+   //int scroll_bar_setting = render_manager->getScrollBarSetting();
+	//cout << scroll_bar_setting << endl;
+   //const char* scroll_bar_ascii = GameManager::i_to_a(scroll_bar_setting);
+   //string gravity_str("0, ");
+   //gravity_str.append(scroll_bar_ascii);
+   //delete[] scroll_bar_ascii;
+   //gravity_str.append(", 0");
 
-   string gravity_str_ = render_manager->networkSendReceive(gravity_str);
-cout << gravity_str_.c_str() << " gravity " << endl;
-   render_manager->setGravity(gravity_str_);
+   //string gravity_str_ = render_manager->networkSendReceive(gravity_str);
+	//cout << gravity_str_.c_str() << " gravity " << endl;
+   //render_manager->setGravity(gravity_str_);
 
    return getRenderStatus();
 }

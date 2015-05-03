@@ -5,7 +5,7 @@
 		<Property key="DefaultGenerated" value="DejaVuSansFontGenerated_15"/>
 	</MyGUI>
 	<MyGUI type="Pointer">
-		<Property key="Default" value="arrow"/>
+		<Property key="Default" value="saber"/>
 		<Property key="Layer" value="Pointer"/>
 	</MyGUI>
 </MyGUI>

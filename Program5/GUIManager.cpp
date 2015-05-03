@@ -7,17 +7,23 @@
 #include <iostream>
 using namespace std;
 
-int GUIManager::getScrollBarSetting()
-{
-   MyGUI::ScrollBar* scroll = MyGUI::Gui::getInstance().findWidget<MyGUI::ScrollBar>("Select_Degrees");
-   int degrees = -1*(scroll->getScrollRange()/2) + scroll->getScrollPosition();
-   return degrees;
-}
-
 GUIManager::GUIManager(RenderManager* rm)
 {
    render_manager = rm;
    all_widgets = new TableAVL<GUIWidgetScript, std::string >(&GUIWidgetScript::compare_items, &GUIWidgetScript::compare_keys);
+}
+
+void GUIManager::updateScore(int score)
+{
+	 std::stringstream ss;
+     ss << score;
+
+     std::string str;
+     ss >> str;
+	  
+	 MyGUI::Widget* win = my_gui->findWidgetT("Score");
+	 MyGUI::TextBox* win2 = (MyGUI::TextBox*)win->findWidget("ScoreText");
+	 win2->setCaption("Score: " + str);	
 }
 
 GUIManager::~GUIManager()
@@ -94,41 +100,23 @@ void GUIManager::loadResourceGroup(std::string resource_group_name)
    }
 }
 
-void GUIManager::buttonRotateGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, MyGUI::MouseButton _id) 
+void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, MyGUI::MouseButton _id) 
 {
    const string& _name = _sender->getName();
-   string button_name = _name;
+   string name = _name;
 
-   GUIWidgetScript* widget_script = all_widgets->tableRetrieve(&button_name);
-   if (widget_script)
+   if(name == "Quotes")
    {
-      string script_file_name = widget_script->getFileName();
-      string script_function_name = widget_script->getScriptName();
-
-      //obtain a reference to the combo box
-      MyGUI::ComboBox* combo = MyGUI::Gui::getInstance().findWidget<MyGUI::ComboBox>("Select_Object");
-      int selected_index = combo->getIndexSelected();
-      string object_name = combo->getItemNameAt(selected_index);
-
-      MyGUI::ScrollBar* scroll = MyGUI::Gui::getInstance().findWidget<MyGUI::ScrollBar>("Select_Degrees");
-      int degrees = -1*(scroll->getScrollRange()/2) + scroll->getScrollPosition();
-
-      render_manager->executeRotateScript(script_file_name, script_function_name, object_name, degrees);
-/*
-      if (button_name == "Yaw")
-      {
-         render_manager->applyTorqueImpulse(object_name, 0, degrees, 0);
-      }
-      else if (button_name == "Pitch")
-      {
-         render_manager->applyTorqueImpulse(object_name, degrees, 0, 0);
-      }
-      else if (button_name == "Roll")
-      {
-         render_manager->applyTorqueImpulse(object_name, 0, 0, degrees);
-      }
-*/
+      render_manager->talk();
    }
+   
+   else if (name == "Force")
+   {
+	   cout <<"FORCE"<<endl;
+	   render_manager->force();
+	   render_manager->playAudio(27, 1);
+   }
+
 }
 
 void GUIManager::comboGUIDelegate(MyGUI::ComboBox* _sender, uint32 index) 
@@ -179,6 +167,13 @@ void GUIManager::buildGUIFromXML(std::string file_name)
                addButtons(buttons_node, values, w);
             }
 
+			TiXmlNode* text_boxes_node = window_node->FirstChild("text_boxes");
+
+			if (text_boxes_node)
+            {
+               addTextBoxes(text_boxes_node, values, w);
+            }
+			
             TiXmlNode* combo_boxes_node = window_node->FirstChild("combo_boxes");
 
             if (combo_boxes_node)
@@ -228,13 +223,48 @@ void GUIManager::addButtons(TiXmlNode* buttons_node, float* values, MyGUI::Windo
       b->setCaption(caption_text);
       b->setFontHeight(font_size);
       b->setTextColour(MyGUI::Colour(0,0,0));
-      b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonRotateGUIDelegate);
+      b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonGUIDelegate);
 
       GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);
       widget_script->setFileName(file_name_text);
       widget_script->setScriptName(script_name_text);
 
       all_widgets->tableInsert(widget_script);
+   }
+}
+
+void GUIManager::addTextBoxes(TiXmlNode* text_boxes_node, float* values, MyGUI::Window* w)
+{
+	
+   for(TiXmlNode* text_box_node = text_boxes_node->FirstChild("text_box"); text_box_node; text_box_node = text_box_node->NextSibling())
+   {  
+      std::string name_text = GameManager::textFromChildNode(text_box_node, "name");
+	  std::string caption_text = GameManager::textFromChildNode(text_box_node, "caption");
+      std::string position_text = GameManager::textFromChildNode(text_box_node, "position");
+      GameManager::parseFloats(position_text, values);
+      uint32 left = (uint32) values[0];
+      uint32 top = (uint32) values[1];
+
+      std::string size_text = GameManager::textFromChildNode(text_box_node, "size");
+      GameManager::parseFloats(size_text, values);
+      uint32 width = (uint32) values[0];
+      uint32 height = (uint32) values[1];
+
+      std::string align_text = GameManager::textFromChildNode(text_box_node, "align");
+      std::string font_size_text = GameManager::textFromChildNode(text_box_node, "font");
+      uint32 font_size = (uint32) GameManager::parseFloat(font_size_text);
+	  
+      MyGUI::TextBox* b = w->createWidget<MyGUI::TextBox>("TextBox", left, top, width, height, MyGUI::Align::Default, name_text);
+      b->setCaption(caption_text);
+      b->setFontHeight(font_size);
+      b->setTextColour(MyGUI::Colour(0,0,0));
+      //b->eventMouseButtonPressed += newDelegate(this, &GUIManager::buttonGUIDelegate);
+
+      // GUIWidgetScript* widget_script = new GUIWidgetScript(b, name_text);
+      // widget_script->setFileName(file_name_text);
+      // widget_script->setScriptName(script_name_text);
+
+       //all_widgets->tableInsert(widget_script);
    }
 }
 

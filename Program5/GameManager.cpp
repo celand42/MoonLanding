@@ -71,12 +71,7 @@ void GameManager::checkForInput(float time_step)
 
 void GameManager::keyPressed(std::string game_key)
 {
-   if (game_key == "ESCAPE")
-   {
-      render_manager->stopRendering();
-      //delete this;
-      //exit(0);
-   }
+   render_manager->keyPressed(game_key);
 }
 
 void GameManager::keyReleased(std::string game_key)
@@ -160,7 +155,7 @@ void GameManager::init()
    input_manager = new InputManager(this);
    resource_manager = new ResourceManager(this);
    network_manager = new NetworkManager(this, 100);  //buffer size specified via constructor
-   network_manager->createSocketAddress("localhost", 6789);
+   //network_manager->createSocketAddress("localhost", 6789);
 }
 
 GameManager::GameManager(std::string scene_file_name)
@@ -168,7 +163,7 @@ GameManager::GameManager(std::string scene_file_name)
    init();
 
    resource_manager->loadFromXMLFile("resources.xml");
-   render_manager->buildSceneFromXML(scene_file_name);  //the group name is now stored in this file
+   render_manager->createScene(scene_file_name);  //the group name is now stored in this file
    //playAudio(20, 5);
    render_manager->startRendering();
 }

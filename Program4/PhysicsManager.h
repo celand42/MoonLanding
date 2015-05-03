@@ -35,7 +35,9 @@ class PhysicsManager
 {
    private:
       RenderManager* render_manager;
+
       TableAVL<RigidBody, std::string>* rigid_bodies;
+	  TableAVL<CompoundShape, std::string>* compound_shapes;
 
       //collision detection
       btBroadphaseInterface* overlapping_pair_cache;

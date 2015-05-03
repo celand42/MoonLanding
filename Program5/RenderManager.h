@@ -13,6 +13,7 @@ class GUIManager;
 class ScriptManager;
 class PhysicsManager;
 class NetworkManager;
+class Saber;
 
 struct SceneNodeMotion
 {
@@ -43,6 +44,7 @@ class RenderManager
       ScriptManager* script_manager;
       GUIManager* gui_manager;
       GameManager* game_manager;
+	  Saber* saber;
 
       RenderListener* animation_render_listener;
       RenderListener* input_render_listener;
@@ -58,26 +60,6 @@ class RenderManager
       void addSceneNodeChildren(TiXmlNode* xml_node, Ogre::SceneNode* parent_node, float* values);
       void addSceneNodeAnimation(TiXmlNode* animation_node_xml, Ogre::SceneNode* child_scene_node, std::string animation_name_text, float* values);
 
-/*
-      void buildSubmarineAnimation(Ogre::SceneNode* submarine_animation_node);
-      void buildRudderAnimation(Ogre::SceneNode* rudder_animation_node);
-      void buildPeriscopeAnimation(Ogre::SceneNode* periscope_animation_node);
-      void buildPropellerAnimation(Ogre::SceneNode* propeller_animation_node);
-
-      void buildXWingAnimationScene();
-      void buildRobotAnimation(Ogre::SceneNode* robot_node);
-      void buildStarShipAnimation(Ogre::SceneNode* starShip);
-      void buildURWingAnimation(Ogre::SceneNode* URWing);
-      void buildLRWingAnimation(Ogre::SceneNode* LRWing);
-      void buildULWingAnimation(Ogre::SceneNode* ULWing);
-      void buildLLWingAnimation(Ogre::SceneNode* ULWing);
-
-      void buildCannonSceneGraph();
-      void buildBarrelAnimation(Ogre::SceneNode* barrel_animation_node);
-      void buildWheelAnimation(Ogre::SceneNode* wheel_animation_node);
-      void buildCannonballAnimation(Ogre::SceneNode* cannonball_animation_node);
-      void buildCannonAnimation(Ogre::SceneNode* cannon_animation_node);
-*/
 
    public:
       RenderManager(GameManager* game_manager);
@@ -90,6 +72,9 @@ class RenderManager
       void mouseMoved(uint32 mouse_x, uint32 mouse_y, int mouse_rel_x, int mouse_rel_y);
       void joystickAxisMoved(int* amount);
 
+	  void createScene(std::string fileName);
+	  void processScene(TiXmlElement* elements, Ogre::SceneNode* parent_node);
+	  
       size_t getRenderWindowHandle();
       int getRenderWindowWidth();
       int getRenderWindowHeight();
@@ -114,12 +99,21 @@ class RenderManager
       void startRendering();
       void stopRendering();
 
+	  void playAudio(uint32 audio_id, uint32 num_repeats);
+	  
       void processAnimations(float time_step);
+	  void resetAnimation();
+	  void keyPressed(std::string game_key);
+	  void talk();
+	  void force();
 
       void setSelectedNode(std::string item);
       void logComment(std::string comment_message);
       void executeRotateScript(std::string file_name, std::string script_name, std::string object_name, int degrees);
+      void executeSlashScript(std::string script_file_name, std::string script_function_name, std::string object_name, int count);
+      void executeForceScript(std::string script_file_name, std::string script_function_name, std::string object_name, int count);
 
+	  
       void setOrientation(SceneNodeMotion* scene_node_motion, double w, double x, double y, double z);
       void setPosition(SceneNodeMotion* scene_node_motion, double x, double y, double z);
       float* getOrientation(SceneNodeMotion* scene_node_motion);
@@ -137,6 +131,8 @@ class RenderManager
       void setGravity(std::string gravity_str);
       std::string networkSendReceive(std::string message_send);
       int getScrollBarSetting();
+	  
+	  void increaseScore();
 };
 
 #endif

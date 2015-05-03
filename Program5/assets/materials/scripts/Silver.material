@@ -1,0 +1,35 @@
+// Silver genrated by blender2ogre 0.5.9
+
+material Silver 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass Silver
+        {
+            ambient 0.4479783773422241 0.4479783773422241 0.4479783773422241 1.0
+            diffuse 0.3583827072140977 0.3583827072140977 0.3583827072140977 1.0
+            specular 0.43854305148124695 0.4026631712913513 0.4294053912162781 1.0 31.75
+            emissive 0.0 0.0 0.0 1.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
