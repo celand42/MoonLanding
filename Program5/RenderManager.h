@@ -44,12 +44,14 @@ class RenderManager
       ScriptManager* script_manager;
       GUIManager* gui_manager;
       GameManager* game_manager;
-	  Saber* saber;
+	Saber* saber;
 
       RenderListener* animation_render_listener;
       RenderListener* input_render_listener;
       RenderListener* physics_render_listener;
       RenderListener* network_render_listener;
+      bool auto_pilot;
+      int opponent_score;
 
       void init();
       size_t window_handle;
@@ -101,6 +103,8 @@ class RenderManager
 
 	  void playAudio(uint32 audio_id, uint32 num_repeats);
 	  
+      void toggleAutoPilot();
+
       void processAnimations(float time_step);
 	  void resetAnimation();
 	  void keyPressed(std::string game_key);

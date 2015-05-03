@@ -14,6 +14,25 @@ AIManager::~AIManager()
    script_manager = NULL;
    game_manager = NULL;
 }
+char AIManager::executeAutoPilot(float x, float y, int your_score, int opponent_score)
+{
+
+   cout << x << " XXXXXXX" << endl;
+   cout << y << " YYYYYYYY" << endl;
+
+   cout  << your_score << endl;
+   cout << opponent_score << endl;
+
+   if (y <= 20 && y >= 10)
+   {
+      if (x < 0)
+         return 'L';
+      else
+         return 'R';
+   }
+
+   return 'N';
+}
 
 void AIManager::executeMotionScript(float* r_i, float* r_f, float* v_i, float* v_f, float* gravity, float t, float* a_req)
 {

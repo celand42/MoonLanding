@@ -112,7 +112,7 @@ void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, 
 {
    const string& _name = _sender->getName();
    string name = _name;
-
+   cout << name << "NAME" << endl;
    if(name == "Quotes")
    {
       render_manager->talk();
@@ -123,6 +123,10 @@ void GUIManager::buttonGUIDelegate(MyGUI::Widget* _sender, int _left, int _top, 
 	   cout <<"FORCE"<<endl;
 	   render_manager->force();
 	   render_manager->playAudio(27, 1);
+   }
+   else if(name == "Auto")
+   {
+      render_manager->toggleAutoPilot();
    }
 
 }

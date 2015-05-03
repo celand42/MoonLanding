@@ -22,6 +22,7 @@ class AIManager
 
       void executeMotionScript(float* r_i, float* r_f, float* v_i, float* v_f, float* gravity, float t, float* a_req);
 	  void executeFindPathScript(string vertices_file, string edges_file, string start_vertex, string end_vertex);
+	  char executeAutoPilot(float x, float y, int your_score, int opponent_score);
 };
 
 #endif

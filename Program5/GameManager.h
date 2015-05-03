@@ -83,7 +83,8 @@ class GameManager : public InputListener
       static std::string textFromChildNode(TiXmlNode* parent_node, const char* child_element_name);
 
       void executeMotionScript(float* r_i, float* r_f, float* v_i, float* v_f, float* gravity, float t, float* a_req);
-        void executeFindPathScript(std::string vertices_file, std::string edges_file, std::string start_vertex, std::string end_vertex);
+      void executeFindPathScript(std::string vertices_file, std::string edges_file, std::string start_vertex, std::string end_vertex);
+      char executeAutoPilot(float x, float y, int your_score, int opponent_score);
 
 };
 

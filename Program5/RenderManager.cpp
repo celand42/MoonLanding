@@ -22,8 +22,8 @@ int RenderManager::get_score()
 }
 void RenderManager::set_score(int value)
 {
-   cout <<"CURRENT SCORE MOTHER FUCKER" <<    value << endl;
    gui_manager->updateScore(value, false);
+   opponent_score = value;
 }
 string RenderManager::networkSendReceive(string message_send)
 {
@@ -543,16 +543,7 @@ void RenderManager::init()
       float aspect_ratio = actual_width/actual_height;
       camera->setAspectRatio(aspect_ratio);
 
-/*
-      Ogre::Camera* camera2 = scene_manager->createCamera("Camera 2");
-      camera2->setPosition(Ogre::Vector3(0, 9.99, 0.01));
-      camera2->lookAt(Ogre::Vector3(0, 0, 0));
-      camera2->setNearClipDistance(2);
-      camera2->setFarClipDistance(50);
-      Ogre::Viewport* viewport2 = window->addViewport(camera2, 1, 0.5, 0, 0.5, 1.0);  //assign a camera to a viewport (can have many cameras and viewports in a single window)
-      viewport2->setBackgroundColour(Ogre::ColourValue(0.1,0.1,0.1));
-      camera2->setAspectRatio(aspect_ratio);
-*/
+      auto_pilot = false;
    }
 
    catch (Ogre::Exception& e)
@@ -567,6 +558,7 @@ RenderManager::RenderManager(GameManager* gm)
    game_manager = gm;
    saber = new Saber(gm);
    init();
+   opponent_score = 0;
 
    //register the listener
    //the listener is notified before and after each frame
@@ -587,6 +579,7 @@ RenderManager::RenderManager(GameManager* gm)
 
    network_render_listener = new NetworkRenderListener(this);
    root->addFrameListener(network_render_listener);
+
 }
 
 RenderManager::~RenderManager()
@@ -699,6 +692,10 @@ Ogre::SceneManager* RenderManager::getSceneManager()
    return scene_manager;
 }
 
+void RenderManager::toggleAutoPilot()
+{
+   auto_pilot = !auto_pilot;
+}
 
 void RenderManager::processAnimations(float time_step)
 {
@@ -728,6 +725,28 @@ void RenderManager::processAnimations(float time_step)
 				executeSlashScript("assets/lua_scripts/placement.lua","placement",name, counter);	// Moves off screen Falcon back to top
 				counter++;
 			}
+
+         if(auto_pilot)
+         {
+            // int* hit;
+            // float* falcon_loc;
+            // falcon_loc[0] = nodePos.x;
+            // falcon_loc[1] = nodePos.y;
+            // falcon_loc[2] = nodePos.z;
+
+            char action = game_manager->executeAutoPilot( nodePos.x, nodePos.y,  saber->getScore(),  opponent_score);
+
+            if (action == 'L')
+               keyPressed("LEFT");
+            else if (action == 'R')
+               keyPressed("RIGHT");
+
+            // delete[] falcon_loc;
+            
+            // delete[] hit;
+
+
+         }
 
 		}
  
@@ -1182,4 +1201,5 @@ void RenderManager::processScene(TiXmlElement* elements, Ogre::SceneNode* parent
             
     }
 }
+
 

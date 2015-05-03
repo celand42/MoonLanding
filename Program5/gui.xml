@@ -18,12 +18,21 @@
                <align>Default</align>
                <font>20</font>
             </button>
-			<button>
-               <name>Force</name>
-               <caption>Use the Force!</caption>
+            <button>
+               <name>Auto</name>
+               <caption>Auto</caption>
                <skin>Button</skin>
-               <position>5,65</position>
-               <size>210,25</size>
+               <position>5, 65</position>
+               <size>50,25</size>
+               <align>Default</align>
+               <font>20</font>
+            </button>
+			   <button>
+               <name>Force</name>
+               <caption>Force Push</caption>
+               <skin>Button</skin>
+               <position>60, 65</position>
+               <size>150,25</size>
                <align>Default</align>
                <font>20</font>
             </button>

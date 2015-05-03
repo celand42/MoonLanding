@@ -40,6 +40,7 @@ class Saber
 	float gameOverTimer;
 	
 	int score;
+	//int opponentScore;
 	
 	public:
 	
@@ -54,6 +55,7 @@ class Saber
 	
 	void increaseScore();
 	int getScore();
+	//int getOpponentScore();
 	
 
 };

@@ -17,7 +17,10 @@ void GameManager::executeFindPathScript(string vertices_file, string edges_file,
 {
    ai_manager->executeFindPathScript(vertices_file, edges_file, start_vertex, end_vertex);
 }
-
+char GameManager::executeAutoPilot(float x, float y, int your_score, int opponent_score)
+{
+   return ai_manager-> executeAutoPilot(x, y,  your_score,  opponent_score);
+}
 string GameManager::networkSendReceive(string message_send)
 {
    return network_manager->networkSendReceive(message_send);
@@ -167,6 +170,7 @@ void GameManager::init()
    network_manager = new NetworkManager(this, 100);  //buffer size specified via constructor
    network_manager->createSocketAddress("localhost", 6789);
    ai_manager = new AIManager(this);
+
 }
 
 GameManager::GameManager(std::string scene_file_name)
