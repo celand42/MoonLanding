@@ -58,24 +58,58 @@
          </combo_boxes>
       </window>
 	  <window>
-         <name>Score</name>
+         <name>UserScore</name>
 
          <skin>EditBox</skin>
-         <position>2,2</position>
-         <size>125,25</size>
+         <position>5,5</position>
+         <size>150,45</size>
          <align>Default</align>
          <layer>Overlapped</layer>
 		 <text_boxes>
 			<text_box>
-				<name>ScoreText</name>
-				<caption>Score:</caption>
+				<name>User</name>
+				<caption>User</caption>
 				<position>0,0</position>
-				<size>125,25</size>
+				<size>150,25</size>
+				<align>Left</align>
+				<font>20</font>
+			</text_box>
+			<text_box>
+				<name>UserScoreText</name>
+				<caption>Score:</caption>
+				<position>0,20</position>
+				<size>150,25</size>
 				<align>Left</align>
 				<font>20</font>
 			</text_box>
 		 </text_boxes>
+      </window>
+	  <window>
+         <name>EnemyScore</name>
 
+         <skin>EditBox</skin>
+         <position>645,5</position>
+         <size>150,45</size>
+         <align>Default</align>
+         <layer>Overlapped</layer>
+		 <text_boxes>
+			<text_box>
+				<name>Enemy</name>
+				<caption>Enemy</caption>
+				<position>0,0</position>
+				<size>150,25</size>
+				<align>Left</align>
+				<font>20</font>
+			</text_box>
+			<text_box>
+				<name>EnemyScoreText</name>
+				<caption>Score:</caption>
+				<position>0,20</position>
+				<size>150,25</size>
+				<align>Left</align>
+				<font>20</font>
+			</text_box>
+		 </text_boxes>
       </window>
    </windows>
 </gui>

@@ -21,8 +21,8 @@ void GUIManager::updateScore(int score)
      std::string str;
      ss >> str;
 	  
-	 MyGUI::Widget* win = my_gui->findWidgetT("Score");
-	 MyGUI::TextBox* win2 = (MyGUI::TextBox*)win->findWidget("ScoreText");
+	 MyGUI::Widget* win = my_gui->findWidgetT("UserScore");
+	 MyGUI::TextBox* win2 = (MyGUI::TextBox*)win->findWidget("UserScoreText");
 	 win2->setCaption("Score: " + str);	
 }
 
