@@ -20,16 +20,48 @@ char AIManager::executeAutoPilot(float x, float y, int your_score, int opponent_
    cout << x << " XXXXXXX" << endl;
    cout << y << " YYYYYYYY" << endl;
 
-   cout  << your_score << endl;
-   cout << opponent_score << endl;
+   string script_file_name = "assets/lua_scripts/placement.lua";
+   string script_function_name = "statistics";
+   int num_inputs = 3;
+   const char** inputs = new const char*[num_inputs];
+   cout << "here" << endl;
+   inputs[0] = NetworkUtils::f_to_a((float)your_score/(float)(your_score + opponent_score));
+   inputs[1] = NetworkUtils::f_to_a(x);
+   inputs[2] = NetworkUtils::f_to_a(y);
+   //cout << inputs[0] << endl;
+   int num_outputs = 1;
+   
+   char** outputs = new char*[num_outputs];
 
-   if (y <= 20 && y >= 10)
+   for (int i = 0; i < num_outputs; i++)
    {
-      if (x < 0)
-         return 'L';
-      else
-         return 'R';
+      outputs[i] = new char[21];
    }
+   //script_manager->executeScript(script_file_name, script_file_name, num_inputs, num_outputs, inputs, outputs );
+
+   for (int i = 0; i < num_inputs; i++)
+   {
+      delete[] inputs[i];
+   }
+
+   delete[] inputs;
+
+   //cout << outputs[0] << endl;
+   for (int i = 0; i < num_outputs; i++)
+   {
+      delete[] outputs[i];
+   }
+
+   delete[] outputs;
+
+
+   // if (y <= 20 && y >= 10)
+   // {
+   //    if (x < 0)
+   //       return 'L';
+   //    else
+   //       return 'R';
+   // }
 
    return 'N';
 }

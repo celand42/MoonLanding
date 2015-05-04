@@ -25,3 +25,18 @@ function force(counter)
 	return x, y, z
 end
 
+
+-- function statistics(statistic, x_pos, y_pos)
+-- 	math.random(os.time());
+-- 	local testing_hit = math.random(0,1);
+-- 	if testing_hit > statistic then
+-- 		if y_pos <= 20 and y_pos >= 20 then
+-- 			if x_pos > 0 then
+-- 				return "L"
+-- 			else 
+-- 				return "R"
+-- 	else
+-- 		return "N"
+
+-- end
+
